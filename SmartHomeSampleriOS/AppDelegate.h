@@ -6,12 +6,36 @@
 //  Copyright (c) 2015 Ibrahim Adnan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#define UIAppDelegate  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <UIKit/UIKit.h>
+#import "PHBridgeSelectionViewController.h"
+#import "PHBridgePushLinkViewController.h"
+#import <HueSDK_iOS/HueSDK.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate, PHBridgeSelectionViewControllerDelegate, PHBridgePushLinkViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) PHHueSDK *phHueSDK;
 
+
+#pragma mark - HueSDK
+
+/**
+ Starts the local heartbeat
+ */
+- (void)enableLocalHeartbeat;
+
+/**
+ Stops the local heartbeat
+ */
+- (void)disableLocalHeartbeat;
+
+/**
+ Starts a search for a bridge
+ */
+- (void)searchForBridgeLocal;
 
 @end
 

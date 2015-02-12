@@ -14,6 +14,22 @@
 		0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */; };
 		0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */; };
 		0F79F5FA1A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */; };
+		0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */; };
+		0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */; };
+		0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */; };
+		0F79F6111A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */; };
+		0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F60C1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m */; };
+		0F79F6131A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */; };
+		0F79F6151A8D2C8900A6FB2E /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */; };
+		0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6191A8D322100A6FB2E /* DDAbstractDatabaseLogger.m */; };
+		0F79F6281A8D322100A6FB2E /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F61B1A8D322100A6FB2E /* DDASLLogger.m */; };
+		0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F61D1A8D322100A6FB2E /* DDFileLogger.m */; };
+		0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F61F1A8D322100A6FB2E /* DDLog.m */; };
+		0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6211A8D322100A6FB2E /* DDTTYLogger.m */; };
+		0F79F62C1A8D322100A6FB2E /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6241A8D322100A6FB2E /* ContextFilterLogFormatter.m */; };
+		0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6261A8D322100A6FB2E /* DispatchQueueLogFormatter.m */; };
+		0F79F6311A8D3D3F00A6FB2E /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */; };
+		0F79F6321A8D3D3F00A6FB2E /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +56,32 @@
 		0F79F5F31A8AE05200A6FB2E /* SmartHomeSampleriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeSampleriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F79F5F81A8AE05200A6FB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeSampleriOSTests.m; sourceTree = "<group>"; };
+		0F79F6051A8D2A8600A6FB2E /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
+		0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
+		0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
+		0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHBridgePushLinkViewController.h; path = PhilipsHue/PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
+		0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHBridgePushLinkViewController.m; path = PhilipsHue/PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
+		0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PHBridgePushLinkViewController.xib; path = PhilipsHue/PHBridgePushLinkViewController.xib; sourceTree = "<group>"; };
+		0F79F60B1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHBridgeSelectionViewController.h; path = PhilipsHue/PHBridgeSelectionViewController.h; sourceTree = "<group>"; };
+		0F79F60C1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHBridgeSelectionViewController.m; path = PhilipsHue/PHBridgeSelectionViewController.m; sourceTree = "<group>"; };
+		0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PHBridgeSelectionViewController.xib; path = PhilipsHue/PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
+		0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HueSDK_iOS.framework; path = ../PhilipsHue/HueSDK_iOS.framework; sourceTree = "<group>"; };
+		0F79F6181A8D322100A6FB2E /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		0F79F6191A8D322100A6FB2E /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		0F79F61A1A8D322100A6FB2E /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		0F79F61B1A8D322100A6FB2E /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		0F79F61C1A8D322100A6FB2E /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		0F79F61D1A8D322100A6FB2E /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		0F79F61E1A8D322100A6FB2E /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		0F79F61F1A8D322100A6FB2E /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		0F79F6201A8D322100A6FB2E /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		0F79F6211A8D322100A6FB2E /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		0F79F6231A8D322100A6FB2E /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		0F79F6241A8D322100A6FB2E /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		0F79F6251A8D322100A6FB2E /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		0F79F6261A8D322100A6FB2E /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = press_smartbridge.png; path = Resources/press_smartbridge.png; sourceTree = SOURCE_ROOT; };
+		0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "press_smartbridge@2x.png"; path = "Resources/press_smartbridge@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79F6151A8D2C8900A6FB2E /* HueSDK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */,
+				0F79F6031A8D2A6400A6FB2E /* PhilipsHue */,
+				0F79F6161A8D2CA200A6FB2E /* Frameworks */,
 				0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */,
 				0F79F5DB1A8AE05200A6FB2E /* Products */,
 			);
@@ -96,6 +141,7 @@
 		0F79F5DD1A8AE05200A6FB2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F79F62E1A8D3D3100A6FB2E /* Resources */,
 				0F79F5DE1A8AE05200A6FB2E /* Info.plist */,
 				0F79F5DF1A8AE05200A6FB2E /* main.m */,
 			);
@@ -117,6 +163,80 @@
 				0F79F5F81A8AE05200A6FB2E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F79F6031A8D2A6400A6FB2E /* PhilipsHue */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F6041A8D2A8600A6FB2E /* LoadingView */,
+				0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */,
+				0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */,
+				0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */,
+				0F79F60B1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.h */,
+				0F79F60C1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m */,
+				0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */,
+			);
+			name = PhilipsHue;
+			sourceTree = "<group>";
+		};
+		0F79F6041A8D2A8600A6FB2E /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F6051A8D2A8600A6FB2E /* PHLoadingViewController.h */,
+				0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */,
+				0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */,
+			);
+			name = LoadingView;
+			path = PhilipsHue/LoadingView;
+			sourceTree = "<group>";
+		};
+		0F79F6161A8D2CA200A6FB2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F6171A8D322100A6FB2E /* Lumberjack */,
+				0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */,
+			);
+			name = Frameworks;
+			path = SmartHomeSampleriOS;
+			sourceTree = "<group>";
+		};
+		0F79F6171A8D322100A6FB2E /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F6181A8D322100A6FB2E /* DDAbstractDatabaseLogger.h */,
+				0F79F6191A8D322100A6FB2E /* DDAbstractDatabaseLogger.m */,
+				0F79F61A1A8D322100A6FB2E /* DDASLLogger.h */,
+				0F79F61B1A8D322100A6FB2E /* DDASLLogger.m */,
+				0F79F61C1A8D322100A6FB2E /* DDFileLogger.h */,
+				0F79F61D1A8D322100A6FB2E /* DDFileLogger.m */,
+				0F79F61E1A8D322100A6FB2E /* DDLog.h */,
+				0F79F61F1A8D322100A6FB2E /* DDLog.m */,
+				0F79F6201A8D322100A6FB2E /* DDTTYLogger.h */,
+				0F79F6211A8D322100A6FB2E /* DDTTYLogger.m */,
+				0F79F6221A8D322100A6FB2E /* Extensions */,
+			);
+			name = Lumberjack;
+			path = PhilipsHue/Lumberjack;
+			sourceTree = SOURCE_ROOT;
+		};
+		0F79F6221A8D322100A6FB2E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F6231A8D322100A6FB2E /* ContextFilterLogFormatter.h */,
+				0F79F6241A8D322100A6FB2E /* ContextFilterLogFormatter.m */,
+				0F79F6251A8D322100A6FB2E /* DispatchQueueLogFormatter.h */,
+				0F79F6261A8D322100A6FB2E /* DispatchQueueLogFormatter.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F79F62E1A8D3D3100A6FB2E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */,
+				0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79F6131A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib in Resources */,
+				0F79F6311A8D3D3F00A6FB2E /* press_smartbridge.png in Resources */,
 				0F79F5E91A8AE05200A6FB2E /* Main.storyboard in Resources */,
+				0F79F6111A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib in Resources */,
+				0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */,
+				0F79F6321A8D3D3F00A6FB2E /* press_smartbridge@2x.png in Resources */,
 				0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */,
 				0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */,
 			);
@@ -219,9 +344,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */,
+				0F79F6281A8D322100A6FB2E /* DDASLLogger.m in Sources */,
+				0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */,
+				0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */,
+				0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */,
+				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
 				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
+				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
+				0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
+				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
 				0F79F5E01A8AE05200A6FB2E /* main.m in Sources */,
+				0F79F62C1A8D322100A6FB2E /* ContextFilterLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +480,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhilipsHue",
+					../,
+				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -355,8 +496,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhilipsHue",
+					../,
+				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -414,6 +561,7 @@
 				0F79F5FF1A8AE05200A6FB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F79F6001A8AE05200A6FB2E /* Build configuration list for PBXNativeTarget "SmartHomeSampleriOSTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +570,7 @@
 				0F79F6021A8AE05200A6FB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
