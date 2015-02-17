@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Group</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Key</key>
+			<string>name_preference</string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>Title</key>
+			<string>Name</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>enabled_preference</string>
+			<key>Title</key>
+			<string>Enabled</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<real>0.5</real>
+			<key>Key</key>
+			<string>slider_preference</string>
+			<key>MaximumValue</key>
+			<integer>1</integer>
+			<key>MaximumValueImage</key>
+			<string></string>
+			<key>MinimumValue</key>
+			<integer>0</integer>
+			<key>MinimumValueImage</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Sample Audio File</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Audio Title</string>
+			<key>Key</key>
+			<string>audioTitle</string>
+			<key>DefaultValue</key>
+			<string>The Song That Doesn&apos;t End</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Audio Description</string>
+			<key>Key</key>
+			<string>audioDescription</string>
+			<key>DefaultValue</key>
+			<string>Lamb Chop&apos;s Play Along</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Audio URL</string>
+			<key>Key</key>
+			<string>audioPath</string>
+			<key>DefaultValue</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audio.mp3</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Audio Thumbnail URL</string>
+			<key>Key</key>
+			<string>audioThumbPath</string>
+			<key>DefaultValue</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audioIcon.jpg</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Audio Mime-type</string>
+			<key>Key</key>
+			<string>audioMimeType</string>
+			<key>DefaultValue</key>
+			<string>audio/mp3</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Sample Video File</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Video Title</string>
+			<key>Key</key>
+			<string>videoTitle</string>
+			<key>DefaultValue</key>
+			<string>Sintel Character Design</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Video Description</string>
+			<key>Key</key>
+			<string>videoDescription</string>
+			<key>DefaultValue</key>
+			<string>Blender Open Movie Project</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Video URL</string>
+			<key>Key</key>
+			<string>videoPath</string>
+			<key>DefaultValue</key>
+			<string>http://192.168.1.6/media/sms-data/Public/Videos/Rainforest%20Seagate.mp4</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Video Thumbnail URL</string>
+			<key>Key</key>
+			<string>videoThumbPath</string>
+			<key>DefaultValue</key>
+			<string>http://192.168.1.6/media/sms-data/Public/Photos/album.JPG</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Video Mime-type</string>
+			<key>Key</key>
+			<string>videoMimeType</string>
+			<key>DefaultValue</key>
+			<string>video/mp4</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

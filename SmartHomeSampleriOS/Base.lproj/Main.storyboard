@@ -25,10 +25,110 @@
                                     <action selector="connectToHueBridge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Twj-Qs-qV7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQc-iw-a1T">
+                                <rect key="frame" x="238" y="92" width="126" height="30"/>
+                                <state key="normal" title="Connect to device">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G9p-MT-XIg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeS-YD-4g5">
+                                <rect key="frame" x="59" y="147" width="39" height="30"/>
+                                <state key="normal" title="Video">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEC-wK-40u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRp-UN-xnt">
+                                <rect key="frame" x="145" y="147" width="40" height="30"/>
+                                <state key="normal" title="Audio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ac-Dh-E9z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNo-Ds-6dG">
+                                <rect key="frame" x="223" y="147" width="71" height="30"/>
+                                <state key="normal" title="Slideshow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSlideShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QrU-gC-Qx2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iah-rA-Nwa">
+                                <rect key="frame" x="67" y="213" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QdR-ye-1EW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-FU-02q">
+                                <rect key="frame" x="144" y="213" width="43" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFa-hY-TkW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSs-NA-nXx">
+                                <rect key="frame" x="228" y="213" width="33" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ej7-iq-H4N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOj-5d-Yz7">
+                                <rect key="frame" x="144" y="266" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeMedia:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UT6-Re-Ji6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACw-fi-39Y">
+                                <rect key="frame" x="16" y="316" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Bi-HP-qU7">
+                                <rect key="frame" x="108" y="350" width="113" height="86"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xZV-Ln-pk1">
+                                <rect key="frame" x="100" y="312" width="185" height="31"/>
+                                <connections>
+                                    <action selector="volumeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="U5e-9w-hn0"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="S1a-Fg-AU4"/>
+                    <connections>
+                        <outlet property="closeMediaButton" destination="XOj-5d-Yz7" id="0OS-IK-3UE"/>
+                        <outlet property="connectDevice" destination="YQc-iw-a1T" id="L8Q-Go-B2R"/>
+                        <outlet property="connectHueBridge" destination="WGC-qs-kas" id="mIh-eV-uXt"/>
+                        <outlet property="imageView" destination="1Bi-HP-qU7" id="giL-4S-56I"/>
+                        <outlet property="pauseButton" destination="AC9-FU-02q" id="8LQ-3P-2IJ"/>
+                        <outlet property="playAudioButton" destination="tRp-UN-xnt" id="fOe-Hj-8dm"/>
+                        <outlet property="playButton" destination="iah-rA-Nwa" id="9Kr-VE-soo"/>
+                        <outlet property="playVideoButton" destination="YeS-YD-4g5" id="NgK-Xu-fdN"/>
+                        <outlet property="slideShowButton" destination="uNo-Ds-6dG" id="2iM-HW-Ovd"/>
+                        <outlet property="stopButton" destination="xSs-NA-nXx" id="JlY-1p-hwp"/>
+                        <outlet property="volumeSlider" destination="xZV-Ln-pk1" id="PWQ-MD-gqm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
