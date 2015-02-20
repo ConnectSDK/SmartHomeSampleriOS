@@ -13,7 +13,6 @@
 		0F79F5E91A8AE05200A6FB2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5E71A8AE05200A6FB2E /* Main.storyboard */; };
 		0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */; };
 		0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */; };
-		0F79F5FA1A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */; };
 		0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */; };
 		0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */; };
 		0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */; };
@@ -35,6 +34,8 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
+		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +75,6 @@
 		0F79F5ED1A8AE05200A6FB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0F79F5F31A8AE05200A6FB2E /* SmartHomeSampleriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeSampleriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F79F5F81A8AE05200A6FB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeSampleriOSTests.m; sourceTree = "<group>"; };
 		0F79F6051A8D2A8600A6FB2E /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +107,9 @@
 		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PhilipsHue/UIImage+Color.h"; sourceTree = "<group>"; };
 		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PhilipsHue/UIImage+Color.m"; sourceTree = "<group>"; };
+		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
+		44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconTrigger.h; sourceTree = "<group>"; };
+		44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTrigger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */,
+				44F0F0591A96717C007F4448 /* Triggers */,
 				0F79F6031A8D2A6400A6FB2E /* PhilipsHue */,
 				0F79F6161A8D2CA200A6FB2E /* Frameworks */,
 				0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */,
@@ -181,7 +185,7 @@
 		0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */,
+				44F0F05D1A9671AD007F4448 /* Triggers */,
 				0F79F5F71A8AE05200A6FB2E /* Supporting Files */,
 			);
 			path = SmartHomeSampleriOSTests;
@@ -280,6 +284,23 @@
 				0F79F63C1A8D608B00A6FB2E /* ConnectSDKTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		44F0F0591A96717C007F4448 /* Triggers */ = {
+			isa = PBXGroup;
+			children = (
+				44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */,
+				44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */,
+			);
+			path = Triggers;
+			sourceTree = "<group>";
+		};
+		44F0F05D1A9671AD007F4448 /* Triggers */ = {
+			isa = PBXGroup;
+			children = (
+				44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */,
+			);
+			path = Triggers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +440,7 @@
 				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
 				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
+				44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */,
 				0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */,
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
@@ -432,7 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F79F5FA1A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m in Sources */,
+				44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
