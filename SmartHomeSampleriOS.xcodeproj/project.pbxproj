@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C0691A96BB3C00A0E8E1 /* Scene.m */; };
+		0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */; };
+		0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */; };
+		0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F67C0731A97C2A200A0E8E1 /* Scene.plist */; };
 		0F79F5E01A8AE05200A6FB2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5DF1A8AE05200A6FB2E /* main.m */; };
 		0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */; };
 		0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E51A8AE05200A6FB2E /* ViewController.m */; };
@@ -62,6 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F67C0681A96BB3C00A0E8E1 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Scenes/Scene.h; sourceTree = "<group>"; };
+		0F67C0691A96BB3C00A0E8E1 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Scenes/Scene.m; sourceTree = "<group>"; };
+		0F67C06B1A96C3C000A0E8E1 /* SceneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneInfo.h; path = Scenes/SceneInfo.h; sourceTree = "<group>"; };
+		0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneInfo.m; path = Scenes/SceneInfo.m; sourceTree = "<group>"; };
+		0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewController.h; sourceTree = "<group>"; };
+		0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneViewController.m; sourceTree = "<group>"; };
+		0F67C0731A97C2A200A0E8E1 /* Scene.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Scene.plist; path = Resources/Scene.plist; sourceTree = SOURCE_ROOT; };
 		0F79F5DA1A8AE05200A6FB2E /* SmartHomeSampleriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomeSampleriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F79F5DE1A8AE05200A6FB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F79F5DF1A8AE05200A6FB2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,6 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F67C0631A96B66000A0E8E1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0F67C0681A96BB3C00A0E8E1 /* Scene.h */,
+				0F67C0691A96BB3C00A0E8E1 /* Scene.m */,
+				0F67C06B1A96C3C000A0E8E1 /* SceneInfo.h */,
+				0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		0F79F5D11A8AE05200A6FB2E = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +177,7 @@
 		0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */ = {
 			isa = PBXGroup;
 			children = (
+				0F67C0631A96B66000A0E8E1 /* Scenes */,
 				0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */,
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
 				0F79F5E41A8AE05200A6FB2E /* ViewController.h */,
@@ -163,6 +186,8 @@
 				0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */,
 				0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */,
 				0F79F5DD1A8AE05200A6FB2E /* Supporting Files */,
+				0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */,
+				0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */,
 			);
 			path = SmartHomeSampleriOS;
 			sourceTree = "<group>";
@@ -174,6 +199,7 @@
 				0F79F5DE1A8AE05200A6FB2E /* Info.plist */,
 				0F79F5DF1A8AE05200A6FB2E /* main.m */,
 				0F79F6441A8D76C600A6FB2E /* Settings.bundle */,
+				0F67C0731A97C2A200A0E8E1 /* Scene.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -392,6 +418,7 @@
 				0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */,
 				0F79F6321A8D3D3F00A6FB2E /* press_smartbridge@2x.png in Resources */,
 				0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */,
+				0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */,
 				0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */,
 				0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */,
 			);
@@ -411,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */,
 				0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */,
 				0F79F6281A8D322100A6FB2E /* DDASLLogger.m in Sources */,
 				0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */,
@@ -420,9 +448,11 @@
 				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
 				0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */,
+				0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */,
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
 				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
+				0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */,
 				0F79F5E01A8AE05200A6FB2E /* main.m in Sources */,
 				0F79F62C1A8D322100A6FB2E /* ContextFilterLogFormatter.m in Sources */,
 			);
