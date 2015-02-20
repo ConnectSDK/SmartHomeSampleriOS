@@ -24,10 +24,13 @@
 /// The minor value of beacons to match; `nil` if not used.
 @property (nonatomic, strong, readonly) NSNumber *minor;
 
-- (instancetype)initWithProximityUUID:(NSUUID *)uuid;
-
+/// Designated initializer. The @c uuid parameter must not be @c nil.
+/// @warning Do not use the default @c -init method.
 - (instancetype)initWithProximityUUID:(NSUUID *)uuid
                                 major:(NSNumber *)major
                              andMinor:(NSNumber *)minor;
+
+/// Initializer. The @c uuid parameter must not be @c nil.
+- (instancetype)initWithProximityUUID:(NSUUID *)uuid;
 
 @end

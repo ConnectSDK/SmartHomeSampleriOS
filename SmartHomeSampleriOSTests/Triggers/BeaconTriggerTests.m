@@ -42,4 +42,24 @@
     XCTAssertEqualObjects(trigger.minor, minor, @"The minor must match");
 }
 
+- (void)testDesignatedInitializerShouldThrowExceptionWithNilUUID {
+    XCTAssertThrowsSpecificNamed([[BeaconTrigger alloc] initWithProximityUUID:nil],
+                                 NSException, NSInvalidArgumentException,
+                                 @"nil UUID must not be accepted");
+}
+
+- (void)testInitializerShouldThrowExceptionWithNilUUID {
+    XCTAssertThrowsSpecificNamed([[BeaconTrigger alloc] initWithProximityUUID:nil
+                                                                        major:@0
+                                                                     andMinor:@0],
+                                 NSException, NSInvalidArgumentException,
+                                 @"nil UUID must not be accepted");
+}
+
+- (void)testInitShouldThrowException {
+    XCTAssertThrowsSpecificNamed([[BeaconTrigger alloc] init],
+                                 NSException, NSInvalidArgumentException,
+                                 @"nil UUID must not be accepted");
+}
+
 @end

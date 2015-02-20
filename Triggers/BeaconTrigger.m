@@ -12,6 +12,10 @@
 
 #pragma mark - Init
 
+- (instancetype)init {
+    return [self initWithProximityUUID:nil];
+}
+
 - (instancetype)initWithProximityUUID:(NSUUID *)uuid {
     return [self initWithProximityUUID:uuid
                                  major:nil
@@ -21,6 +25,12 @@
 - (instancetype)initWithProximityUUID:(NSUUID *)uuid
                                 major:(NSNumber *)major
                              andMinor:(NSNumber *)minor {
+    if (!uuid) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"UUID must not be nil"
+                                     userInfo:nil];
+    }
+
     if (self = [super init]) {
         _proximityUUID = uuid;
         _major = major;
