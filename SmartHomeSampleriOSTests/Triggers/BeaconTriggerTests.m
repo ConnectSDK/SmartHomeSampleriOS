@@ -192,4 +192,51 @@ static const CGFloat kDefaultAsyncTestTimeout = 0.2f;
                                  }];
 }
 
+- (void)testStoppedTriggerShouldNotCallback {
+    NSUUID *uuid = [NSUUID new];
+
+    id locationManagerMock = OCMClassMock([CLLocationManager class]);
+
+    TriggerBlock triggerBlock = ^() {
+        XCTFail(@"Must not be called");
+    };
+    BeaconTrigger *trigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
+                                                          andTriggerBlock:triggerBlock];
+
+    trigger.locationManager = locationManagerMock;
+
+    __block CLBeaconRegion *region;
+    [OCMExpect([locationManagerMock startMonitoringForRegion:[OCMArg isKindOfClass:[CLBeaconRegion class]]]) andDo:^(NSInvocation *invocation) {
+        region = [invocation objectArgumentAtIndex:0];
+    }];
+
+    [trigger start];
+    [trigger stop];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertNotNil(region); // tests for tests?!
+
+        id beaconMock = OCMClassMock([CLBeacon class]);
+        [OCMStub([beaconMock proximity]) andReturnValue:OCMOCK_VALUE(CLProximityNear)];
+        [OCMStub([beaconMock valueForKey:@"proximity"]) andReturn:@(CLProximityNear)];
+
+        [trigger locationManager:locationManagerMock
+                 didRangeBeacons:@[beaconMock]
+                        inRegion:region];
+    });
+
+    [self runRunLoopForInterval:kDefaultAsyncTestTimeout];
+    OCMVerifyAll(locationManagerMock);
+}
+
+#pragma mark - Helpers
+
+- (void)runRunLoopForInterval:(CGFloat)interval {
+    NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:interval];
+    while ([timeoutDate timeIntervalSinceNow] > 0) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:timeoutDate];
+    }
+}
+
 @end

@@ -48,4 +48,8 @@ typedef void(^TriggerBlock)();
 /// Starts iBeacon monitoring.
 - (void)start;
 
+/// Stops the monitoring. The trigger block will not be called until @c -start
+/// is called.
+- (void)stop;
+
 @end
