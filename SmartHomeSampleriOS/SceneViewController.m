@@ -73,12 +73,12 @@
 {
     if(device){
         
-        NSLog(@"Device address %@",device.address);
+        NSLog(@"Device address %@",device.services);
         if(self.scene1 && self.scene2){
             NSDictionary *sceneDevice1 = [self.scene1.configuration valueForKey:@"device"];
             NSDictionary *sceneDevice2 = [self.scene2.configuration valueForKey:@"device"];
           
-            if([[sceneDevice1 objectForKey:@"ip"] isEqualToString:device.address]){
+            if([device serviceWithName:kConnectSDKWebOSTVServiceId] && [[sceneDevice1 objectForKey:@"ip"] isEqualToString:device.address]){
                 self.scene1.conectableDevice = device;
                 [self.scene1 configureScene];
             }
