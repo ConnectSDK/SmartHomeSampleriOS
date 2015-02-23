@@ -34,8 +34,10 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */; };
 		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
 		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
+		44F0F0681A96BC39007F4448 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F0F0671A96BC39007F4448 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,9 +109,13 @@
 		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PhilipsHue/UIImage+Color.h"; sourceTree = "<group>"; };
 		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PhilipsHue/UIImage+Color.m"; sourceTree = "<group>"; };
+		44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+ObjectGetter.h"; sourceTree = "<group>"; };
+		44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+ObjectGetter.m"; sourceTree = "<group>"; };
 		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
 		44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconTrigger.h; sourceTree = "<group>"; };
 		44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTrigger.m; sourceTree = "<group>"; };
+		44F0F0671A96BC39007F4448 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = SOURCE_ROOT; };
+		44F0F06C1A9808D4007F4448 /* BeaconTrigger_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeaconTrigger_Private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F0F0681A96BC39007F4448 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,8 @@
 		0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */,
+				44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */,
 				44F0F05D1A9671AD007F4448 /* Triggers */,
 				0F79F5F71A8AE05200A6FB2E /* Supporting Files */,
 			);
@@ -229,6 +238,7 @@
 		0F79F6161A8D2CA200A6FB2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44F0F0671A96BC39007F4448 /* OCMock.framework */,
 				0F79F6401A8D626000A6FB2E /* libicucore.dylib */,
 				0F79F63E1A8D60BB00A6FB2E /* GoogleCast.framework */,
 				0F79F6171A8D322100A6FB2E /* Lumberjack */,
@@ -291,6 +301,7 @@
 			children = (
 				44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */,
 				44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */,
+				44F0F06C1A9808D4007F4448 /* BeaconTrigger_Private.h */,
 			);
 			path = Triggers;
 			sourceTree = "<group>";
@@ -454,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */,
 				44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +625,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -620,6 +633,12 @@
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHomeSampleriOS.app/SmartHomeSampleriOS";
 			};
@@ -632,9 +651,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHomeSampleriOS.app/SmartHomeSampleriOS";
 			};

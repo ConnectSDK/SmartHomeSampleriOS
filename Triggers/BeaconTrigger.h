@@ -9,13 +9,18 @@
 #import <Foundation/Foundation.h>
 
 /**
- * A trigger that monitors an iBeacon region with the specified parameters.
+ * A trigger that monitors an iBeacon region with the specified parameters. The
+ * trigger's block is called when a beacon is "near" or "immediate". It's an
+ * immutable class.
  *
  * @see @c CLBeaconRegion class
  */
 @interface BeaconTrigger : NSObject
 
-/// The proximity UUID of beacons to monitor for.
+/// Notification block type.
+typedef void(^TriggerBlock)();
+
+/// The proximity UUID of beacons to monitor for. Cannot be @c nil.
 @property (nonatomic, strong, readonly) NSUUID *proximityUUID;
 
 /// The major value of beacons to match; `nil` if not used.
@@ -24,13 +29,23 @@
 /// The minor value of beacons to match; `nil` if not used.
 @property (nonatomic, strong, readonly) NSNumber *minor;
 
-/// Designated initializer. The @c uuid parameter must not be @c nil.
+/// The block to trigger when a matching beacon is found. Cannot be @c nil.
+@property (nonatomic, copy, readonly) TriggerBlock triggerBlock;
+
+
+/// Designated initializer. The @c uuid and @c block parameters must not be
+/// @c nil.
 /// @warning Do not use the default @c -init method.
 - (instancetype)initWithProximityUUID:(NSUUID *)uuid
                                 major:(NSNumber *)major
-                             andMinor:(NSNumber *)minor;
+                                minor:(NSNumber *)minor
+                      andTriggerBlock:(TriggerBlock)block;
 
-/// Initializer. The @c uuid parameter must not be @c nil.
-- (instancetype)initWithProximityUUID:(NSUUID *)uuid;
+/// Initializer. The @c uuid and @c block parameters must not be @c nil.
+- (instancetype)initWithProximityUUID:(NSUUID *)uuid
+                      andTriggerBlock:(TriggerBlock)block;
+
+/// Starts iBeacon monitoring.
+- (void)start;
 
 @end
