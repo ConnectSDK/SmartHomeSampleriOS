@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "UIImage+Color.h"
+#import "BeaconTrigger.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) BeaconTrigger *beaconTrigger;
 
 @end
 
@@ -71,11 +74,25 @@
     NSMutableDictionary *image4 = [NSMutableDictionary dictionary];
     [image4 setValue:@"http://192.168.1.6/media/sms-data/Public/Photos/slideshow/image4.jpg" forKey:@"imagePath"];
     _imageArray = [[NSArray alloc] initWithObjects:image1,image2,image3,image4, nil];
+
+    [self setupBeaconTrigger];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Triggers
+
+- (void)setupBeaconTrigger {
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
+    __weak typeof(self) wself = self;
+    TriggerBlock triggerBlock = ^{
+        typeof(self) sself = wself;
+        sself.beaconInfoLabel.text = [NSString stringWithFormat:@"discovered @ %@", [NSDate date]];
+    };
+
+    self.beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
+                                                                major:@0
+                                                                minor:@0
+                                                      andTriggerBlock:triggerBlock];
+    [self.beaconTrigger start];
 }
 
 #pragma mark - Media
