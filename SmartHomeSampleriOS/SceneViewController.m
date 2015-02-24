@@ -41,7 +41,7 @@
     
     // Do any additional setup after loading the view.
     _discoveryManager = [DiscoveryManager sharedManager];
-    [_discoveryManager registerDeviceService:[DLNAService class] withDiscovery:[SSDPDiscoveryProvider class]]; // LG TV devices only, includes NetcastTVService
+    [_discoveryManager registerDeviceService:[DLNAService class] withDiscovery:[SSDPDiscoveryProvider class]];
     [_discoveryManager registerDeviceService:[WebOSTVService class] withDiscovery:[SSDPDiscoveryProvider class]];
     
     _discoveryManager.pairingLevel = DeviceServicePairingLevelOn;
@@ -54,6 +54,54 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)startScene1:(id)sender{
+    [self.scene1 changeSceneState:Running sucess:^(id responseObject) {
+        NSLog(@"Scene1 Started");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene1 failure");
+    }];
+}
+
+-(IBAction)startScene2:(id)sender{
+    [self.scene2 changeSceneState:Running sucess:^(id responseObject) {
+        NSLog(@"Scene2 Started");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene2 failure");
+    }];
+}
+
+-(IBAction)pauseScene1:(id)sender{
+    [self.scene1 changeSceneState:Paused sucess:^(id responseObject) {
+        NSLog(@"Scene1 Paused");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene1 pause failure");
+    }];
+}
+
+-(IBAction)pauseScene2:(id)sender{
+    [self.scene2 changeSceneState:Paused sucess:^(id responseObject) {
+        NSLog(@"Scene2 Paused");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene2 pause failure");
+    }];
+}
+
+-(IBAction)stopScene1:(id)sender{
+    [self.scene1 changeSceneState:Stopped sucess:^(id responseObject) {
+        NSLog(@"Scene1 Stopped");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene1 stop failure");
+    }];
+}
+
+-(IBAction)stopScene2:(id)sender{
+    [self.scene2 changeSceneState:Stopped sucess:^(id responseObject) {
+        NSLog(@"Scene2 Stoped");
+    } failure:^(NSError *error) {
+        NSLog(@"Scene2 stop failure");
+    }];
 }
 
 /*
@@ -99,6 +147,24 @@
 - (void)discoveryManager:(DiscoveryManager *)manager didUpdateDevice:(ConnectableDevice *)device
 {
     //Nothing
+    if(device){
+        
+        NSLog(@"Device address %@",device.services);
+        if(self.scene1 && self.scene2){
+            NSDictionary *sceneDevice1 = [self.scene1.configuration valueForKey:@"device"];
+            NSDictionary *sceneDevice2 = [self.scene2.configuration valueForKey:@"device"];
+            
+            if([device serviceWithName:kConnectSDKWebOSTVServiceId] && [[sceneDevice1 objectForKey:@"ip"] isEqualToString:device.address]){
+                self.scene1.conectableDevice = device;
+                [self.scene1 configureScene];
+            }
+            
+            if([[sceneDevice2 objectForKey:@"ip"] isEqualToString:device.address]){
+                self.scene2.conectableDevice = device;
+                [self.scene2 configureScene];
+            }
+        }
+    }
 }
 
 @end

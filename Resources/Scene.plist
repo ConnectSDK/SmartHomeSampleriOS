@@ -6,39 +6,39 @@
 	<array>
 		<dict>
 			<key>description</key>
-			<string></string>
+			<string>Song Description</string>
 			<key>title</key>
-			<string></string>
+			<string>Title</string>
 			<key>iconURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audioIcon.jpg</string>
 			<key>mimeType</key>
-			<string></string>
+			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audio.mp3</string>
 		</dict>
 		<dict>
 			<key>description</key>
-			<string></string>
+			<string>Song 2</string>
 			<key>title</key>
-			<string></string>
+			<string>Song 2</string>
 			<key>iconURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/photo.jpg</string>
 			<key>mimeType</key>
-			<string></string>
+			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/akon-so-blue-clean.mp3</string>
 		</dict>
 		<dict>
 			<key>description</key>
-			<string></string>
+			<string>song 3</string>
 			<key>title</key>
-			<string></string>
+			<string>song 3</string>
 			<key>iconURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audioIcon.jpg</string>
 			<key>mimeType</key>
-			<string></string>
+			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string></string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/GlowwormPeriphescence.mp3	</string>
 		</dict>
 	</array>
 	<key>Scenes</key>
@@ -46,7 +46,7 @@
 		<dict>
 			<key>hueBulb</key>
 			<dict>
-				<key>bulbId</key>
+				<key>1</key>
 				<string>1</string>
 			</dict>
 			<key>device</key>
@@ -58,8 +58,10 @@
 		<dict>
 			<key>hueBulb</key>
 			<dict>
-				<key>bulbId</key>
+				<key>2</key>
 				<string>2</string>
+				<key>3</key>
+				<string>3</string>
 			</dict>
 			<key>device</key>
 			<dict>

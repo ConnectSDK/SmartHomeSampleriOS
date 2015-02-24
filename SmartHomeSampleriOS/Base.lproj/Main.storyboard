@@ -15,6 +15,62 @@
                     <view key="view" contentMode="scaleToFill" id="30k-k2-llg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-ia-2eY">
+                                <rect key="frame" x="35" y="81" width="89" height="30"/>
+                                <state key="normal" title="Start Scene1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="okk-p0-6L1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-cz-ZUM">
+                                <rect key="frame" x="32" y="132" width="99" height="30"/>
+                                <state key="normal" title="Pause Scene1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="k1Y-yO-psf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-kl-ePy">
+                                <rect key="frame" x="186" y="132" width="99" height="30"/>
+                                <state key="normal" title="Pause Scene2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="TqS-2o-HYv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-0o-Hi1">
+                                <rect key="frame" x="35" y="190" width="89" height="30"/>
+                                <state key="normal" title="Stop Scene1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="WrP-jz-Lcl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9x-0A-vls">
+                                <rect key="frame" x="191" y="190" width="89" height="30"/>
+                                <state key="normal" title="Stop Scene2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="Mlc-Br-R2Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-5K-8XE">
+                                <rect key="frame" x="191" y="81" width="89" height="30"/>
+                                <state key="normal" title="Start Scene2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="N59-2b-9Fs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="APT-r0-uEr"/>

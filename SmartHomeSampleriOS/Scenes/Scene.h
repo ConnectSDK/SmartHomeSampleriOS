@@ -25,6 +25,7 @@ typedef enum {
 @property(nonatomic,strong) ConnectableDevice *conectableDevice;
 @property(nonatomic,strong) PHBridgeResourcesCache *hueBridge;
 @property(nonatomic,strong) NSDictionary *configuration;
+@property(nonatomic,strong) UIImage *currentImage;
 
 -(instancetype)initWithConfiguration:(NSDictionary *)configuration andSceneInfo:(SceneInfo *)sceneInfo;
 - (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure;
