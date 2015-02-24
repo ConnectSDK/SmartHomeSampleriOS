@@ -13,6 +13,8 @@
 @property (nonatomic, assign) BOOL isStarted;
 @property (nonatomic, strong, readonly) CLBeaconRegion *beaconRegion;
 
+@property (nonatomic, assign) CLProximity latestProximity;
+
 @end
 
 @implementation BeaconTrigger
@@ -60,6 +62,8 @@
         _triggerBlock = [block copy];
 
         _isStarted = NO;
+        _beaconRegion = nil;
+        _latestProximity = CLProximityUnknown;
     }
     return self;
 }
@@ -77,6 +81,8 @@
 
 - (void)stop {
     self.isStarted = NO;
+    self.latestProximity = CLProximityUnknown;
+
     [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
     [self.locationManager stopMonitoringForRegion:self.beaconRegion];
 }
@@ -85,6 +91,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager
 didStartMonitoringForRegion:(CLRegion *)region {
+    // source: http://stackoverflow.com/a/20795852/635603
     [manager requestStateForRegion:region];
 }
 
@@ -122,12 +129,23 @@ monitoringDidFailForRegion:(CLRegion *)region
         return;
     }
 
-    // notify the delegate if at least one of the beacons is closer than "near"
-    NSPredicate *beaconClosenessPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                                             @"proximity", @[@(CLProximityNear), @(CLProximityImmediate)]];
-    NSArray *closeBeacons = [beacons filteredArrayUsingPredicate:beaconClosenessPredicate];
-    if (closeBeacons.count > 0) {
-        self.triggerBlock();
+    NSPredicate *nearBeaconPredicate = [NSPredicate predicateWithFormat:@"%K == %@",
+                                        @"proximity", @(CLProximityNear)];
+    NSPredicate *immediateBeaconPredicate = [NSPredicate predicateWithFormat:@"%K == %@",
+                                             @"proximity", @(CLProximityImmediate)];
+    const BOOL hasNearBeacons = ([beacons filteredArrayUsingPredicate:nearBeaconPredicate].count > 0);
+    const BOOL hasImmediateBeacons = ([beacons filteredArrayUsingPredicate:immediateBeaconPredicate].count > 0);
+
+    if (hasImmediateBeacons) {
+        if (self.latestProximity != CLProximityImmediate) {
+            self.latestProximity = CLProximityImmediate;
+            self.triggerBlock();
+        }
+    } else if (hasNearBeacons) {
+        if (self.latestProximity != CLProximityNear) {
+            self.latestProximity = CLProximityNear;
+            self.triggerBlock();
+        }
     }
 }
 
