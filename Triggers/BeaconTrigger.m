@@ -67,6 +67,10 @@
 #pragma mark - Monitoring
 
 - (void)start {
+    if (![self hasLocationAuthorization]) {
+        [self requestLocationAuthorization];
+    }
+
     self.isStarted = YES;
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
 }
@@ -80,6 +84,19 @@
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager
+didStartMonitoringForRegion:(CLRegion *)region {
+    [manager requestStateForRegion:region];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+      didDetermineState:(CLRegionState)state
+              forRegion:(CLRegion *)region {
+    if (CLRegionStateInside == state) {
+        [self locationManager:manager didEnterRegion:region];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
     if (![self isValidRegion:region]) {
         return;
@@ -90,6 +107,12 @@
     } else {
         NSLog(@"Ranging is not available");
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+monitoringDidFailForRegion:(CLRegion *)region
+              withError:(NSError *)error {
+    NSLog(@"Failed to monitor region: %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -118,6 +141,19 @@
     return _locationManager;
 }
 
+- (BOOL)hasLocationAuthorization {
+    const CLAuthorizationStatus status = [[self.locationManager class] authorizationStatus];
+    return ((kCLAuthorizationStatusAuthorizedAlways == status) ||
+            (kCLAuthorizationStatusAuthorizedWhenInUse == status));
+}
+
+- (void)requestLocationAuthorization {
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    self.locationManager.pausesLocationUpdatesAutomatically = NO;
+}
+
 - (CLBeaconRegion *)beaconRegion {
     // since all the region's values are immutable, don't need to recreate it
     if (!_beaconRegion) {
@@ -133,6 +169,10 @@
             _beaconRegion = [_beaconRegion initWithProximityUUID:self.proximityUUID
                                                       identifier:[self beaconIdentifier]];
         }
+
+        _beaconRegion.notifyEntryStateOnDisplay = YES;
+        _beaconRegion.notifyOnEntry = YES;
+        _beaconRegion.notifyOnExit = NO;
     }
     return _beaconRegion;
 }
