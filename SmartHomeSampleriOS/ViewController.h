@@ -24,6 +24,7 @@
 @property (nonatomic, assign) ConnectableDevice *device;
 @property(nonatomic,weak) IBOutlet UIImageView *imageView;
 @property(nonatomic,strong) NSTimer *imageTimer;
+@property (weak, nonatomic) IBOutlet UILabel *beaconInfoLabel;
 
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)playVideo:(id)sender;
