@@ -13,7 +13,9 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) BeaconTrigger *beaconTrigger;
+/// Array of currently active beacon triggers (@c beaconTrigger objects).
+@property (nonatomic, strong) NSMutableArray *beaconTriggers;
+@property (nonatomic, assign) NSUInteger currentSceneIndex;
 
 @end
 
@@ -75,24 +77,46 @@
     [image4 setValue:@"http://192.168.1.6/media/sms-data/Public/Photos/slideshow/image4.jpg" forKey:@"imagePath"];
     _imageArray = [[NSArray alloc] initWithObjects:image1,image2,image3,image4, nil];
 
-    [self setupBeaconTrigger];
+    [self setupBeaconTriggers];
 }
 
 #pragma mark - Triggers
 
-- (void)setupBeaconTrigger {
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
+- (void)setupBeaconTriggers {
     __weak typeof(self) wself = self;
-    TriggerBlock triggerBlock = ^{
-        typeof(self) sself = wself;
-        sself.beaconInfoLabel.text = [NSString stringWithFormat:@"discovered @ %@", [NSDate date]];
-    };
 
-    self.beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
-                                                                major:@0
-                                                                minor:@0
-                                                      andTriggerBlock:triggerBlock];
-    [self.beaconTrigger start];
+    // scene 0
+    [self startBeaconTriggerWithUUIDString:@"00001111-2222-3333-4444-555566667777"
+                           andTriggerBlock:^{
+                               typeof(self) sself = wself;
+                               if (sself.currentSceneIndex != 0) {
+                                   sself.currentSceneIndex = 0;
+                                   sself.beaconInfoLabel.text = [NSString stringWithFormat:@"activate scene 0 @ %@", [NSDate date]];
+                               }
+                           }];
+
+    // scene 1
+    [self startBeaconTriggerWithUUIDString:@"88889999-aaaa-bbbb-cccc-ddddeeeeffff"
+                           andTriggerBlock:^{
+                               typeof(self) sself = wself;
+                               if (sself.currentSceneIndex != 1) {
+                                   sself.currentSceneIndex = 1;
+                                   sself.beaconInfoLabel.text = [NSString stringWithFormat:@"activate scene 1 @ %@", [NSDate date]];
+                               }
+                           }];
+}
+
+- (void)startBeaconTriggerWithUUIDString:(NSString *)uuidString
+                         andTriggerBlock:(TriggerBlock)block {
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
+    BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
+                                                                          major:@0
+                                                                          minor:@0
+                                                                andTriggerBlock:block];
+    [beaconTrigger start];
+
+    self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
+    [self.beaconTriggers addObject:beaconTrigger];
 }
 
 #pragma mark - Media
