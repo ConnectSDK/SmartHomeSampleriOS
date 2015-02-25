@@ -38,6 +38,11 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287391A9E622A0035F665 /* BelkinSDKLibrary.a */; };
+		447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873A1A9E622A0035F665 /* Cybergarage.a */; };
+		447287461A9E622A0035F665 /* Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873B1A9E622A0035F665 /* Reachability.a */; };
+		447287471A9E622A0035F665 /* WeMoLocalControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287411A9E622A0035F665 /* WeMoLocalControl.a */; };
+		4472874C1A9E62650035F665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472874B1A9E62650035F665 /* libxml2.dylib */; };
 		44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */; };
 		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
 		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
@@ -120,6 +125,18 @@
 		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PhilipsHue/UIImage+Color.h"; sourceTree = "<group>"; };
 		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PhilipsHue/UIImage+Color.m"; sourceTree = "<group>"; };
+		447287391A9E622A0035F665 /* BelkinSDKLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = BelkinSDKLibrary.a; sourceTree = "<group>"; };
+		4472873A1A9E622A0035F665 /* Cybergarage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Cybergarage.a; sourceTree = "<group>"; };
+		4472873B1A9E622A0035F665 /* Reachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Reachability.a; sourceTree = "<group>"; };
+		4472873C1A9E622A0035F665 /* WeMoBugSenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoBugSenseManager.h; sourceTree = "<group>"; };
+		4472873D1A9E622A0035F665 /* WeMoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoConstants.h; sourceTree = "<group>"; };
+		4472873E1A9E622A0035F665 /* WeMoControlDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoControlDevice.h; sourceTree = "<group>"; };
+		4472873F1A9E622A0035F665 /* WeMoDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoDevice.h; sourceTree = "<group>"; };
+		447287401A9E622A0035F665 /* WeMoDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoDiscoveryManager.h; sourceTree = "<group>"; };
+		447287411A9E622A0035F665 /* WeMoLocalControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = WeMoLocalControl.a; sourceTree = "<group>"; };
+		447287421A9E622A0035F665 /* WeMoNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoNetworkManager.h; sourceTree = "<group>"; };
+		447287431A9E622A0035F665 /* WeMoStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoStateManager.h; sourceTree = "<group>"; };
+		4472874B1A9E62650035F665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+ObjectGetter.h"; sourceTree = "<group>"; };
 		44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+ObjectGetter.m"; sourceTree = "<group>"; };
 		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
@@ -134,10 +151,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4472874C1A9E62650035F665 /* libxml2.dylib in Frameworks */,
+				447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */,
 				0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */,
 				0F79F63F1A8D60BB00A6FB2E /* GoogleCast.framework in Frameworks */,
 				0F79F63D1A8D609A00A6FB2E /* libConnectSDK.a in Frameworks */,
 				0F79F6151A8D2C8900A6FB2E /* HueSDK_iOS.framework in Frameworks */,
+				447287471A9E622A0035F665 /* WeMoLocalControl.a in Frameworks */,
+				447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */,
+				447287461A9E622A0035F665 /* Reachability.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +191,7 @@
 				0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */,
 				44F0F0591A96717C007F4448 /* Triggers */,
 				0F79F6031A8D2A6400A6FB2E /* PhilipsHue */,
+				447287381A9E622A0035F665 /* WeMoSDK */,
 				0F79F6161A8D2CA200A6FB2E /* Frameworks */,
 				0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */,
 				0F79F5DB1A8AE05200A6FB2E /* Products */,
@@ -264,6 +287,7 @@
 		0F79F6161A8D2CA200A6FB2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4472874B1A9E62650035F665 /* libxml2.dylib */,
 				44F0F0671A96BC39007F4448 /* OCMock.framework */,
 				0F79F6401A8D626000A6FB2E /* libicucore.dylib */,
 				0F79F63E1A8D60BB00A6FB2E /* GoogleCast.framework */,
@@ -320,6 +344,24 @@
 				0F79F63C1A8D608B00A6FB2E /* ConnectSDKTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		447287381A9E622A0035F665 /* WeMoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447287391A9E622A0035F665 /* BelkinSDKLibrary.a */,
+				4472873A1A9E622A0035F665 /* Cybergarage.a */,
+				4472873B1A9E622A0035F665 /* Reachability.a */,
+				4472873C1A9E622A0035F665 /* WeMoBugSenseManager.h */,
+				4472873D1A9E622A0035F665 /* WeMoConstants.h */,
+				4472873E1A9E622A0035F665 /* WeMoControlDevice.h */,
+				4472873F1A9E622A0035F665 /* WeMoDevice.h */,
+				447287401A9E622A0035F665 /* WeMoDiscoveryManager.h */,
+				447287411A9E622A0035F665 /* WeMoLocalControl.a */,
+				447287421A9E622A0035F665 /* WeMoNetworkManager.h */,
+				447287431A9E622A0035F665 /* WeMoStateManager.h */,
+			);
+			path = WeMoSDK;
 			sourceTree = "<group>";
 		};
 		44F0F0591A96717C007F4448 /* Triggers */ = {
@@ -620,6 +662,10 @@
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeMoSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
@@ -640,6 +686,10 @@
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeMoSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
