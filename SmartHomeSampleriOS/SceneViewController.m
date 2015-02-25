@@ -53,7 +53,6 @@
     [_discoveryManager startDiscovery];
     
      [UIAppDelegate enableLocalHeartbeat];
-     [self setupBeaconTriggers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +61,9 @@
 }
 
 -(IBAction)startScene1:(id)sender{
+    [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
+    self.scene1.sceneInfo = self.scene2.sceneInfo;
+    
     [self.scene1 changeSceneState:Running sucess:^(id responseObject) {
         NSLog(@"Scene1 Started");
     } failure:^(NSError *error) {
@@ -70,6 +72,9 @@
 }
 
 -(IBAction)startScene2:(id)sender{
+    [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:2.0];
+    self.scene1.sceneInfo = self.scene2.sceneInfo;
+    
     [self.scene2 changeSceneState:Running sucess:^(id responseObject) {
         NSLog(@"Scene2 Started");
     } failure:^(NSError *error) {
@@ -109,6 +114,13 @@
     }];
 }
 
+-(IBAction)switchPressed:(id)sender{
+    if(self.sceneSwitch.on){
+        [self setupBeaconTriggers];
+    }else{
+        [self stopBeaconTriggering];
+    }
+}
 #pragma mark - Triggers
 
 - (void)setupBeaconTriggers {
@@ -121,7 +133,8 @@
                                if (sself.currentSceneIndex != 0) {
                                    sself.currentSceneIndex = 0;
                                 
-                                   [self stopScene2:nil];
+                                   [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
+                                   self.scene1.sceneInfo = self.scene2.sceneInfo;
                                    [self startScene1:nil];
                                }
                            }];
@@ -133,7 +146,8 @@
                                if (sself.currentSceneIndex != 1) {
                                    sself.currentSceneIndex = 1;
                             
-                                   [self stopScene1:nil];
+                                    [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:2.0];
+                                   self.scene2.sceneInfo = self.scene1.sceneInfo;
                                    [self startScene2:nil];
                                }
                            }];
@@ -152,6 +166,12 @@
     [self.beaconTriggers addObject:beaconTrigger];
 }
 
+
+-(void)stopBeaconTriggering{
+    for(BeaconTrigger *beacon in self.beaconTriggers){
+        [beacon stop];
+    }
+}
 /*
 #pragma mark - Navigation
 

@@ -44,13 +44,16 @@
     }
     self.currentState = Stopped;
     self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
-   
+    
 }
 
 - (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure {
     
     if(self.hueBridge == nil){
         self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
+    }
+    if(self.mediaInfoTimer){
+        [self.mediaInfoTimer invalidate];
     }
     
     switch (state) {
@@ -64,14 +67,10 @@
             }
             break;
         case Paused:
-            if(self.currentState == Running){
                 [self pauseSceneWithSuccess:sucess andFailure:failure];
-            }
             break;
         case Stopped:
-            if(self.currentState == Paused || self.currentState == Running){
                 [self stopSceneWithSuccess:sucess andFailure:failure];
-            }
             break;
         default:
             break;
@@ -162,16 +161,12 @@
                                                 self.currentImage = [UIImage imageWithData:data];
                                                 [self startTimer:nil];
                                                 
-                                                if ([self.conectableDevice hasCapability:kMediaControlPlayStateSubscribe])
-                                                {
-                                                    [self.mediaControl subscribePlayStateWithSuccess:_playStateHandler failure:^(NSError *error)
-                                                     {
-                                                         NSLog(@"subscribe play state failure: %@", error.localizedDescription);
-                                                     }];
-                                                } else
-                                                {
-                                                    self.mediaInfoTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateMediaInfo) userInfo:nil repeats:YES];
+                                                if(self.sceneInfo.currentPosition > 0){
+                                                    [self performSelector:@selector(seekMedia) withObject:nil afterDelay:2.0];
+                                                }else{
+                                                 self.mediaInfoTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateMediaInfo) userInfo:nil repeats:YES];
                                                 }
+
                                                 if(success)
                                                 success(launchObject);
                                                 

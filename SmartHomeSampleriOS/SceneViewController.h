@@ -11,4 +11,6 @@
 
 @interface SceneViewController : UIViewController<DiscoveryManagerDelegate>
 
+@property(nonatomic,weak)IBOutlet UISwitch *sceneSwitch;
+
 @end
