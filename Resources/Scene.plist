@@ -10,11 +10,11 @@
 			<key>title</key>
 			<string>Title</string>
 			<key>iconURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audioIcon.jpg</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image4.jpg</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audio.mp3</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/Turn_down_for_what.mp3</string>
 		</dict>
 		<dict>
 			<key>description</key>
@@ -34,7 +34,7 @@
 			<key>title</key>
 			<string>song 3</string>
 			<key>iconURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/audioIcon.jpg</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image2.jpg</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
@@ -66,7 +66,7 @@
 			<key>device</key>
 			<dict>
 				<key>ip</key>
-				<string>192.168.1.29</string>
+				<string>192.168.1.4</string>
 			</dict>
 		</dict>
 	</array>
