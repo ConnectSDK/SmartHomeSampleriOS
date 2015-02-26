@@ -44,6 +44,7 @@
 		4472874C1A9E62650035F665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472874B1A9E62650035F665 /* libxml2.dylib */; };
 		4472875F1A9F924E0035F665 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472875E1A9F924E0035F665 /* libcrypto.a */; };
 		447287601A9F94DA0035F665 /* WeMoLocalControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287411A9E622A0035F665 /* WeMoLocalControl.a */; };
+		447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447287661A9FBCBE0035F665 /* DeviceConfigData.plist */; };
 		44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */; };
 		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
 		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
@@ -139,6 +140,7 @@
 		447287431A9E622A0035F665 /* WeMoStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoStateManager.h; sourceTree = "<group>"; };
 		4472874B1A9E62650035F665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		4472875E1A9F924E0035F665 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../libcrypto.a; sourceTree = "<group>"; };
+		447287661A9FBCBE0035F665 /* DeviceConfigData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceConfigData.plist; sourceTree = SOURCE_ROOT; };
 		44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+ObjectGetter.h"; sourceTree = "<group>"; };
 		44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+ObjectGetter.m"; sourceTree = "<group>"; };
 		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		0F79F5DD1A8AE05200A6FB2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				447287661A9FBCBE0035F665 /* DeviceConfigData.plist */,
 				0F79F62E1A8D3D3100A6FB2E /* Resources */,
 				0F79F5DE1A8AE05200A6FB2E /* Info.plist */,
 				0F79F5DF1A8AE05200A6FB2E /* main.m */,
@@ -498,6 +501,7 @@
 				0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */,
 				0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */,
 				0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */,
+				447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */,
 				0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
