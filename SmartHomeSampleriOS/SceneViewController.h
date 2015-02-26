@@ -13,4 +13,6 @@
 
 @interface SceneViewController : UIViewController <DiscoveryManagerDelegate, WeMoDeviceDiscoveryDelegate>
 
+- (IBAction)actionSwitchTheSwitch:(id)sender;
+
 @end

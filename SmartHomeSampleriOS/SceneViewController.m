@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSMutableArray *beaconTriggers;
 @property (nonatomic, assign) NSUInteger currentSceneIndex;
 
+@property (nonatomic, strong) WeMoControlDevice *wemoDevice;
+
 @end
 
 @implementation SceneViewController
@@ -116,6 +118,13 @@
     } failure:^(NSError *error) {
         NSLog(@"Scene2 stop failure");
     }];
+}
+
+- (IBAction)actionSwitchTheSwitch:(id)sender {
+    WeMoSetStateStatus result = [self.wemoDevice setPluginStatus:[self invertDeviceState:self.wemoDevice.state]];
+    if (WeMoStatusSuccess != result) {
+        NSLog(@"OOps, couldn't update state: %d", result);
+    }
 }
 
 #pragma mark - Triggers
@@ -229,15 +238,33 @@
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
           didFoundDevice:(WeMoControlDevice *)device {
     NSLog(@"didFindDevice %@", device);
+    self.wemoDevice = device;
 }
 
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
      removeDeviceWithUdn:(NSString *)udn {
     NSLog(@"didRemoveDevice %@", udn);
+    NSParameterAssert([udn isEqualToString:self.wemoDevice.udn]);
+    self.wemoDevice = nil;
 }
 
 - (void)discoveryManagerRemovedAllDevices:(WeMoDiscoveryManager *)manager {
     NSLog(@"didRemoveAllDevices");
+    self.wemoDevice = nil;
+}
+
+- (WeMoDeviceState)invertDeviceState:(WeMoDeviceState)state {
+    switch (state) {
+        case WeMoDeviceOff:
+            return WeMoDeviceOn;
+
+        case WeMoDeviceOn:
+            return WeMoDeviceOff;
+
+        default:
+            // what is this?
+            return state;
+    }
 }
 
 @end
