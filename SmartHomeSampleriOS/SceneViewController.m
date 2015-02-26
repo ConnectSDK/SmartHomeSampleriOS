@@ -189,7 +189,8 @@
 {
     if(device){
         
-        NSLog(@"Device address %@",device.services);
+        NSLog(@"Device address %@ - %@ ",device.friendlyName,device.address);
+        
         if(self.scene1 && self.scene2){
             NSDictionary *sceneDevice1 = [self.scene1.configuration valueForKey:@"device"];
             NSDictionary *sceneDevice2 = [self.scene2.configuration valueForKey:@"device"];
