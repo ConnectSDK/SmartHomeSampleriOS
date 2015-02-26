@@ -54,6 +54,9 @@
     
      [UIAppDelegate enableLocalHeartbeat];
      [self setupBeaconTriggers];
+
+    [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
+    [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -213,6 +216,22 @@
             }
         }
     }
+}
+
+#pragma mark - WeMoDeviceDiscoveryDelegate
+
+- (void)discoveryManager:(WeMoDiscoveryManager *)manager
+          didFoundDevice:(WeMoControlDevice *)device {
+    NSLog(@"didFindDevice %@", device);
+}
+
+- (void)discoveryManager:(WeMoDiscoveryManager *)manager
+     removeDeviceWithUdn:(NSString *)udn {
+    NSLog(@"didRemoveDevice %@", udn);
+}
+
+- (void)discoveryManagerRemovedAllDevices:(WeMoDiscoveryManager *)manager {
+    NSLog(@"didRemoveAllDevices");
 }
 
 @end

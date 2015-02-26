@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <ConnectSDK/ConnectSDK.h>
 
-@interface SceneViewController : UIViewController<DiscoveryManagerDelegate>
+#import "WeMoDiscoveryManager.h"
+
+@interface SceneViewController : UIViewController <DiscoveryManagerDelegate, WeMoDeviceDiscoveryDelegate>
 
 @end

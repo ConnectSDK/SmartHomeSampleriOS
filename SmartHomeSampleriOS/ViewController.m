@@ -11,6 +11,7 @@
 #import "UIImage+Color.h"
 #import "BeaconTrigger.h"
 
+
 @interface ViewController ()
 
 /// Array of currently active beacon triggers (@c beaconTrigger objects).
