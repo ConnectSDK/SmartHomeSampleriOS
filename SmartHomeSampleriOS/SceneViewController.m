@@ -73,7 +73,7 @@
 }
 
 -(IBAction)startScene1:(id)sender{
-    [self.scene1 changeSceneState:Running sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene1 Started");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 failure");
@@ -81,7 +81,7 @@
 }
 
 -(IBAction)startScene2:(id)sender{
-    [self.scene2 changeSceneState:Running sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene2 Started");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 failure");
@@ -89,7 +89,7 @@
 }
 
 -(IBAction)pauseScene1:(id)sender{
-    [self.scene1 changeSceneState:Paused sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Paused success:^(id responseObject) {
         NSLog(@"Scene1 Paused");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 pause failure");
@@ -97,7 +97,7 @@
 }
 
 -(IBAction)pauseScene2:(id)sender{
-    [self.scene2 changeSceneState:Paused sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Paused success:^(id responseObject) {
         NSLog(@"Scene2 Paused");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 pause failure");
@@ -105,7 +105,7 @@
 }
 
 -(IBAction)stopScene1:(id)sender{
-    [self.scene1 changeSceneState:Stopped sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Stopped success:^(id responseObject) {
         NSLog(@"Scene1 Stopped");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 stop failure");
@@ -113,7 +113,7 @@
 }
 
 -(IBAction)stopScene2:(id)sender{
-    [self.scene2 changeSceneState:Stopped sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Stopped success:^(id responseObject) {
         NSLog(@"Scene2 Stoped");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 stop failure");

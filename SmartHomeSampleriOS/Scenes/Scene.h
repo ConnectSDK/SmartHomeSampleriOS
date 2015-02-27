@@ -28,7 +28,7 @@ typedef enum {
 @property(nonatomic,strong) UIImage *currentImage;
 
 -(instancetype)initWithConfiguration:(NSDictionary *)configuration andSceneInfo:(SceneInfo *)sceneInfo;
-- (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure;
+- (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure;
 -(void)configureScene;
 
 @end

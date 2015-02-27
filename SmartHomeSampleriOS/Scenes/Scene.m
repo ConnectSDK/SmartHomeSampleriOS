@@ -47,7 +47,7 @@
    
 }
 
-- (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure {
+- (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure {
     
     if(self.hueBridge == nil){
         self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -56,21 +56,21 @@
     switch (state) {
         case Running:
             if(self.currentState == Stopped ){
-                [self startSceneWithSuccess:sucess andFailure:failure];
+                [self startSceneWithSuccess:success andFailure:failure];
             }
             else
             if (self.currentState == Paused){
-                [self playSceneWithSuccess:sucess andFailure:failure];
+                [self playSceneWithSuccess:success andFailure:failure];
             }
             break;
         case Paused:
             if(self.currentState == Running){
-                [self pauseSceneWithSuccess:sucess andFailure:failure];
+                [self pauseSceneWithSuccess:success andFailure:failure];
             }
             break;
         case Stopped:
             if(self.currentState == Paused || self.currentState == Running){
-                [self stopSceneWithSuccess:sucess andFailure:failure];
+                [self stopSceneWithSuccess:success andFailure:failure];
             }
             break;
         default:
