@@ -147,10 +147,10 @@
     }
 }
 
--(IBAction)switchPressed:(id)sender{
-    if(self.sceneSwitch.on){
+-(IBAction)useBeaconsSwitchPressed:(id)sender{
+    if (self.useBeaconsSwitch.on) {
         [self setupBeaconTriggers];
-    }else{
+    } else {
         [self stopBeaconTriggering];
     }
 }
@@ -201,10 +201,8 @@
 }
 
 
--(void)stopBeaconTriggering{
-    for(BeaconTrigger *beacon in self.beaconTriggers){
-        [beacon stop];
-    }
+- (void)stopBeaconTriggering {
+    self.beaconTriggers = nil;
 }
 /*
 #pragma mark - Navigation

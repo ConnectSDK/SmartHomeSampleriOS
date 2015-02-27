@@ -12,6 +12,6 @@
 
 - (IBAction)actionSwitchTheSwitch:(id)sender;
 
-@property(nonatomic,weak)IBOutlet UISwitch *sceneSwitch;
+@property(nonatomic,weak)IBOutlet UISwitch *useBeaconsSwitch;
 
 @end
