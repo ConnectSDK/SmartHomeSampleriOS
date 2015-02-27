@@ -118,7 +118,7 @@
     
     if(self.currentSceneIndex == 0){
         [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:3.0];
-        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:300.0];
+        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:30.0];
     }else{
         [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:3.0];
         [self performSelector:@selector(startScene2:) withObject:nil afterDelay:30.0];
