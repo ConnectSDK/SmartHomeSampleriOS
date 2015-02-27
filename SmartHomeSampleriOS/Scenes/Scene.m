@@ -20,7 +20,6 @@
 @property (nonatomic, strong) NSTimer *imageTimer;
 @property (nonatomic) CGFloat currentVolume;
 @property (nonatomic, strong) ServiceSubscription *volumeSubscription;
-@property (nonatomic) CGFloat prevVolume;
 @end
 
 @implementation Scene
@@ -106,8 +105,7 @@
 -(void)playMediawithScuess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
     if(self.sceneInfo.currentPosition > 0){
-        self.prevVolume = self.currentVolume;
-        [self setVolume:0];
+        [self setMute:YES];
     }
     if ([self.conectableDevice hasCapability:kVolumeControlVolumeSubscribe])
     {
@@ -252,8 +250,7 @@
 -(void)seekMedia{
    [_mediaControl seek:self.sceneInfo.currentPosition success:^(id responseObject)
      {
-         NSLog(@"seek success");
-         [self setVolume:self.prevVolume];
+         [self setMute:NO];
          self.estimatedMediaPosition = self.sceneInfo.currentPosition;
          self->_playStateHandler(MediaControlPlayStatePlaying);
      } failure:^(NSError *error)
@@ -263,11 +260,11 @@
     
 }
 
--(void)setVolume:(CGFloat)volume{
-    [self.conectableDevice.volumeControl setVolume:volume success:^(id responseObject) {
-        NSLog(@"Volume set");
+-(void)setMute:(BOOL)mute{
+    [self.conectableDevice.volumeControl setMute:mute success:^(id responseObject) {
+        NSLog(@"Mute set");
     } failure:^(NSError *error) {
-        NSLog(@"Volume set failure");
+        NSLog(@"Mute set failure");
     }];
 }
 
