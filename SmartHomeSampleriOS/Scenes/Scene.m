@@ -8,6 +8,7 @@
 
 #import "Scene.h"
 #import "UIImage+Color.h"
+#import "WeMoControlDevice.h"
 
 @interface Scene()
 
@@ -80,6 +81,7 @@
 
 -(void)startSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self playMediaWithSuccess:success andFailure:failure];
+    [self turnOnSwitch];
     self.currentState = Running;
 }
 
@@ -96,6 +98,7 @@
 -(void)stopSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self stopMedia];
     [self switchOffLights];
+    [self turnOffSwitch];
     self.currentState = Stopped;
     
     if(self.volumeSubscription){
@@ -350,5 +353,21 @@
     self.imageTimer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playLights) userInfo:nil repeats:YES];
 }
 
+#pragma mark - WemoSwitch
+
+- (void)turnOnSwitch {
+    [self setSwitchState:WeMoDeviceOn];
+}
+
+- (void)turnOffSwitch {
+    [self setSwitchState:WeMoDeviceOff];
+}
+
+- (void)setSwitchState:(WeMoDeviceState)state {
+    WeMoSetStateStatus result = (self.wemoSwitch ? [self.wemoSwitch setPluginStatus:state] : WeMoStatusSuccess);
+    if (WeMoStatusSuccess != result) {
+        NSLog(@"Failed to switch wemo switch to state %d: %d", state, result);
+    }
+}
 
 @end

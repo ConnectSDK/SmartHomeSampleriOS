@@ -14,8 +14,10 @@
 #import <ConnectSDK/WebOSTVService.h>
 #import <ConnectSDK/SSDPDiscoveryProvider.h>
 #import "BeaconTrigger.h"
+#import "WeMoDiscoveryManager.h"
 
-@interface SceneViewController ()
+@interface SceneViewController () <DiscoveryManagerDelegate,
+                                    WeMoDeviceDiscoveryDelegate>
 
 @property(nonatomic , strong) DiscoveryManager *discoveryManager;
 @property(nonatomic , strong) Scene *scene1;
@@ -24,14 +26,14 @@
 @property (nonatomic, strong) NSMutableArray *beaconTriggers;
 @property (nonatomic, assign) NSUInteger currentSceneIndex;
 
-@property (nonatomic, strong) WeMoControlDevice *wemoDevice;
-
 @end
 
 @implementation SceneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.currentSceneIndex = -1;
     
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
@@ -121,7 +123,10 @@
 }
 
 - (IBAction)actionSwitchTheSwitch:(id)sender {
-    WeMoSetStateStatus result = [self.wemoDevice setPluginStatus:[self invertDeviceState:self.wemoDevice.state]];
+    // FIXME: this looks weird; need to create and use self.currentScene object
+    WeMoControlDevice *currentDevice = (self.currentSceneIndex == 0 ? self.scene1 : self.scene2).wemoSwitch;
+
+    WeMoSetStateStatus result = [currentDevice setPluginStatus:[self invertDeviceState:currentDevice.state]];
     if (WeMoStatusSuccess != result) {
         NSLog(@"OOps, couldn't update state: %d", result);
     }
@@ -235,22 +240,35 @@
 
 #pragma mark - WeMoDeviceDiscoveryDelegate
 
+- (NSArray *)scenesForWemoSwitchUdn:(NSString *)udn {
+    NSPredicate *udnMatchPredicate = [NSPredicate predicateWithFormat:@"configuration.wemoSwitch.udn == %@", udn];
+    return [@[self.scene1, self.scene2] filteredArrayUsingPredicate:udnMatchPredicate];
+}
+
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
           didFoundDevice:(WeMoControlDevice *)device {
     NSLog(@"didFindDevice %@", device);
-    self.wemoDevice = device;
+
+    [[self scenesForWemoSwitchUdn:device.udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = device;
+    }];
 }
 
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
      removeDeviceWithUdn:(NSString *)udn {
     NSLog(@"didRemoveDevice %@", udn);
-    NSParameterAssert([udn isEqualToString:self.wemoDevice.udn]);
-    self.wemoDevice = nil;
+
+    [[self scenesForWemoSwitchUdn:udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = nil;
+    }];
 }
 
 - (void)discoveryManagerRemovedAllDevices:(WeMoDiscoveryManager *)manager {
     NSLog(@"didRemoveAllDevices");
-    self.wemoDevice = nil;
+
+    [@[self.scene1, self.scene2] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = nil;
+    }];
 }
 
 - (WeMoDeviceState)invertDeviceState:(WeMoDeviceState)state {

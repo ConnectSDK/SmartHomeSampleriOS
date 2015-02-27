@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ConnectSDK/ConnectSDK.h>
 
-#import "WeMoDiscoveryManager.h"
-
-@interface SceneViewController : UIViewController <DiscoveryManagerDelegate, WeMoDeviceDiscoveryDelegate>
+@interface SceneViewController : UIViewController
 
 - (IBAction)actionSwitchTheSwitch:(id)sender;
 

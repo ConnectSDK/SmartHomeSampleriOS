@@ -54,6 +54,11 @@
 				<key>ip</key>
 				<string>192.168.1.87</string>
 			</dict>
+            <key>wemoSwitch</key>
+            <dict>
+                <key>udn</key>
+                <string>uuid:Socket-1_0-221434K0100D1D</string>
+            </dict>
 		</dict>
 		<dict>
 			<key>hueBulb</key>
