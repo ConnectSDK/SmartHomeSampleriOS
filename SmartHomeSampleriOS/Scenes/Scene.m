@@ -79,7 +79,7 @@
 }
 
 -(void)startSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
-    [self playMediawithScuess:success andFailure:failure];
+    [self playMediaWithSuccess:success andFailure:failure];
     self.currentState = Running;
 }
 
@@ -104,7 +104,7 @@
 }
 
 
--(void)playMediawithScuess:(SuccessBlock)success andFailure:(FailureBlock)failure{
+-(void)playMediaWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
     if ([self.conectableDevice hasCapability:kVolumeControlVolumeSubscribe])
     {
@@ -205,7 +205,7 @@
                  }else{
                      self.sceneInfo.currentMediaIndex ++;
                  }
-                 [self playMediawithScuess:nil andFailure:nil];
+                 [self playMediaWithSuccess:nil andFailure:nil];
              }
 
          } failure:nil];
