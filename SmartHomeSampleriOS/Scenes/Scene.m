@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSTimer *imageTimer;
 @property (nonatomic) CGFloat currentVolume;
 @property (nonatomic, strong) ServiceSubscription *volumeSubscription;
-
+@property (nonatomic) CGFloat prevVolume;
 @end
 
 @implementation Scene
@@ -45,13 +45,16 @@
     }
     self.currentState = Stopped;
     self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
-   
+    
 }
 
 - (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure {
     
     if(self.hueBridge == nil){
         self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
+    }
+    if(self.mediaInfoTimer){
+        [self.mediaInfoTimer invalidate];
     }
     
     switch (state) {
@@ -65,14 +68,10 @@
             }
             break;
         case Paused:
-            if(self.currentState == Running){
                 [self pauseSceneWithSuccess:success andFailure:failure];
-            }
             break;
         case Stopped:
-            if(self.currentState == Paused || self.currentState == Running){
                 [self stopSceneWithSuccess:success andFailure:failure];
-            }
             break;
         default:
             break;
@@ -109,6 +108,10 @@
 
 -(void)playMediaWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
+    if(self.sceneInfo.currentPosition > 0){
+        self.prevVolume = self.currentVolume;
+        [self setVolume:0];
+    }
     if ([self.conectableDevice hasCapability:kVolumeControlVolumeSubscribe])
     {
         _volumeSubscription = [self.conectableDevice.volumeControl subscribeVolumeWithSuccess:^(float volume)
@@ -165,16 +168,12 @@
                                                 self.currentImage = [UIImage imageWithData:data];
                                                 [self startTimer:nil];
                                                 
-                                                if ([self.conectableDevice hasCapability:kMediaControlPlayStateSubscribe])
-                                                {
-                                                    [self.mediaControl subscribePlayStateWithSuccess:_playStateHandler failure:^(NSError *error)
-                                                     {
-                                                         NSLog(@"subscribe play state failure: %@", error.localizedDescription);
-                                                     }];
-                                                } else
-                                                {
-                                                    self.mediaInfoTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateMediaInfo) userInfo:nil repeats:YES];
+                                                if(self.sceneInfo.currentPosition > 0){
+                                                    [self performSelector:@selector(seekMedia) withObject:nil afterDelay:2.0];
+                                                }else{
+                                                 self.mediaInfoTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateMediaInfo) userInfo:nil repeats:YES];
                                                 }
+
                                                 if(success)
                                                 success(launchObject);
                                                 
@@ -257,7 +256,7 @@
    [_mediaControl seek:self.sceneInfo.currentPosition success:^(id responseObject)
      {
          NSLog(@"seek success");
-         
+         [self setVolume:self.prevVolume];
          self.estimatedMediaPosition = self.sceneInfo.currentPosition;
          self->_playStateHandler(MediaControlPlayStatePlaying);
      } failure:^(NSError *error)
@@ -266,6 +265,15 @@
      }];
     
 }
+
+-(void)setVolume:(CGFloat)volume{
+    [self.conectableDevice.volumeControl setVolume:volume success:^(id responseObject) {
+        NSLog(@"Volume set");
+    } failure:^(NSError *error) {
+        NSLog(@"Volume set failure");
+    }];
+}
+
 #pragma mark - ConnectableDeviceDelegate
 
 - (void) connectableDeviceReady:(ConnectableDevice *)device
