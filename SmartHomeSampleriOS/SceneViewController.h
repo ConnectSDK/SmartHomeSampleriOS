@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ConnectSDK/ConnectSDK.h>
 
-@interface SceneViewController : UIViewController<DiscoveryManagerDelegate>
+@interface SceneViewController : UIViewController
 
-@property(nonatomic,weak)IBOutlet UISwitch *sceneSwitch;
+- (IBAction)actionSwitchTheSwitch:(id)sender;
+
+@property(nonatomic,weak)IBOutlet UISwitch *useBeaconsSwitch;
 
 @end

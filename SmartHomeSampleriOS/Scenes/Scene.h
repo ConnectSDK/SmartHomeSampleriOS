@@ -11,6 +11,8 @@
 #import <HueSDK_iOS/HueSDK.h>
 #import "SceneInfo.h"
 
+@class WeMoControlDevice;
+
 typedef enum {
     Stopped,
     Running,
@@ -22,13 +24,16 @@ typedef enum {
 
 @property(nonatomic) SceneState currentState;
 @property(nonatomic,strong) SceneInfo *sceneInfo;
+
 @property(nonatomic,strong) ConnectableDevice *conectableDevice;
 @property(nonatomic,strong) PHBridgeResourcesCache *hueBridge;
+@property (nonatomic, strong) WeMoControlDevice *wemoSwitch;
+
 @property(nonatomic,strong) NSDictionary *configuration;
 @property(nonatomic,strong) UIImage *currentImage;
 
 -(instancetype)initWithConfiguration:(NSDictionary *)configuration andSceneInfo:(SceneInfo *)sceneInfo;
-- (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure;
+- (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure;
 -(void)configureScene;
 
 @end

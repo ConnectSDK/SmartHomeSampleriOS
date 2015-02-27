@@ -14,8 +14,10 @@
 #import <ConnectSDK/WebOSTVService.h>
 #import <ConnectSDK/SSDPDiscoveryProvider.h>
 #import "BeaconTrigger.h"
+#import "WeMoDiscoveryManager.h"
 
-@interface SceneViewController ()
+@interface SceneViewController () <DiscoveryManagerDelegate,
+                                    WeMoDeviceDiscoveryDelegate>
 
 @property(nonatomic , strong) DiscoveryManager *discoveryManager;
 @property(nonatomic , strong) Scene *scene1;
@@ -30,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.currentSceneIndex = -1;
     
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
@@ -53,6 +57,14 @@
     [_discoveryManager startDiscovery];
     
      [UIAppDelegate enableLocalHeartbeat];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
+        // * you must have the discovery settings in a file named
+        // `DeviceConfigData.plist`
+        // * according to the docs, this method returns immediately, which is
+        // totally incorrect!
+        [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +76,7 @@
     [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
     self.scene1.sceneInfo = self.scene2.sceneInfo;
     
-    [self.scene1 changeSceneState:Running sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene1 Started");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 failure");
@@ -75,7 +87,7 @@
     [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:2.0];
     self.scene1.sceneInfo = self.scene2.sceneInfo;
     
-    [self.scene2 changeSceneState:Running sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene2 Started");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 failure");
@@ -83,7 +95,7 @@
 }
 
 -(IBAction)pauseScene1:(id)sender{
-    [self.scene1 changeSceneState:Paused sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Paused success:^(id responseObject) {
         NSLog(@"Scene1 Paused");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 pause failure");
@@ -91,7 +103,7 @@
 }
 
 -(IBAction)pauseScene2:(id)sender{
-    [self.scene2 changeSceneState:Paused sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Paused success:^(id responseObject) {
         NSLog(@"Scene2 Paused");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 pause failure");
@@ -99,7 +111,7 @@
 }
 
 -(IBAction)stopScene1:(id)sender{
-    [self.scene1 changeSceneState:Stopped sucess:^(id responseObject) {
+    [self.scene1 changeSceneState:Stopped success:^(id responseObject) {
         NSLog(@"Scene1 Stopped");
     } failure:^(NSError *error) {
         NSLog(@"Scene1 stop failure");
@@ -107,11 +119,21 @@
 }
 
 -(IBAction)stopScene2:(id)sender{
-    [self.scene2 changeSceneState:Stopped sucess:^(id responseObject) {
+    [self.scene2 changeSceneState:Stopped success:^(id responseObject) {
         NSLog(@"Scene2 Stoped");
     } failure:^(NSError *error) {
         NSLog(@"Scene2 stop failure");
     }];
+}
+
+- (IBAction)actionSwitchTheSwitch:(id)sender {
+    // FIXME: this looks weird; need to create and use self.currentScene object
+    WeMoControlDevice *currentDevice = (self.currentSceneIndex == 0 ? self.scene1 : self.scene2).wemoSwitch;
+
+    WeMoSetStateStatus result = [currentDevice setPluginStatus:[self invertDeviceState:currentDevice.state]];
+    if (WeMoStatusSuccess != result) {
+        NSLog(@"OOps, couldn't update state: %d", result);
+    }
 }
 
 -(IBAction)wakeMeUP:(id)sender{
@@ -125,13 +147,14 @@
     }
 }
 
--(IBAction)switchPressed:(id)sender{
-    if(self.sceneSwitch.on){
+-(IBAction)useBeaconsSwitchPressed:(id)sender{
+    if (self.useBeaconsSwitch.on) {
         [self setupBeaconTriggers];
-    }else{
+    } else {
         [self stopBeaconTriggering];
     }
 }
+
 #pragma mark - Triggers
 
 - (void)setupBeaconTriggers {
@@ -178,10 +201,8 @@
 }
 
 
--(void)stopBeaconTriggering{
-    for(BeaconTrigger *beacon in self.beaconTriggers){
-        [beacon stop];
-    }
+- (void)stopBeaconTriggering {
+    self.beaconTriggers = nil;
 }
 /*
 #pragma mark - Navigation
@@ -244,6 +265,53 @@
                 [self.scene2 configureScene];
             }
         }
+    }
+}
+
+#pragma mark - WeMoDeviceDiscoveryDelegate
+
+- (NSArray *)scenesForWemoSwitchUdn:(NSString *)udn {
+    NSPredicate *udnMatchPredicate = [NSPredicate predicateWithFormat:@"configuration.wemoSwitch.udn == %@", udn];
+    return [@[self.scene1, self.scene2] filteredArrayUsingPredicate:udnMatchPredicate];
+}
+
+- (void)discoveryManager:(WeMoDiscoveryManager *)manager
+          didFoundDevice:(WeMoControlDevice *)device {
+    NSLog(@"didFindDevice %@", device);
+
+    [[self scenesForWemoSwitchUdn:device.udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = device;
+    }];
+}
+
+- (void)discoveryManager:(WeMoDiscoveryManager *)manager
+     removeDeviceWithUdn:(NSString *)udn {
+    NSLog(@"didRemoveDevice %@", udn);
+
+    [[self scenesForWemoSwitchUdn:udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = nil;
+    }];
+}
+
+- (void)discoveryManagerRemovedAllDevices:(WeMoDiscoveryManager *)manager {
+    NSLog(@"didRemoveAllDevices");
+
+    [@[self.scene1, self.scene2] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
+        scene.wemoSwitch = nil;
+    }];
+}
+
+- (WeMoDeviceState)invertDeviceState:(WeMoDeviceState)state {
+    switch (state) {
+        case WeMoDeviceOff:
+            return WeMoDeviceOn;
+
+        case WeMoDeviceOn:
+            return WeMoDeviceOff;
+
+        default:
+            // what is this?
+            return state;
     }
 }
 

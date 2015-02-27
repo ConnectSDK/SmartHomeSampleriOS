@@ -8,6 +8,7 @@
 
 #import "Scene.h"
 #import "UIImage+Color.h"
+#import "WeMoControlDevice.h"
 
 @interface Scene()
 
@@ -46,7 +47,7 @@
     
 }
 
-- (void)changeSceneState:(SceneState)state sucess:(SuccessBlock)sucess failure:(FailureBlock)failure {
+- (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure {
     
     if(self.hueBridge == nil){
         self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -58,18 +59,18 @@
     switch (state) {
         case Running:
             if(self.currentState == Stopped ){
-                [self startSceneWithSuccess:sucess andFailure:failure];
+                [self startSceneWithSuccess:success andFailure:failure];
             }
             else
             if (self.currentState == Paused){
-                [self playSceneWithSuccess:sucess andFailure:failure];
+                [self playSceneWithSuccess:success andFailure:failure];
             }
             break;
         case Paused:
-                [self pauseSceneWithSuccess:sucess andFailure:failure];
+                [self pauseSceneWithSuccess:success andFailure:failure];
             break;
         case Stopped:
-                [self stopSceneWithSuccess:sucess andFailure:failure];
+                [self stopSceneWithSuccess:success andFailure:failure];
             break;
         default:
             break;
@@ -77,7 +78,8 @@
 }
 
 -(void)startSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
-    [self playMediawithScuess:success andFailure:failure];
+    [self playMediaWithSuccess:success andFailure:failure];
+    [self turnOnSwitch];
     self.currentState = Running;
 }
 
@@ -94,6 +96,7 @@
 -(void)stopSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self stopMedia];
     [self switchOffLights];
+    [self turnOffSwitch];
     self.currentState = Stopped;
     
     if(self.volumeSubscription){
@@ -102,7 +105,7 @@
 }
 
 
--(void)playMediawithScuess:(SuccessBlock)success andFailure:(FailureBlock)failure{
+-(void)playMediaWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
     if(self.sceneInfo.currentPosition > 0){
         [self setMute:YES];
@@ -202,7 +205,7 @@
                  }else{
                      self.sceneInfo.currentMediaIndex ++;
                  }
-                 [self playMediawithScuess:nil andFailure:nil];
+                 [self playMediaWithSuccess:nil andFailure:nil];
              }
 
          } failure:nil];
@@ -355,5 +358,21 @@
     self.imageTimer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playLights) userInfo:nil repeats:YES];
 }
 
+#pragma mark - WemoSwitch
+
+- (void)turnOnSwitch {
+    [self setSwitchState:WeMoDeviceOn];
+}
+
+- (void)turnOffSwitch {
+    [self setSwitchState:WeMoDeviceOff];
+}
+
+- (void)setSwitchState:(WeMoDeviceState)state {
+    WeMoSetStateStatus result = (self.wemoSwitch ? [self.wemoSwitch setPluginStatus:state] : WeMoStatusSuccess);
+    if (WeMoStatusSuccess != result) {
+        NSLog(@"Failed to switch wemo switch to state %d: %d", state, result);
+    }
+}
 
 @end
