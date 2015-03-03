@@ -9,6 +9,9 @@
 #import "Scene.h"
 #import "UIImage+Color.h"
 #import "WeMoControlDevice.h"
+#import "WinkAPI.h"
+#import "UIImage+ColorArt.h"
+#import "Secret.h"
 
 @interface Scene()
 
@@ -21,6 +24,8 @@
 @property (nonatomic, strong) NSTimer *imageTimer;
 @property (nonatomic) CGFloat currentVolume;
 @property (nonatomic, strong) ServiceSubscription *volumeSubscription;
+@property (nonatomic, strong) SLColorArt *imageColorArt;
+@property (nonatomic,strong) WinkAPI *wink;
 @end
 
 @implementation Scene
@@ -45,6 +50,15 @@
     self.currentState = Stopped;
     self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
     
+    if([self.configuration valueForKey:@"wink"]){
+        self.wink = [[WinkAPI alloc] initWithUsername:kWinkUsername
+                                             password:kWinkPassword
+                                             clientId:kWinkClientId
+                                         clientSecret:kWinkClientSecret];
+        [self.wink authenticateWithResponse:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSLog(@"Authenticated");
+        }];
+    }
 }
 
 - (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure {
@@ -86,17 +100,20 @@
 -(void)pauseSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self pauseMedia];
     self.currentState = Paused;
+    [self  switchOnoffWinkBulb:1 brightness:0.1];
 }
 
 -(void)playSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self playMedia];
     self.currentState = Running;
+    [self  switchOnoffWinkBulb:1 brightness:1.0];
 }
 
 -(void)stopSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self stopMedia];
     [self switchOffLights];
     [self turnOffSwitch];
+    [self  switchOnoffWinkBulb:0 brightness:1];
     self.currentState = Stopped;
     
     if(self.volumeSubscription){
@@ -107,6 +124,7 @@
 
 -(void)playMediaWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
+    [self setMute:NO];
     if(self.sceneInfo.currentPosition > 0){
         [self setMute:YES];
     }
@@ -164,8 +182,9 @@
                                                 
                                                 NSData *data = [NSData dataWithContentsOfURL:iconURL];
                                                 self.currentImage = [UIImage imageWithData:data];
+                                                self.imageColorArt = [self.currentImage colorArt];
                                                 [self startTimer:nil];
-                                                
+                                                [self  switchOnoffWinkBulb:1 brightness:1];
                                                 if(self.sceneInfo.currentPosition > 0){
                                                     [self performSelector:@selector(seekMedia) withObject:nil afterDelay:2.0];
                                                 }else{
@@ -205,6 +224,9 @@
                  }else{
                      self.sceneInfo.currentMediaIndex ++;
                  }
+                 self.sceneInfo.currentPosition = 0;
+                 
+                 [self.mediaInfoTimer invalidate];
                  [self playMediaWithSuccess:nil andFailure:nil];
              }
 
@@ -319,12 +341,13 @@
 
 - (void)playLights{
     UIColor *imageColor;
-    UIImage *mediaImage = self.currentImage;
-    size_t width = CGImageGetWidth(mediaImage.CGImage);
-    size_t height = CGImageGetHeight(mediaImage.CGImage);
-    int randomX = arc4random() % width;
-    int randomY = arc4random() % height;
-    imageColor = [mediaImage getPixelColorAtLocation:CGPointMake(randomX, randomY)];
+  //  UIImage *mediaImage = self.currentImage;
+//    size_t width = CGImageGetWidth(mediaImage.CGImage);
+//    size_t height = CGImageGetHeight(mediaImage.CGImage);
+//    int randomX = arc4random() % width;
+//    int randomY = arc4random() % height;
+//    imageColor = [mediaImage getPixelColorAtLocation:CGPointMake(randomX, randomY)];
+    imageColor = [self getRandomColorFromImageColorArt];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     NSDictionary *bulbs =  [self.configuration valueForKey:@"hueBulb"];
     for (NSString *lightId in bulbs) {
@@ -356,6 +379,30 @@
 -(IBAction)startTimer:(id)sender{
     [self stopTimer:nil];
     self.imageTimer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playLights) userInfo:nil repeats:YES];
+}
+
+-(UIColor *)getRandomColorFromImageColorArt{
+    UIColor *color = [UIColor whiteColor];
+    int random = arc4random()%4;
+    if(random == 1){
+        color = self.imageColorArt.primaryColor;
+    }else if (random == 2){
+        color = self.imageColorArt.detailColor;
+    }else if (random == 3){
+        color = self.imageColorArt.secondaryColor;
+    }else if (random == 4){
+        color = self.imageColorArt.backgroundColor;
+    }
+    
+    return color;
+}
+
+-(void)switchOnoffWinkBulb:(int)power brightness:(float)brightness{
+    if(self.wink){
+        NSString *bulbId = [[self.configuration valueForKey:@"wink"] valueForKey:@"bulbId"];
+        
+        [self.wink updateBulb:[bulbId intValue] power:power brightness:brightness];
+    }
 }
 
 #pragma mark - WemoSwitch

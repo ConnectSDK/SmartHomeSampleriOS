@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2A25941A9FD86B009E8B1D /* WinkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25931A9FD86B009E8B1D /* WinkAPI.m */; };
+		0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25971AA12E08009E8B1D /* SLColorArt.m */; };
+		0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */; };
+		0F2A259E1AA12E08009E8B1D /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */; };
 		0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C0691A96BB3C00A0E8E1 /* Scene.m */; };
 		0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */; };
 		0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */; };
@@ -38,6 +42,7 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		440383531AAA6F33008BF221 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = 440383521AAA6F33008BF221 /* Secret.m */; };
 		447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287391A9E622A0035F665 /* BelkinSDKLibrary.a */; };
 		447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873A1A9E622A0035F665 /* Cybergarage.a */; };
 		447287461A9E622A0035F665 /* Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873B1A9E622A0035F665 /* Reachability.a */; };
@@ -76,6 +81,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2A25921A9FD86B009E8B1D /* WinkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinkAPI.h; path = Wink/WinkAPI.h; sourceTree = SOURCE_ROOT; };
+		0F2A25931A9FD86B009E8B1D /* WinkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinkAPI.m; path = Wink/WinkAPI.m; sourceTree = SOURCE_ROOT; };
+		0F2A25961AA12E08009E8B1D /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
+		0F2A25971AA12E08009E8B1D /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
+		0F2A25981AA12E08009E8B1D /* UIImage+ColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorArt.h"; sourceTree = "<group>"; };
+		0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorArt.m"; sourceTree = "<group>"; };
+		0F2A259A1AA12E08009E8B1D /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		0F67C0681A96BB3C00A0E8E1 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Scenes/Scene.h; sourceTree = "<group>"; };
 		0F67C0691A96BB3C00A0E8E1 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Scenes/Scene.m; sourceTree = "<group>"; };
 		0F67C06B1A96C3C000A0E8E1 /* SceneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneInfo.h; path = Scenes/SceneInfo.h; sourceTree = "<group>"; };
@@ -127,6 +140,8 @@
 		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PhilipsHue/UIImage+Color.h"; sourceTree = "<group>"; };
 		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PhilipsHue/UIImage+Color.m"; sourceTree = "<group>"; };
+		440383511AAA6F33008BF221 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
+		440383521AAA6F33008BF221 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
 		447287391A9E622A0035F665 /* BelkinSDKLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = BelkinSDKLibrary.a; sourceTree = "<group>"; };
 		4472873A1A9E622A0035F665 /* Cybergarage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Cybergarage.a; sourceTree = "<group>"; };
 		4472873B1A9E622A0035F665 /* Reachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Reachability.a; sourceTree = "<group>"; };
@@ -179,6 +194,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2A258E1A9FD830009E8B1D /* Wink */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A25921A9FD86B009E8B1D /* WinkAPI.h */,
+				0F2A25931A9FD86B009E8B1D /* WinkAPI.m */,
+			);
+			name = Wink;
+			sourceTree = "<group>";
+		};
+		0F2A25951AA12E08009E8B1D /* ColorArt */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A25961AA12E08009E8B1D /* SLColorArt.h */,
+				0F2A25971AA12E08009E8B1D /* SLColorArt.m */,
+				0F2A25981AA12E08009E8B1D /* UIImage+ColorArt.h */,
+				0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */,
+				0F2A259A1AA12E08009E8B1D /* UIImage+Scale.h */,
+				0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */,
+			);
+			name = ColorArt;
+			path = PhilipsHue/ColorArt;
+			sourceTree = "<group>";
+		};
 		0F67C0631A96B66000A0E8E1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +254,9 @@
 		0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */ = {
 			isa = PBXGroup;
 			children = (
+				440383511AAA6F33008BF221 /* Secret.h */,
+				440383521AAA6F33008BF221 /* Secret.m */,
+				0F2A258E1A9FD830009E8B1D /* Wink */,
 				0F67C0631A96B66000A0E8E1 /* Scenes */,
 				0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */,
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
@@ -266,6 +307,7 @@
 		0F79F6031A8D2A6400A6FB2E /* PhilipsHue */ = {
 			isa = PBXGroup;
 			children = (
+				0F2A25951AA12E08009E8B1D /* ColorArt */,
 				0F79F6041A8D2A8600A6FB2E /* LoadingView */,
 				0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */,
 				0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */,
@@ -522,19 +564,24 @@
 			files = (
 				0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */,
 				0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */,
+				0F2A25941A9FD86B009E8B1D /* WinkAPI.m in Sources */,
 				0F79F6281A8D322100A6FB2E /* DDASLLogger.m in Sources */,
 				0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */,
 				0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */,
 				0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */,
+				0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */,
 				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
 				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
 				44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */,
+				0F2A259E1AA12E08009E8B1D /* UIImage+Scale.m in Sources */,
 				0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */,
 				0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */,
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
+				440383531AAA6F33008BF221 /* Secret.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
 				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
+				0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */,
 				0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */,
 				0F79F5E01A8AE05200A6FB2E /* main.m in Sources */,
 				0F79F62C1A8D322100A6FB2E /* ContextFilterLogFormatter.m in Sources */,
