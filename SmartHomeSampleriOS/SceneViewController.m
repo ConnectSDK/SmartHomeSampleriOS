@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSMutableArray *beaconTriggers;
 @property (nonatomic, assign) NSUInteger currentSceneIndex;
 @property (nonatomic,strong) NuanceSpeech *speechKit;
+@property (nonatomic, strong) GCDWebServer *webServer;
 
 @end
 
@@ -80,7 +81,7 @@
 -(IBAction)startScene1:(id)sender{
     [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
     self.scene1.sceneInfo = self.scene2.sceneInfo;
-    
+    self.currentSceneIndex = 0;
     [self.scene1 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene1 Started");
     } failure:^(NSError *error) {
@@ -91,7 +92,7 @@
 -(IBAction)startScene2:(id)sender{
     [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:2.0];
     self.scene1.sceneInfo = self.scene2.sceneInfo;
-    
+    self.currentSceneIndex = 1;
     [self.scene2 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene2 Started");
     } failure:^(NSError *error) {
@@ -141,7 +142,52 @@
     }
 }
 
--(IBAction)wakeMeUP:(id)sender{
+-(IBAction)wakeMeUp:(id)sender{
+    
+    self.scene1.sceneInfo.currentMediaIndex = 1;
+    self.scene2.sceneInfo.currentMediaIndex = 1;
+    
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *currentTime = [dateFormatter stringFromDate:today];
+    
+    NSString *message = [NSString stringWithFormat:@"Its time to wake up. The time is %@",currentTime];
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://www.translate.google.com/translate_tts?tl=en&q=%@",[message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURL  *url = [NSURL URLWithString:urlString];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+    if ( urlData )
+    {
+        //NSArray   *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString  *documentsDirectory = NSTemporaryDirectory();
+        
+        NSString  *filePath = [NSString stringWithFormat:@"%@%@", documentsDirectory,@"translate.mp3"];
+        [urlData writeToFile:filePath atomically:YES];
+    }
+    
+    if(self.webServer == nil){
+        self.webServer = [[GCDWebServer alloc] init];
+        [self.webServer addGETHandlerForBasePath:@"/" directoryPath:NSTemporaryDirectory() indexFilename:nil cacheAge:3600 allowRangeRequests:YES];
+        [self.webServer startWithPort:8080 bonjourName:nil];
+    }
+    
+    
+    NSString *newURL = [NSString stringWithFormat:@"%@%@",self.webServer.serverURL,@"translate.mp3"];
+    
+    if(self.currentSceneIndex == 0){
+        [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:1.0];
+        [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
+        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:10.0];
+    }else{
+        [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:1.0];
+        [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
+        [self performSelector:@selector(startScene2:) withObject:nil afterDelay:10.0];
+    }
+}
+
+-(IBAction)voiceCommand:(id)sender{
     
     [self.speechKit recordVoiceWithResponse:^(NSString *responseString, NSError *error) {
         if(error){
@@ -151,16 +197,10 @@
         self.scene1.sceneInfo.currentMediaIndex = 0;
         self.scene2.sceneInfo.currentMediaIndex = 0;
         self.scene1.sceneInfo.currentPosition = 0;
-         self.scene1.sceneInfo.currentPosition = 1;
+         self.scene2.sceneInfo.currentPosition = 0;
         
         if([responseString isEqualToString:@"Wake me up"]){
-            if(self.currentSceneIndex == 0){
-                [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:3.0];
-                [self performSelector:@selector(startScene1:) withObject:nil afterDelay:10.0];
-            }else{
-                [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:3.0];
-                [self performSelector:@selector(startScene2:) withObject:nil afterDelay:10.0];
-            }
+            [self wakeMeUp:nil];
         }
         
         if([responseString isEqualToString:@"i am home"] || [responseString isEqualToString:@"I'm home"]){
@@ -186,6 +226,14 @@
                 [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:0.0];
             }else{
                 [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:0.0];
+            }
+        }
+        
+        if([responseString isEqualToString:@"Pause"] || [responseString isEqualToString:@"Silence please"]|| [responseString isEqualToString:@"I'm getting a call"]){
+            if(self.currentSceneIndex == 0){
+                [self performSelector:@selector(pauseScene1:) withObject:nil afterDelay:0.0];
+            }else{
+                [self performSelector:@selector(pauseScene2:) withObject:nil afterDelay:0.0];
             }
         }
     }];

@@ -23,5 +23,6 @@ typedef void (^SpeechResponse)(NSString *responseString , NSError *error);
 
 - (void)configure;
 -(void)recordVoiceWithResponse:(SpeechResponse)response;
+-(void)readAMessage:(NSString *)message;
 
 @end

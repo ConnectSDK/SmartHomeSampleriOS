@@ -10,6 +10,7 @@
 #import <ConnectSDK/ConnectSDK.h>
 #import <HueSDK_iOS/HueSDK.h>
 #import "SceneInfo.h"
+#import "NuanceSpeech.h"
 
 @class WeMoControlDevice;
 
@@ -35,5 +36,5 @@ typedef enum {
 -(instancetype)initWithConfiguration:(NSDictionary *)configuration andSceneInfo:(SceneInfo *)sceneInfo;
 - (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure;
 -(void)configureScene;
-
+-(void)playMessageFromURL:(NSString *)urlString;
 @end

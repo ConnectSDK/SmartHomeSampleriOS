@@ -64,6 +64,18 @@
     }
 }
 
+-(void)readAMessage:(NSString *)message{
+    if (self.isSpeaking) {
+        [self.vocalizer cancel];
+        self.isSpeaking = NO;
+    }
+    else {
+        self.isSpeaking = YES;
+        self.vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
+        [self.vocalizer speakString:message];
+    }
+}
+
 #pragma mark -
 #pragma mark SKRecognizerDelegate methods
 
@@ -90,15 +102,7 @@
     NSString *outputString;
     if (numOfResults > 0)
         outputString = [results firstResult];
-//    if (self.isSpeaking) {
-//        [self.vocalizer cancel];
-//        self.isSpeaking = NO;
-//    }
-//    else {
-//        self.isSpeaking = YES;
-//        self.vocalizer = [[SKVocalizer alloc] initWithLanguage:@"en_US" delegate:self];
-//        [self.vocalizer speakString:outputString];
-//    }
+
     self.voiceSearch = nil;
     
     self.response(outputString,nil);

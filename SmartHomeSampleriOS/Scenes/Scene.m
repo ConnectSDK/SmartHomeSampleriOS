@@ -25,7 +25,9 @@
 @property (nonatomic) CGFloat currentVolume;
 @property (nonatomic, strong) ServiceSubscription *volumeSubscription;
 @property (nonatomic, strong) SLColorArt *imageColorArt;
-@property (nonatomic,strong) WinkAPI *wink;
+@property (nonatomic, strong) WinkAPI *wink;
+@property (nonatomic, strong) NuanceSpeech *speechKit;
+
 @end
 
 @implementation Scene
@@ -293,6 +295,30 @@
     }];
 }
 
+-(void)playMessageFromURL:(NSString *)urlString{
+    
+    NSURL *mediaURL =  [NSURL URLWithString:urlString];
+    NSURL *iconURL = nil;
+    NSString *title = @"Wake up message";
+    NSString *description = @"Wake up message";
+    NSString *mimeType = @"audio/mp3";
+    BOOL shouldLoop = NO;
+    
+    MediaInfo *mediaInfo = [[MediaInfo alloc] initWithURL:mediaURL mimeType:mimeType];
+    mediaInfo.title = title;
+    mediaInfo.description = description;
+    ImageInfo *imageInfo = [[ImageInfo alloc] initWithURL:iconURL type:ImageTypeThumb];
+    [mediaInfo addImage:imageInfo];
+    
+    [self.connectableDevice.mediaPlayer playMediaWithMediaInfo:mediaInfo shouldLoop:shouldLoop
+                                                      success:^(MediaLaunchObject *launchObject) {
+                                                          NSLog(@"Play wake up message success");
+                                                          
+                                                      } failure:^(NSError *error) {
+                                                          NSLog(@"display audio failure: %@", error.localizedDescription);
+                                                      }];
+}
+
 #pragma mark - ConnectableDeviceDelegate
 
 - (void) connectableDeviceReady:(ConnectableDevice *)device
@@ -314,7 +340,6 @@
     self.connectableDevice.delegate = nil;
     self.connectableDevice = nil;
 }
-
 
 #pragma mark - Philips Hue
 

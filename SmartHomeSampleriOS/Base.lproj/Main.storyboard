@@ -91,7 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="wakeMeUP:" destination="JV5-S1-fAV" eventType="touchUpInside" id="Og6-eO-Vbf"/>
+                                    <action selector="voiceCommand:" destination="JV5-S1-fAV" eventType="touchUpInside" id="9gm-1R-b8y"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-f4-jJ7">
