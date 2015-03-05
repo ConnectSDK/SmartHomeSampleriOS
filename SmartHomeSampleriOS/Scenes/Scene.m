@@ -44,8 +44,8 @@
 }
 
 -(void)configureScene{
-    if (self.conectableDevice) {
-         [self.conectableDevice connect];
+    if (self.connectableDevice) {
+         [self.connectableDevice connect];
     }
     self.currentState = Stopped;
     self.hueBridge = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -128,9 +128,9 @@
     if(self.sceneInfo.currentPosition > 0){
         [self setMute:YES];
     }
-    if ([self.conectableDevice hasCapability:kVolumeControlVolumeSubscribe])
+    if ([self.connectableDevice hasCapability:kVolumeControlVolumeSubscribe])
     {
-        _volumeSubscription = [self.conectableDevice.volumeControl subscribeVolumeWithSuccess:^(float volume)
+        _volumeSubscription = [self.connectableDevice.volumeControl subscribeVolumeWithSuccess:^(float volume)
                                {
                                    self.currentVolume = volume;
                                    
@@ -173,7 +173,7 @@
     ImageInfo *imageInfo = [[ImageInfo alloc] initWithURL:iconURL type:ImageTypeThumb];
     [mediaInfo addImage:imageInfo];
     
-    [self.conectableDevice.mediaPlayer playMediaWithMediaInfo:mediaInfo shouldLoop:shouldLoop
+    [self.connectableDevice.mediaPlayer playMediaWithMediaInfo:mediaInfo shouldLoop:shouldLoop
                                             success:^(MediaLaunchObject *launchObject) {
                                                 NSLog(@"Play audio success");
                                                 
@@ -203,10 +203,10 @@
 
 - (void) updateMediaInfo
 {
-    if (![self.conectableDevice hasCapability:kMediaControlPlayStateSubscribe])
+    if (![self.connectableDevice hasCapability:kMediaControlPlayStateSubscribe])
         [self.mediaControl getPlayStateWithSuccess:_playStateHandler failure:nil];
     
-    if ([self.conectableDevice hasCapabilities:@[kMediaControlDuration, kMediaControlPosition]])
+    if ([self.connectableDevice hasCapabilities:@[kMediaControlDuration, kMediaControlPosition]])
     {
         [self.mediaControl getDurationWithSuccess:^(NSTimeInterval duration)
          {
@@ -286,7 +286,7 @@
 }
 
 -(void)setMute:(BOOL)mute{
-    [self.conectableDevice.volumeControl setMute:mute success:^(id responseObject) {
+    [self.connectableDevice.volumeControl setMute:mute success:^(id responseObject) {
         NSLog(@"Mute set");
     } failure:^(NSError *error) {
         NSLog(@"Mute set failure");
@@ -311,8 +311,8 @@
 
 - (void) connectableDeviceDisconnected:(ConnectableDevice *)device withError:(NSError *)error
 {
-    self.conectableDevice.delegate = nil;
-    self.conectableDevice = nil;
+    self.connectableDevice.delegate = nil;
+    self.connectableDevice = nil;
 }
 
 

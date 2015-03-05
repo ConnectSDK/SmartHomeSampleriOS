@@ -25,7 +25,7 @@ typedef enum {
 @property(nonatomic) SceneState currentState;
 @property(nonatomic,strong) SceneInfo *sceneInfo;
 
-@property(nonatomic,strong) ConnectableDevice *conectableDevice;
+@property(nonatomic,strong) ConnectableDevice *connectableDevice;
 @property(nonatomic,strong) PHBridgeResourcesCache *hueBridge;
 @property (nonatomic, strong) WeMoControlDevice *wemoSwitch;
 

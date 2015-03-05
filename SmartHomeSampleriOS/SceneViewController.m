@@ -290,7 +290,7 @@
 
             if (sceneRequiresDevice &&
                 ((requiresWebOSService && deviceHasWebOSService) || !requiresWebOSService)) {
-                scene.conectableDevice = device;
+                scene.connectableDevice = device;
                 [scene configureScene];
             }
         }
