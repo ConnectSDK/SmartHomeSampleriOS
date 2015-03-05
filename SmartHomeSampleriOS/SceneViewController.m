@@ -15,6 +15,7 @@
 #import <ConnectSDK/SSDPDiscoveryProvider.h>
 #import "BeaconTrigger.h"
 #import "WeMoDiscoveryManager.h"
+#import "NuanceSpeech.h"
 
 @interface SceneViewController () <DiscoveryManagerDelegate,
                                     WeMoDeviceDiscoveryDelegate>
@@ -25,6 +26,7 @@
 /// Array of currently active beacon triggers (@c beaconTrigger objects).
 @property (nonatomic, strong) NSMutableArray *beaconTriggers;
 @property (nonatomic, assign) NSUInteger currentSceneIndex;
+@property (nonatomic,strong) NuanceSpeech *speechKit;
 
 @end
 
@@ -65,6 +67,9 @@
         // totally incorrect!
         [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
     });
+    
+    self.speechKit = [[NuanceSpeech alloc] init];
+    [self.speechKit configure];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -138,13 +143,53 @@
 
 -(IBAction)wakeMeUP:(id)sender{
     
-    if(self.currentSceneIndex == 0){
-        [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:3.0];
-        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:30.0];
-    }else{
-        [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:3.0];
-        [self performSelector:@selector(startScene2:) withObject:nil afterDelay:30.0];
-    }
+    [self.speechKit recordVoiceWithResponse:^(NSString *responseString, NSError *error) {
+        if(error){
+            NSLog(@"Error in Speech Recognition");
+        }
+        
+        self.scene1.sceneInfo.currentMediaIndex = 0;
+        self.scene2.sceneInfo.currentMediaIndex = 0;
+        self.scene1.sceneInfo.currentPosition = 0;
+         self.scene1.sceneInfo.currentPosition = 1;
+        
+        if([responseString isEqualToString:@"Wake me up"]){
+            if(self.currentSceneIndex == 0){
+                [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:3.0];
+                [self performSelector:@selector(startScene1:) withObject:nil afterDelay:10.0];
+            }else{
+                [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:3.0];
+                [self performSelector:@selector(startScene2:) withObject:nil afterDelay:10.0];
+            }
+        }
+        
+        if([responseString isEqualToString:@"i am home"] || [responseString isEqualToString:@"I'm home"]){
+            if(self.currentSceneIndex == 0){
+                [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:1.0];
+                [self performSelector:@selector(startScene1:) withObject:nil afterDelay:1.0];
+            }else{
+                [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:1.0];
+                [self performSelector:@selector(startScene2:) withObject:nil afterDelay:1.0];
+            }
+        }
+        
+        if([responseString isEqualToString:@"Start playing"] || [responseString isEqualToString:@"Play"] || [responseString isEqualToString:@"Start"]){
+            if(self.currentSceneIndex == 0){
+                [self performSelector:@selector(startScene1:) withObject:nil afterDelay:0.0];
+            }else{
+                [self performSelector:@selector(startScene2:) withObject:nil afterDelay:0.0];
+            }
+        }
+        
+        if([responseString isEqualToString:@"Stop playing"] || [responseString isEqualToString:@"Stop"]|| [responseString isEqualToString:@"I'm going to bed"]){
+            if(self.currentSceneIndex == 0){
+                [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:0.0];
+            }else{
+                [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:0.0];
+            }
+        }
+    }];
+    
 }
 
 -(IBAction)useBeaconsSwitchPressed:(id)sender{

@@ -8,6 +8,9 @@
 
 @import Foundation;
 
+extern NSString *const kNuanceAppId;
+extern const unsigned char SpeechKitApplicationKey[];
+
 extern NSString *const kWinkUsername;
 extern NSString *const kWinkPassword;
 extern NSString *const kWinkClientId;
