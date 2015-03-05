@@ -264,25 +264,8 @@
 
 - (void)discoveryManager:(DiscoveryManager *)manager didFindDevice:(ConnectableDevice *)device
 {
-    if(device){
-        
-        NSLog(@"Device address %@ - %@ ",device.friendlyName,device.address);
-        
-        if(self.scene1 && self.scene2){
-            NSDictionary *sceneDevice1 = [self.scene1.configuration valueForKey:@"device"];
-            NSDictionary *sceneDevice2 = [self.scene2.configuration valueForKey:@"device"];
-          
-            if([device serviceWithName:kConnectSDKWebOSTVServiceId] && [[sceneDevice1 objectForKey:@"ip"] isEqualToString:device.address]){
-                self.scene1.conectableDevice = device;
-                [self.scene1 configureScene];
-            }
-            
-            if([[sceneDevice2 objectForKey:@"ip"] isEqualToString:device.address]){
-                self.scene2.conectableDevice = device;
-                [self.scene2 configureScene];
-            }
-        }
-    }
+    NSLog(@"Found device %@ - %@", device.friendlyName, device.address);
+    [self didUpdateConnectableDevice:device];
 }
 
 - (void)discoveryManager:(DiscoveryManager *)manager didLoseDevice:(ConnectableDevice *)device
@@ -292,22 +275,23 @@
 
 - (void)discoveryManager:(DiscoveryManager *)manager didUpdateDevice:(ConnectableDevice *)device
 {
-    //Nothing
-    if(device){
-        
-        NSLog(@"Device address %@",device.services);
-        if(self.scene1 && self.scene2){
-            NSDictionary *sceneDevice1 = [self.scene1.configuration valueForKey:@"device"];
-            NSDictionary *sceneDevice2 = [self.scene2.configuration valueForKey:@"device"];
-            
-            if([device serviceWithName:kConnectSDKWebOSTVServiceId] && [[sceneDevice1 objectForKey:@"ip"] isEqualToString:device.address]){
-                self.scene1.conectableDevice = device;
-                [self.scene1 configureScene];
-            }
-            
-            if([[sceneDevice2 objectForKey:@"ip"] isEqualToString:device.address]){
-                self.scene2.conectableDevice = device;
-                [self.scene2 configureScene];
+    NSLog(@"Updated device %@ - %@", device.friendlyName, device.address);
+    [self didUpdateConnectableDevice:device];
+}
+
+- (void)didUpdateConnectableDevice:(ConnectableDevice *)device {
+    if (device && self.scene1 && self.scene2) {
+        const BOOL deviceHasWebOSService = ([device serviceWithName:kConnectSDKWebOSTVServiceId] != nil);
+
+        for (Scene *scene in @[self.scene1, self.scene2]) {
+            NSDictionary *sceneDevice = scene.configuration[@"device"];
+            const BOOL requiresWebOSService = [sceneDevice[@"type"] isEqualToString:@"webostv"];
+            const BOOL sceneRequiresDevice = [sceneDevice[@"name"] isEqualToString:device.friendlyName];
+
+            if (sceneRequiresDevice &&
+                ((requiresWebOSService && deviceHasWebOSService) || !requiresWebOSService)) {
+                scene.conectableDevice = device;
+                [scene configureScene];
             }
         }
     }

@@ -51,8 +51,10 @@
 			</dict>
 			<key>device</key>
 			<dict>
-				<key>ip</key>
-				<string>192.168.1.87</string>
+				<key>name</key>
+				<string>adnan tv</string>
+				<key>type</key>
+				<string>webostv</string>
 			</dict>
             <key>wemoSwitch</key>
             <dict>
@@ -75,8 +77,8 @@
 			</dict>
 			<key>device</key>
 			<dict>
-				<key>ip</key>
-				<string>192.168.1.7</string>
+				<key>name</key>
+				<string>Living Room - Sonos PLAY:1 Media Renderer</string>
 			</dict>
 		</dict>
 	</array>
