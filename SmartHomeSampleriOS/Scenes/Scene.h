@@ -37,4 +37,6 @@ typedef enum {
 - (void)changeSceneState:(SceneState)state success:(SuccessBlock)success failure:(FailureBlock)failure;
 -(void)configureScene;
 -(void)playMessageFromURL:(NSString *)urlString;
+
+-(void)setSceneInfoWithMediaIndex:(NSInteger)index andPosition:(CGFloat)position;
 @end

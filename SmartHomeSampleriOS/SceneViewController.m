@@ -146,10 +146,8 @@
 
 -(IBAction)wakeMeUp:(id)sender{
     
-    self.scene1.sceneInfo.currentMediaIndex = 1;
-    self.scene2.sceneInfo.currentMediaIndex = 1;
-    self.scene1.sceneInfo.currentPosition = 0;
-    self.scene2.sceneInfo.currentPosition = 0;
+    [self.scene1 setSceneInfoWithMediaIndex:1 andPosition:0];
+    [self.scene2 setSceneInfoWithMediaIndex:1 andPosition:0];
     
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -198,10 +196,6 @@
             NSLog(@"Error in Speech Recognition");
         }
         
-        self.scene1.sceneInfo.currentMediaIndex = 0;
-        self.scene2.sceneInfo.currentMediaIndex = 0;
-        self.scene1.sceneInfo.currentPosition = 0;
-         self.scene2.sceneInfo.currentPosition = 0;
         
         if([responseString isEqualToString:@"Wake me up"]){
             [self wakeMeUp:nil];

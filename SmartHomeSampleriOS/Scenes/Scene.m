@@ -95,6 +95,14 @@
     }
 }
 
+-(void)setSceneInfoWithMediaIndex:(NSInteger)index andPosition:(CGFloat)position{
+    if(self.mediaInfoTimer){
+        [self.mediaInfoTimer invalidate];
+    }
+    self.sceneInfo.currentMediaIndex = index;
+    self.sceneInfo.currentPosition = position;
+}
+
 -(void)startSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self playMediaWithSuccess:success andFailure:failure];
     [self turnOnSwitch];
