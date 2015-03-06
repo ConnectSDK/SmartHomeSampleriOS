@@ -44,6 +44,11 @@
 	<key>Scenes</key>
 	<array>
 		<dict>
+			<key>iBeacon</key>
+			<dict>
+				<key>uuid</key>
+				<string>00001111-2222-3333-4444-555566667777</string>
+			</dict>
 			<key>hueBulb</key>
 			<dict>
 				<key>1</key>
@@ -56,13 +61,18 @@
 				<key>type</key>
 				<string>webostv</string>
 			</dict>
-            <key>wemoSwitch</key>
-            <dict>
-                <key>udn</key>
-                <string>uuid:Socket-1_0-221434K0100D1D</string>
-            </dict>
+			<key>wemoSwitch</key>
+			<dict>
+				<key>udn</key>
+				<string>uuid:Socket-1_0-221434K0100D1D</string>
+			</dict>
 		</dict>
 		<dict>
+			<key>iBeacon</key>
+			<dict>
+				<key>uuid</key>
+				<string>88889999-aaaa-bbbb-cccc-ddddeeeeffff</string>
+			</dict>
 			<key>wink</key>
 			<dict>
 				<key>bulbId</key>

@@ -258,7 +258,7 @@
     __weak typeof(self) wself = self;
     
     // scene 1
-    [self startBeaconTriggerWithUUIDString:@"00001111-2222-3333-4444-555566667777"
+    [self startBeaconTriggerWithUUIDString:[self.scene1.configuration valueForKeyPath:@"iBeacon.uuid"]
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 0) {
@@ -271,7 +271,7 @@
                            }];
     
     // scene 2
-    [self startBeaconTriggerWithUUIDString:@"88889999-aaaa-bbbb-cccc-ddddeeeeffff"
+    [self startBeaconTriggerWithUUIDString:[self.scene2.configuration valueForKeyPath:@"iBeacon.uuid"]
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 1) {
