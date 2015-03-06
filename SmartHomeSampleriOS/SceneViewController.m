@@ -81,6 +81,7 @@
 -(IBAction)startScene1:(id)sender{
     [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
     self.scene1.sceneInfo = self.scene2.sceneInfo;
+  
     self.currentSceneIndex = 0;
     [self.scene1 changeSceneState:Running success:^(id responseObject) {
         NSLog(@"Scene1 Started");
@@ -146,6 +147,8 @@
     
     self.scene1.sceneInfo.currentMediaIndex = 1;
     self.scene2.sceneInfo.currentMediaIndex = 1;
+    self.scene1.sceneInfo.currentPosition = 0;
+    self.scene2.sceneInfo.currentPosition = 0;
     
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -179,11 +182,11 @@
     if(self.currentSceneIndex == 0){
         [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:1.0];
         [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
-        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:10.0];
+        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:15.0];
     }else{
         [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:1.0];
         [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
-        [self performSelector:@selector(startScene2:) withObject:nil afterDelay:10.0];
+        [self performSelector:@selector(startScene2:) withObject:nil afterDelay:15.0];
     }
 }
 

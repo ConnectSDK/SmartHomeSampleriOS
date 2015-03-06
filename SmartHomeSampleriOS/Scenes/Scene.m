@@ -71,7 +71,9 @@
     if(self.mediaInfoTimer){
         [self.mediaInfoTimer invalidate];
     }
-    
+    if(self.imageTimer){
+        [self.imageTimer invalidate];
+    }
     switch (state) {
         case Running:
             if(self.currentState == Stopped ){
@@ -242,6 +244,7 @@
     [self.mediaControl playWithSuccess:^(id responseObject)
      {
          NSLog(@"play success");
+          self.mediaInfoTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(updateMediaInfo) userInfo:nil repeats:YES];
          [self startTimer:nil];
      } failure:^(NSError *error)
      {
@@ -403,7 +406,8 @@
 
 -(IBAction)startTimer:(id)sender{
     [self stopTimer:nil];
-    self.imageTimer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playLights) userInfo:nil repeats:YES];
+    [self playLights];
+    self.imageTimer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(playLights) userInfo:nil repeats:YES];
 }
 
 -(UIColor *)getRandomColorFromImageColorArt{
