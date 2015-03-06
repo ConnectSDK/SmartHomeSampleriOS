@@ -13,6 +13,7 @@
 #import <ConnectSDK/DLNAService.h>
 #import <ConnectSDK/WebOSTVService.h>
 #import <ConnectSDK/SSDPDiscoveryProvider.h>
+#import <ConnectSDK/GCDWebServer.h>
 #import "BeaconTrigger.h"
 #import "WeMoDiscoveryManager.h"
 #import "NuanceSpeech.h"
