@@ -38,7 +38,7 @@
     [super viewDidLoad];
 
     self.currentSceneIndex = -1;
-    
+    [self debugSwitchPressed:self.debugSwitch];
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
@@ -227,7 +227,7 @@
             }
         }
         
-        if([responseString isEqualToString:@"Pause"] || [responseString isEqualToString:@"Silence please"]|| [responseString isEqualToString:@"I'm getting a call"]){
+        if([responseString isEqualToString:@"Pause"] || [responseString isEqualToString:@"Silence please"]|| [responseString isEqualToString:@"Pause Playing"]){
             if(self.currentSceneIndex == 0){
                 [self performSelector:@selector(pauseScene1:) withObject:nil afterDelay:0.0];
             }else{
@@ -244,6 +244,19 @@
     } else {
         [self stopBeaconTriggering];
     }
+}
+
+-(IBAction)debugSwitchPressed:(id)sender{
+    UISwitch *debugSwitch= (UISwitch *)sender;
+    self.startScene1Btn.hidden = !debugSwitch.isOn;
+    self.startScene2Btn.hidden = !debugSwitch.isOn;
+    self.stopScene1Btn.hidden = !debugSwitch.isOn;
+    self.stopScene2Btn.hidden = !debugSwitch.isOn;
+    self.pauseScene1Btn.hidden = !debugSwitch.isOn;
+    self.pauseScene2Btn.hidden = !debugSwitch.isOn;
+    self.useBeaconsSwitch.hidden = !debugSwitch.isOn;
+    self.useBeaconlabel.hidden = !debugSwitch.isOn;
+    self.wemoSwitch.hidden = !debugSwitch.isOn;
 }
 
 #pragma mark - Triggers
