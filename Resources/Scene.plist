@@ -51,8 +51,10 @@
 			</dict>
 			<key>hueBulb</key>
 			<dict>
-				<key>1</key>
-				<string>1</string>
+				<key>2</key>
+				<string>2</string>
+				<key>3</key>
+				<string>3</string>
 			</dict>
 			<key>device</key>
 			<dict>
@@ -80,10 +82,8 @@
 			</dict>
 			<key>hueBulb</key>
 			<dict>
-				<key>2</key>
-				<string>2</string>
-				<key>3</key>
-				<string>3</string>
+				<key>1</key>
+				<string>1</string>
 			</dict>
 			<key>device</key>
 			<dict>
