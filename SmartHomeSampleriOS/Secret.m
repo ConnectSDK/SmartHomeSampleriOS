@@ -10,6 +10,9 @@
 
 // DO NOT commit any actual secrets here, use placeholders instead!
 
+// to avoid committing changes, run this command from the working copy root:
+// git config filter.mask_secrets.clean ./mask_secrets.sed
+
 NSString *const kNuanceAppId = @"CHANGE_ME";
 const unsigned char SpeechKitApplicationKey[] = {0x00, 0xff /*CHANGE_ME*/};
 
