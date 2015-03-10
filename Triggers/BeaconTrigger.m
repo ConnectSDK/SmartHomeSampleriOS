@@ -145,22 +145,27 @@ monitoringDidFailForRegion:(CLRegion *)region
         return;
     }
 
-    NSPredicate *nearBeaconPredicate = [NSPredicate predicateWithFormat:@"%K == %@",
-                                        @"proximity", @(CLProximityNear)];
-    NSPredicate *immediateBeaconPredicate = [NSPredicate predicateWithFormat:@"%K == %@",
-                                             @"proximity", @(CLProximityImmediate)];
-    const BOOL hasNearBeacons = ([beacons filteredArrayUsingPredicate:nearBeaconPredicate].count > 0);
-    const BOOL hasImmediateBeacons = ([beacons filteredArrayUsingPredicate:immediateBeaconPredicate].count > 0);
+    if (beacons.count > 1) {
+        NSLog(@"WARN: %d beacons ranged, while expecting one", beacons.count);
+    }
 
-    if (hasImmediateBeacons) {
-        if (self.latestProximity != CLProximityImmediate) {
-            self.latestProximity = CLProximityImmediate;
-            self.triggerBlock();
-        }
-    } else if (self.triggerOnNearProximity && hasNearBeacons) {
-        if (self.latestProximity != CLProximityNear) {
-            self.latestProximity = CLProximityNear;
-            self.triggerBlock();
+    CLBeacon *beacon = beacons.firstObject;
+    if (self.latestProximity != beacon.proximity) {
+        // the proximity has changed
+        self.latestProximity = beacon.proximity;
+
+        switch (beacon.proximity) {
+            case CLProximityImmediate:
+                self.triggerBlock();
+                break;
+
+            case CLProximityNear:
+                if (self.triggerOnNearProximity) {
+                    self.triggerBlock();
+                }
+
+            default:
+                break;
         }
     }
 }
