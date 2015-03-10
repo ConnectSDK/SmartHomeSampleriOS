@@ -50,6 +50,8 @@
     
     NSDictionary *scene2Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:1];
     self.scene2 = [[Scene alloc] initWithConfiguration:scene2Dictionary andSceneInfo:sceneInfo];
+
+    [self setupUI];
     
     // Do any additional setup after loading the view.
     _discoveryManager = [DiscoveryManager sharedManager];
@@ -73,6 +75,22 @@
     self.speechKit = [[NuanceSpeech alloc] init];
     [self.speechKit configure];
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
+}
+
+- (void)setupUI {
+    // sets the tab stop on the voice commands label, so the second column is
+    // left-aligned
+    static const CGFloat kTabStopPosition = 144.0f;
+    NSMutableParagraphStyle *comLabelStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    NSTextTab *secondColumnTab = [[NSTextTab alloc] initWithTextAlignment:NSTextAlignmentLeft
+                                                                 location:kTabStopPosition
+                                                                  options:nil];
+    comLabelStyle.tabStops = @[secondColumnTab];
+    comLabelStyle.headIndent = kTabStopPosition;
+
+    NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:self.voiceCommandsLabel.text
+                                                                   attributes:@{NSParagraphStyleAttributeName: comLabelStyle}];
+    self.voiceCommandsLabel.attributedText = attrText;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -247,17 +265,8 @@
     }
 }
 
--(IBAction)debugSwitchPressed:(id)sender{
-    UISwitch *debugSwitch= (UISwitch *)sender;
-    self.startScene1Btn.hidden = !debugSwitch.isOn;
-    self.startScene2Btn.hidden = !debugSwitch.isOn;
-    self.stopScene1Btn.hidden = !debugSwitch.isOn;
-    self.stopScene2Btn.hidden = !debugSwitch.isOn;
-    self.pauseScene1Btn.hidden = !debugSwitch.isOn;
-    self.pauseScene2Btn.hidden = !debugSwitch.isOn;
-    self.useBeaconsSwitch.hidden = !debugSwitch.isOn;
-    self.useBeaconlabel.hidden = !debugSwitch.isOn;
-    self.wemoSwitch.hidden = !debugSwitch.isOn;
+- (IBAction)debugSwitchPressed:(UISwitch *)sender {
+    self.debugView.hidden = !sender.on;
 }
 
 #pragma mark - Triggers

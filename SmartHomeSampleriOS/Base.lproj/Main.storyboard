@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scene View Controller-->
@@ -16,62 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-ia-2eY">
-                                <rect key="frame" x="35" y="111" width="89" height="30"/>
-                                <state key="normal" title="Start Scene1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="okk-p0-6L1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-cz-ZUM">
-                                <rect key="frame" x="32" y="149" width="99" height="30"/>
-                                <state key="normal" title="Pause Scene1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pauseScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="k1Y-yO-psf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-kl-ePy">
-                                <rect key="frame" x="186" y="149" width="99" height="30"/>
-                                <state key="normal" title="Pause Scene2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pauseScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="TqS-2o-HYv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-0o-Hi1">
-                                <rect key="frame" x="35" y="187" width="89" height="30"/>
-                                <state key="normal" title="Stop Scene1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="WrP-jz-Lcl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9x-0A-vls">
-                                <rect key="frame" x="191" y="187" width="89" height="30"/>
-                                <state key="normal" title="Stop Scene2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="Mlc-Br-R2Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-5K-8XE">
-                                <rect key="frame" x="191" y="111" width="89" height="30"/>
-                                <state key="normal" title="Start Scene2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="N59-2b-9Fs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvs-Nd-O5N">
-                                <rect key="frame" x="287" y="251" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvs-Nd-O5N" userLabel="VoiceCommandButton">
+                                <rect key="frame" x="250" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9z9-zR-ZyL"/>
+                                    <constraint firstAttribute="width" secondItem="bvs-Nd-O5N" secondAttribute="height" multiplier="1:1" id="BKp-el-BTY"/>
+                                </constraints>
                                 <state key="normal" image="voiceicon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,114 +31,206 @@
                                     <action selector="voiceCommand:" destination="JV5-S1-fAV" eventType="touchUpInside" id="9gm-1R-b8y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voice Commands" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7O-si-bLI">
-                                <rect key="frame" x="265" y="371" width="145" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Commands" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7O-si-bLI">
+                                <rect key="frame" x="231" y="180" width="138" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Going to Bed&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goU-bW-AzY">
-                                <rect key="frame" x="32" y="459" width="117" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-v2-yg4">
+                                <rect key="frame" x="16" y="566" width="51" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stops Playing the current scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAk-hA-KyK">
-                                <rect key="frame" x="254" y="459" width="244" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Wake me up&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPX-YX-BPC">
-                                <rect key="frame" x="34" y="491" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plays an Wake up message and starts playing the scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoV-Ta-uyy">
-                                <rect key="frame" x="256" y="491" width="431" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Stop Playing&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-BP-L8k">
-                                <rect key="frame" x="34" y="520" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stops Playing the current scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyz-Sn-uS6">
-                                <rect key="frame" x="256" y="520" width="244" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Pause Playing&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqW-qB-VJD">
-                                <rect key="frame" x="32" y="549" width="123" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pauses the current scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv5-uE-uRz">
-                                <rect key="frame" x="257" y="549" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-v2-yg4">
-                                <rect key="frame" x="34" y="77" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-eV-RhX">
-                                <rect key="frame" x="93" y="72" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-eV-RhX" userLabel="DebugSwitch">
+                                <rect key="frame" x="75" y="561" width="51" height="31"/>
                                 <connections>
                                     <action selector="debugSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="C1x-mR-lEX"/>
                                     <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="bOM-6x-Pt2"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-bC-guZ">
-                                <rect key="frame" x="342" y="111" width="167" height="30"/>
-                                <state key="normal" title="Switch the wemo switch">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionSwitchTheSwitch:" destination="JV5-S1-fAV" eventType="touchUpInside" id="u0B-Oo-28U"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Beacons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-Xp-iAr">
-                                <rect key="frame" x="342" y="154" width="103" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tak-VK-ndB" userLabel="DebugView">
+                                <rect key="frame" x="16" y="373" width="568" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-bC-guZ">
+                                        <rect key="frame" x="168" y="0.0" width="167" height="30"/>
+                                        <state key="normal" title="Switch the wemo switch">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionSwitchTheSwitch:" destination="JV5-S1-fAV" eventType="touchUpInside" id="u0B-Oo-28U"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Beacons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-Xp-iAr">
+                                        <rect key="frame" x="168" y="43" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-f4-jJ7" userLabel="UseBeaconsSwitch">
+                                        <rect key="frame" x="278" y="38" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="efQ-IQ-7L0"/>
+                                        </connections>
+                                    </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuF-es-3tv" userLabel="Scene1Controls">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-ia-2eY">
+                                                <rect key="frame" x="23" y="28" width="33" height="30"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="okk-p0-6L1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-cz-ZUM">
+                                                <rect key="frame" x="18" y="66" width="43" height="30"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="k1Y-yO-psf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-0o-Hi1">
+                                                <rect key="frame" x="23" y="104" width="33" height="30"/>
+                                                <state key="normal" title="Stop">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stopScene1:" destination="JV5-S1-fAV" eventType="touchUpInside" id="WrP-jz-Lcl"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-YZ-YxV">
+                                                <rect key="frame" x="8" y="0.0" width="63" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="g0z-ia-2eY" firstAttribute="top" secondItem="w7S-YZ-YxV" secondAttribute="bottom" constant="8" symbolic="YES" id="1Ei-jK-GB2"/>
+                                            <constraint firstItem="5NY-cz-ZUM" firstAttribute="top" secondItem="g0z-ia-2eY" secondAttribute="bottom" constant="8" id="2of-lz-ANW"/>
+                                            <constraint firstAttribute="centerX" secondItem="g0z-ia-2eY" secondAttribute="centerX" id="Gcu-VL-A1H"/>
+                                            <constraint firstAttribute="centerX" secondItem="M1e-0o-Hi1" secondAttribute="centerX" id="Ksq-CC-Ypq"/>
+                                            <constraint firstAttribute="width" constant="80" id="Mpa-PY-pYa"/>
+                                            <constraint firstAttribute="centerX" secondItem="5NY-cz-ZUM" secondAttribute="centerX" id="cQ8-8N-Igz"/>
+                                            <constraint firstAttribute="centerX" secondItem="w7S-YZ-YxV" secondAttribute="centerX" id="dSz-7p-oFD"/>
+                                            <constraint firstItem="M1e-0o-Hi1" firstAttribute="top" secondItem="5NY-cz-ZUM" secondAttribute="bottom" constant="8" id="fz7-5w-HAo"/>
+                                            <constraint firstItem="w7S-YZ-YxV" firstAttribute="top" secondItem="EuF-es-3tv" secondAttribute="top" id="gGV-wz-Vzm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-pk-xAP" userLabel="Scene2Controls">
+                                        <rect key="frame" x="80" y="0.0" width="80" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-5K-8XE">
+                                                <rect key="frame" x="23" y="28" width="33" height="30"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="N59-2b-9Fs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-kl-ePy">
+                                                <rect key="frame" x="18" y="66" width="43" height="30"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="TqS-2o-HYv"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTC-De-6AD">
+                                                <rect key="frame" x="8" y="0.0" width="63" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9x-0A-vls">
+                                                <rect key="frame" x="23" y="104" width="33" height="30"/>
+                                                <state key="normal" title="Stop">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stopScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="Mlc-Br-R2Z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="B9x-0A-vls" secondAttribute="centerX" id="1F5-ji-yY7"/>
+                                            <constraint firstItem="bR6-5K-8XE" firstAttribute="top" secondItem="GTC-De-6AD" secondAttribute="bottom" constant="8" symbolic="YES" id="3lY-w5-OT7"/>
+                                            <constraint firstAttribute="centerX" secondItem="bR6-5K-8XE" secondAttribute="centerX" id="EGf-EN-FRE"/>
+                                            <constraint firstAttribute="centerX" secondItem="GTC-De-6AD" secondAttribute="centerX" id="FwI-aW-8ty"/>
+                                            <constraint firstItem="B9x-0A-vls" firstAttribute="top" secondItem="0FG-kl-ePy" secondAttribute="bottom" constant="8" symbolic="YES" id="cJx-w5-VPC"/>
+                                            <constraint firstItem="GTC-De-6AD" firstAttribute="top" secondItem="5A1-pk-xAP" secondAttribute="top" id="fLW-MT-qvJ"/>
+                                            <constraint firstAttribute="centerX" secondItem="0FG-kl-ePy" secondAttribute="centerX" id="fci-RK-hc6"/>
+                                            <constraint firstItem="0FG-kl-ePy" firstAttribute="top" secondItem="bR6-5K-8XE" secondAttribute="bottom" constant="8" symbolic="YES" id="k9W-XQ-QW3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5A1-pk-xAP" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="Bpq-il-tuh"/>
+                                    <constraint firstItem="cM6-Xp-iAr" firstAttribute="leading" secondItem="7R3-bC-guZ" secondAttribute="leading" id="Cys-97-iU1"/>
+                                    <constraint firstItem="EuF-es-3tv" firstAttribute="leading" secondItem="tak-VK-ndB" secondAttribute="leading" id="GeZ-MI-Xlf"/>
+                                    <constraint firstItem="cM6-Xp-iAr" firstAttribute="centerY" secondItem="9kI-f4-jJ7" secondAttribute="centerY" id="NQH-ZJ-9cd"/>
+                                    <constraint firstItem="9kI-f4-jJ7" firstAttribute="leading" secondItem="cM6-Xp-iAr" secondAttribute="trailing" constant="8" symbolic="YES" id="VMW-yh-guq"/>
+                                    <constraint firstAttribute="bottom" secondItem="5A1-pk-xAP" secondAttribute="bottom" id="XYA-YW-xDK"/>
+                                    <constraint firstItem="5A1-pk-xAP" firstAttribute="leading" secondItem="EuF-es-3tv" secondAttribute="trailing" id="YS2-ud-Ebe"/>
+                                    <constraint firstItem="7R3-bC-guZ" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="cEf-Ms-Kti"/>
+                                    <constraint firstAttribute="bottom" secondItem="EuF-es-3tv" secondAttribute="bottom" id="g2K-m9-ONA"/>
+                                    <constraint firstItem="EuF-es-3tv" firstAttribute="width" secondItem="5A1-pk-xAP" secondAttribute="width" id="jux-Xf-KEy"/>
+                                    <constraint firstItem="7R3-bC-guZ" firstAttribute="leading" secondItem="5A1-pk-xAP" secondAttribute="trailing" constant="8" symbolic="YES" id="l8r-2o-cPU"/>
+                                    <constraint firstItem="9kI-f4-jJ7" firstAttribute="top" secondItem="7R3-bC-guZ" secondAttribute="bottom" constant="8" symbolic="YES" id="nDZ-1E-DMn"/>
+                                    <constraint firstItem="EuF-es-3tv" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="oWx-CJ-56U"/>
+                                    <constraint firstAttribute="height" constant="180" id="qne-8D-nmf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-yL-H5N" userLabel="VoiceCommandsLabel">
+                                <rect key="frame" x="16" y="208" width="568" height="101.5"/>
+                                <string key="text">▸ "Going to Bed"	Stops Playing the current scene
+▸ "Wake me up"	Plays an Wake up message and starts playing the scene
+▸ "Stop Playing"	Stops Playing the current scene
+▸ "Pause Playing"	Pauses the current scene</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-f4-jJ7">
-                                <rect key="frame" x="453" y="149" width="51" height="31"/>
-                                <connections>
-                                    <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="efQ-IQ-7L0"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PyI-eV-RhX" firstAttribute="leading" secondItem="tKp-v2-yg4" secondAttribute="trailing" constant="8" symbolic="YES" id="30f-rs-f8H"/>
+                            <constraint firstItem="PyI-eV-RhX" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="bottom" constant="8" symbolic="YES" id="3oX-a7-u8S"/>
+                            <constraint firstItem="Mb2-yo-Xdn" firstAttribute="top" secondItem="PyI-eV-RhX" secondAttribute="bottom" constant="8" symbolic="YES" id="4la-NH-Ktq"/>
+                            <constraint firstItem="bvs-Nd-O5N" firstAttribute="top" secondItem="7sZ-7t-oRY" secondAttribute="bottom" constant="8" symbolic="YES" id="EeI-ik-2fr"/>
+                            <constraint firstItem="l7O-si-bLI" firstAttribute="top" secondItem="bvs-Nd-O5N" secondAttribute="bottom" constant="8" symbolic="YES" id="Fgy-40-IEZ"/>
+                            <constraint firstItem="tak-VK-ndB" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="OYa-10-7Zq"/>
+                            <constraint firstItem="pnN-yL-H5N" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="RMC-Hm-MJ2"/>
+                            <constraint firstItem="pnN-yL-H5N" firstAttribute="top" secondItem="l7O-si-bLI" secondAttribute="bottom" constant="8" symbolic="YES" id="WVX-Lv-X8G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tak-VK-ndB" secondAttribute="trailing" id="YCj-ua-f5n"/>
+                            <constraint firstItem="PyI-eV-RhX" firstAttribute="centerY" secondItem="tKp-v2-yg4" secondAttribute="centerY" id="bMu-uU-V87"/>
+                            <constraint firstItem="tKp-v2-yg4" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="cwQ-PW-OPG"/>
+                            <constraint firstItem="l7O-si-bLI" firstAttribute="centerX" secondItem="bvs-Nd-O5N" secondAttribute="centerX" id="izf-lH-apu"/>
+                            <constraint firstAttribute="centerX" secondItem="bvs-Nd-O5N" secondAttribute="centerX" id="qYb-Lw-05L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pnN-yL-H5N" secondAttribute="trailing" id="xn0-rS-Y6p"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="APT-r0-uEr"/>
                     <connections>
                         <outlet property="debugSwitch" destination="PyI-eV-RhX" id="uG4-OR-WpP"/>
-                        <outlet property="pauseScene1Btn" destination="5NY-cz-ZUM" id="9Hm-uc-uRx"/>
-                        <outlet property="pauseScene2Btn" destination="0FG-kl-ePy" id="8Im-jc-4qE"/>
-                        <outlet property="startScene1Btn" destination="g0z-ia-2eY" id="IFQ-yL-lKT"/>
-                        <outlet property="startScene2Btn" destination="bR6-5K-8XE" id="Hio-eC-to7"/>
-                        <outlet property="stopScene1Btn" destination="M1e-0o-Hi1" id="tko-EI-r1P"/>
-                        <outlet property="stopScene2Btn" destination="B9x-0A-vls" id="vxs-qk-l43"/>
-                        <outlet property="useBeaconlabel" destination="cM6-Xp-iAr" id="iWf-Mj-Ycf"/>
+                        <outlet property="debugView" destination="tak-VK-ndB" id="FgL-8C-Qfj"/>
                         <outlet property="useBeaconsSwitch" destination="9kI-f4-jJ7" id="98J-4d-YXd"/>
+                        <outlet property="voiceCommandsLabel" destination="pnN-yL-H5N" id="3Jq-xf-MLt"/>
                         <outlet property="wemoSwitch" destination="7R3-bC-guZ" id="v5l-aj-zBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-rR-UHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="1049"/>
+            <point key="canvasLocation" x="486" y="1048"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
