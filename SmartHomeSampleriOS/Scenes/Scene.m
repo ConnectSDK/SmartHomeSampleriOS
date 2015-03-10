@@ -422,7 +422,7 @@
     for (NSString *lightId in bulbs) {
         PHLight *light = [self.hueBridge.lights objectForKey:lightId];
             PHLightState *lightState = [[PHLightState alloc] init];
-        [lightState setCt:[NSNumber numberWithInt:153]];
+            [lightState setCt:[NSNumber numberWithInt:153]];
             [lightState setOnBool:on];
             [lightState setBrightness:[NSNumber numberWithInt:self.currentVolume*254]];
             // Send lightstate to light
@@ -455,9 +455,13 @@
         CGPoint xy = [PHUtilities calculateXY:imageColor forModel:light.modelNumber];
         [lightState setX:[NSNumber numberWithFloat:xy.x]];
         [lightState setY:[NSNumber numberWithFloat:xy.y]];
-        [lightState setBrightness:[NSNumber numberWithInt:self.currentVolume*254*2]];
+        NSNumber *brightness = [NSNumber numberWithInt:self.currentVolume*10*254];
+        if([brightness intValue]>254){
+            brightness = @(254);
+        }
+        [lightState setBrightness:brightness];
         [lightState setOnBool:YES];
-        
+        NSLog(@"Value %@, Brightness %@",brightness,lightState.brightness);
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
             if (errors != nil) {
