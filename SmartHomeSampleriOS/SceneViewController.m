@@ -280,6 +280,7 @@
 
     // scene 1
     [self startBeaconTriggerWithUUIDString:[self.scene1.configuration valueForKeyPath:@"iBeacon.uuid"]
+                 triggeringOnNearProximity:YES
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 0) {
@@ -296,6 +297,7 @@
     
     // scene 2
     [self startBeaconTriggerWithUUIDString:[self.scene2.configuration valueForKeyPath:@"iBeacon.uuid"]
+                 triggeringOnNearProximity:NO
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 1) {
@@ -322,12 +324,14 @@
 }
 
 - (void)startBeaconTriggerWithUUIDString:(NSString *)uuidString
+               triggeringOnNearProximity:(BOOL)triggerOnNearProximity
                          andTriggerBlock:(TriggerBlock)block {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
     BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
                                                                           major:@0
                                                                           minor:@0
                                                                 andTriggerBlock:block];
+    beaconTrigger.triggerOnNearProximity = triggerOnNearProximity;
     [beaconTrigger start];
     
     self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
@@ -340,10 +344,10 @@
 }
 
 - (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender {
-    const BOOL newTriggerOnNear = sender.on;
+/*    const BOOL newTriggerOnNear = sender.on;
     for (BeaconTrigger *trigger in self.beaconTriggers) {
         trigger.triggerOnNearProximity = newTriggerOnNear;
-    }
+    }*/
 }
 
 # pragma mark - DiscoveryManagerDelegate methods

@@ -164,13 +164,13 @@
                                             <constraint firstItem="0FG-kl-ePy" firstAttribute="top" secondItem="bR6-5K-8XE" secondAttribute="bottom" constant="8" symbolic="YES" id="k9W-XQ-QW3"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger on &quot;near&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNP-XE-cZp">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger on &quot;near&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNP-XE-cZp">
                                         <rect key="frame" x="168" y="110" width="130" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-Lg-IX0" userLabel="TriggerOnNearSwitch">
+                                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-Lg-IX0" userLabel="TriggerOnNearSwitch">
                                         <rect key="frame" x="306" y="105" width="51" height="31"/>
                                         <connections>
                                             <action selector="triggerOnNearSwitchChanged:" destination="JV5-S1-fAV" eventType="valueChanged" id="dzf-S6-9cw"/>
