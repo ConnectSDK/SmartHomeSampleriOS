@@ -39,7 +39,6 @@
 
     self.currentSceneIndex = -1;
     [self debugSwitchPressed:self.debugSwitch];
-    [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
@@ -73,6 +72,7 @@
     
     self.speechKit = [[NuanceSpeech alloc] init];
     [self.speechKit configure];
+    [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
 }
 
 - (void)didReceiveMemoryWarning {
