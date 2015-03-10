@@ -10,8 +10,8 @@
 
 /**
  * A trigger that monitors an iBeacon region with the specified parameters. The
- * trigger's block is called when a beacon is "near" or "immediate". It's an
- * immutable class.
+ * trigger's block is called when a beacon is ("immediate") or
+ * ("near" or "immediate") – see @c triggerOnNearProximity property.
  *
  * @see @c CLBeaconRegion class
  */
@@ -31,6 +31,10 @@ typedef void(^TriggerBlock)();
 
 /// The block to trigger when a matching beacon is found. Cannot be @c nil.
 @property (nonatomic, copy, readonly) TriggerBlock triggerBlock;
+
+/// Defines whether to trigger the callback on "near" proximity, in addition to
+/// "immediate". Default is @c YES.
+@property (nonatomic, assign) BOOL triggerOnNearProximity;
 
 
 /// Designated initializer. The @c uuid and @c block parameters must not be

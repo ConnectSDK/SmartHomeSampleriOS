@@ -13,10 +13,14 @@
 - (IBAction)actionSwitchTheSwitch:(id)sender;
 
 @property(nonatomic,weak)IBOutlet UISwitch *useBeaconsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *triggerBeaconsOnNearSwitch;
+
 @property(nonatomic,weak)IBOutlet UIButton *wemoSwitch;
 @property(nonatomic,weak)IBOutlet UISwitch *debugSwitch;
 
 @property (weak, nonatomic) IBOutlet UIView *debugView;
 @property (weak, nonatomic) IBOutlet UILabel *voiceCommandsLabel;
+
+- (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender;
 
 @end

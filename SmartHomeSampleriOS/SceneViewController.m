@@ -74,7 +74,9 @@
     
     self.speechKit = [[NuanceSpeech alloc] init];
     [self.speechKit configure];
+
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
+    [self triggerOnNearSwitchChanged:self.triggerBeaconsOnNearSwitch];
 }
 
 - (void)setupUI {
@@ -260,6 +262,7 @@
 -(IBAction)useBeaconsSwitchPressed:(id)sender{
     if (self.useBeaconsSwitch.on) {
         [self setupBeaconTriggers];
+        [self triggerOnNearSwitchChanged:self.triggerBeaconsOnNearSwitch];
     } else {
         [self stopBeaconTriggering];
     }
@@ -318,16 +321,13 @@
 - (void)stopBeaconTriggering {
     self.beaconTriggers = nil;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender {
+    const BOOL newTriggerOnNear = sender.on;
+    for (BeaconTrigger *trigger in self.beaconTriggers) {
+        trigger.triggerOnNearProximity = newTriggerOnNear;
+    }
 }
-*/
-
 
 # pragma mark - DiscoveryManagerDelegate methods
 

@@ -60,6 +60,7 @@
         _major = major;
         _minor = minor;
         _triggerBlock = [block copy];
+        _triggerOnNearProximity = YES;
 
         _isStarted = NO;
         _beaconRegion = nil;
@@ -141,7 +142,7 @@ monitoringDidFailForRegion:(CLRegion *)region
             self.latestProximity = CLProximityImmediate;
             self.triggerBlock();
         }
-    } else if (hasNearBeacons) {
+    } else if (self.triggerOnNearProximity && hasNearBeacons) {
         if (self.latestProximity != CLProximityNear) {
             self.latestProximity = CLProximityNear;
             self.triggerBlock();
