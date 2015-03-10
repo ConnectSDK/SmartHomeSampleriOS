@@ -200,13 +200,13 @@
     NSString *newURL = [NSString stringWithFormat:@"%@%@",self.webServer.serverURL,@"translate.mp3"];
     
     if(self.currentSceneIndex == 0){
-        [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:1.0];
-        [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
-        [self performSelector:@selector(startScene1:) withObject:nil afterDelay:15.0];
+        [self.scene1 stopSceneWithTransition];
+        [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:25.0];
+        [self.scene1 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:35.0];
     }else{
-        [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:1.0];
-        [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:5.0];
-        [self performSelector:@selector(startScene2:) withObject:nil afterDelay:15.0];
+        [self.scene2 stopSceneWithTransition];
+        [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:25.0];
+        [self.scene2 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:35.0];
     }
 }
 
@@ -218,7 +218,7 @@
         }
         
         
-        if([responseString isEqualToString:@"Wake me up"]){
+        if([responseString isEqualToString:@"Wake me up"] ||[responseString isEqualToString:@"Going to sleep"] ){
             [self wakeMeUp:nil];
         }
         

@@ -39,4 +39,6 @@ typedef enum {
 -(void)playMessageFromURL:(NSString *)urlString;
 
 -(void)setSceneInfoWithMediaIndex:(NSInteger)index andPosition:(CGFloat)position;
+-(void)stopSceneWithTransition;
+-(void)startSceneWithTransition;
 @end

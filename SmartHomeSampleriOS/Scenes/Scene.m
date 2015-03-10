@@ -27,7 +27,9 @@
 @property (nonatomic, strong) SLColorArt *imageColorArt;
 @property (nonatomic, strong) WinkAPI *wink;
 @property (nonatomic, strong) NuanceSpeech *speechKit;
-
+@property (nonatomic, strong) NSTimer *volumeTimer;
+@property (nonatomic, strong) NSTimer *lightTimer;
+@property (nonatomic) CGFloat lastKnownVolume;
 @end
 
 @implementation Scene
@@ -104,6 +106,7 @@
 }
 
 -(void)startSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
+    [self switchOnLights:YES];
     [self playMediaWithSuccess:success andFailure:failure];
     [self turnOnSwitch];
     self.currentState = Running;
@@ -123,7 +126,7 @@
 
 -(void)stopSceneWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     [self stopMedia];
-    [self switchOffLights];
+    [self switchOnLights:NO];
     [self turnOffSwitch];
     [self  switchOnoffWinkBulb:0 brightness:1];
     self.currentState = Stopped;
@@ -133,6 +136,45 @@
     }
 }
 
+-(void)stopSceneWithTransition{
+    self.lastKnownVolume = self.currentVolume;
+    [self  switchOnoffWinkBulb:1 brightness:0.5];
+    NSNumber *volumeUp = [NSNumber numberWithBool:NO];
+    self.volumeTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setVolumeTransition:) userInfo:volumeUp repeats:YES];
+}
+
+-(void)startSceneWithTransition{
+    [self setVolume:0];
+    [self setSceneInfoWithMediaIndex:2 andPosition:0];
+    [self startSceneWithSuccess:nil andFailure:nil];
+    NSNumber *volumeUp = [NSNumber numberWithBool:YES];
+    self.volumeTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setVolumeTransition:) userInfo:volumeUp repeats:YES];
+    
+}
+
+-(void)setVolumeTransition:(NSTimer*)timer{
+    
+    BOOL volumeUp = [[timer userInfo] boolValue];
+    if(volumeUp){
+        if(self.currentVolume == self.lastKnownVolume){
+            [self.volumeTimer invalidate];
+            
+        }else{
+            [self setVolume:self.currentVolume+0.01];
+            return;
+        }
+    }else{
+        if(self.currentVolume > 0){
+            [self setVolume:self.currentVolume-0.01];
+        }else{
+            [self.volumeTimer invalidate];
+            [self stopSceneWithSuccess:nil andFailure:nil];
+            return;
+        }
+        
+        
+    }
+}
 
 -(void)playMediaWithSuccess:(SuccessBlock)success andFailure:(FailureBlock)failure{
     
@@ -306,8 +348,25 @@
     }];
 }
 
+-(void)setVolume:(CGFloat)volume{
+    [self.connectableDevice.volumeControl setVolume:volume success:^(id responseObject) {
+        NSLog(@"Volume set");
+        [self.connectableDevice.volumeControl getVolumeWithSuccess:^(float volume)
+         {
+             NSLog(@"Vol rolled back to actual %f", volume);
+             
+             self.currentVolume = volume;
+         } failure:^(NSError *getVolumeError)
+         {
+             NSLog(@"Vol serious error: %@", getVolumeError.localizedDescription);
+         }];
+    } failure:^(NSError *error) {
+        NSLog(@"Volume set failure");
+    }];
+}
+
 -(void)playMessageFromURL:(NSString *)urlString{
-    
+    [self setVolume:self.lastKnownVolume];
     NSURL *mediaURL =  [NSURL URLWithString:urlString];
     NSURL *iconURL = nil;
     NSString *title = @"Wake up message";
@@ -324,7 +383,8 @@
     [self.connectableDevice.mediaPlayer playMediaWithMediaInfo:mediaInfo shouldLoop:shouldLoop
                                                       success:^(MediaLaunchObject *launchObject) {
                                                           NSLog(@"Play wake up message success");
-                                                          
+                                                          [self switchOnLights:YES];
+                                                          [self  switchOnoffWinkBulb:1 brightness:0.5];
                                                       } failure:^(NSError *error) {
                                                           NSLog(@"display audio failure: %@", error.localizedDescription);
                                                       }];
@@ -354,7 +414,7 @@
 
 #pragma mark - Philips Hue
 
--(void)switchOffLights{
+-(void)switchOnLights:(BOOL)on{
     
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     NSDictionary *bulbs =  [self.configuration valueForKey:@"hueBulb"];
@@ -362,7 +422,9 @@
     for (NSString *lightId in bulbs) {
         PHLight *light = [self.hueBridge.lights objectForKey:lightId];
             PHLightState *lightState = [[PHLightState alloc] init];
-            [lightState setOnBool:NO];
+        [lightState setCt:[NSNumber numberWithInt:153]];
+            [lightState setOnBool:on];
+            [lightState setBrightness:[NSNumber numberWithInt:self.currentVolume*254]];
             // Send lightstate to light
             [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
                 if (errors != nil) {
@@ -395,6 +457,7 @@
         [lightState setY:[NSNumber numberWithFloat:xy.y]];
         [lightState setBrightness:[NSNumber numberWithInt:self.currentVolume*254*2]];
         [lightState setOnBool:YES];
+        
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
             if (errors != nil) {
