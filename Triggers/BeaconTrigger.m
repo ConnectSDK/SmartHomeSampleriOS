@@ -76,8 +76,12 @@
         [self requestLocationAuthorization];
     }
 
-    self.isStarted = YES;
-    [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    if ([[self.locationManager class] isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
+        self.isStarted = YES;
+        [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    } else {
+        NSLog(@"Beacons monitoring is not available");
+    }
 }
 
 - (void)stop {
@@ -94,6 +98,12 @@
 didStartMonitoringForRegion:(CLRegion *)region {
     // source: http://stackoverflow.com/a/20795852/635603
     [manager requestStateForRegion:region];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+monitoringDidFailForRegion:(CLRegion *)region
+              withError:(NSError *)error {
+    NSLog(@"Failed to monitor region %@: %@", region, error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -118,9 +128,14 @@ didStartMonitoringForRegion:(CLRegion *)region {
 }
 
 - (void)locationManager:(CLLocationManager *)manager
-monitoringDidFailForRegion:(CLRegion *)region
-              withError:(NSError *)error {
-    NSLog(@"Failed to monitor region: %@", error);
+          didExitRegion:(CLRegion *)region {
+    if (![self isValidRegion:region]) {
+        return;
+    }
+
+    if ([[self.locationManager class] isRangingAvailable]) {
+        [self.locationManager stopRangingBeaconsInRegion:(CLBeaconRegion *)region];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -191,15 +206,15 @@ monitoringDidFailForRegion:(CLRegion *)region
 
         _beaconRegion.notifyEntryStateOnDisplay = YES;
         _beaconRegion.notifyOnEntry = YES;
-        _beaconRegion.notifyOnExit = NO;
+        _beaconRegion.notifyOnExit = YES;
     }
     return _beaconRegion;
 }
 
 - (NSString *)beaconIdentifier {
-    // the object's address "%p" is used here to add uniqueness to the beacon
-    // identifier, in case if another trigger is created with the same UUID
-    return [NSString stringWithFormat:@"%@-%p", self.proximityUUID, self];
+    // returning the same beacon id for the same beacon region ensures that no
+    // duplicates are monitored for the same UUID
+    return self.proximityUUID.UUIDString;
 }
 
 - (BOOL)isValidRegion:(CLRegion *)region {
