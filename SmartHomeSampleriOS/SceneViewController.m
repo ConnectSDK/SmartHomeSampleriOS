@@ -265,6 +265,7 @@
         [self triggerOnNearSwitchChanged:self.triggerBeaconsOnNearSwitch];
     } else {
         [self stopBeaconTriggering];
+        self.currentSceneIndex = -1;
     }
 }
 
