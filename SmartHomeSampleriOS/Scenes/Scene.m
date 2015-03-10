@@ -161,11 +161,13 @@
             
         }else{
             [self setVolume:self.currentVolume+0.01];
+            [self playLights];
             return;
         }
     }else{
         if(self.currentVolume > 0){
             [self setVolume:self.currentVolume-0.01];
+            [self playLights];
         }else{
             [self.volumeTimer invalidate];
             [self stopSceneWithSuccess:nil andFailure:nil];
