@@ -13,6 +13,8 @@
 #import "UIImage+ColorArt.h"
 #import "Secret.h"
 
+#define minVolume 0.15
+
 @interface Scene()
 
 @property (nonatomic, strong) NSTimer *mediaInfoTimer;
@@ -79,6 +81,9 @@
     switch (state) {
         case Running:
             if(self.currentState == Stopped ){
+                if(self.currentVolume < minVolume){
+                    [self setVolume:minVolume];
+                }
                 [self startSceneWithSuccess:success andFailure:failure];
             }
             else
@@ -145,6 +150,9 @@
 
 -(void)startSceneWithTransition{
     [self setVolume:0];
+    if(self.lastKnownVolume < minVolume){
+        self.lastKnownVolume = minVolume;
+    }
     [self setSceneInfoWithMediaIndex:2 andPosition:0];
     [self startSceneWithSuccess:nil andFailure:nil];
     NSNumber *volumeUp = [NSNumber numberWithBool:YES];
