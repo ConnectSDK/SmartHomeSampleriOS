@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *debugView;
 @property (weak, nonatomic) IBOutlet UILabel *voiceCommandsLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *sceneInfoLabel;
+
 - (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender;
 
 @end

@@ -53,23 +53,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tak-VK-ndB" userLabel="DebugView">
                                 <rect key="frame" x="16" y="373" width="568" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-bC-guZ">
-                                        <rect key="frame" x="168" y="0.0" width="167" height="30"/>
-                                        <state key="normal" title="Switch the wemo switch">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionSwitchTheSwitch:" destination="JV5-S1-fAV" eventType="touchUpInside" id="u0B-Oo-28U"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Beacons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-Xp-iAr">
-                                        <rect key="frame" x="168" y="43" width="102.5" height="20.5"/>
+                                        <rect key="frame" x="168" y="71" width="102.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-f4-jJ7" userLabel="UseBeaconsSwitch">
-                                        <rect key="frame" x="278" y="38" width="51" height="31"/>
+                                        <rect key="frame" x="278" y="66" width="51" height="31"/>
                                         <connections>
                                             <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="efQ-IQ-7L0"/>
                                         </connections>
@@ -174,34 +165,51 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger on &quot;near&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNP-XE-cZp">
-                                        <rect key="frame" x="168" y="82" width="130" height="20.5"/>
+                                        <rect key="frame" x="168" y="110" width="130" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-Lg-IX0" userLabel="TriggerOnNearSwitch">
-                                        <rect key="frame" x="306" y="77" width="51" height="31"/>
+                                        <rect key="frame" x="306" y="105" width="51" height="31"/>
                                         <connections>
                                             <action selector="triggerOnNearSwitchChanged:" destination="JV5-S1-fAV" eventType="valueChanged" id="dzf-S6-9cw"/>
                                         </connections>
                                     </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-7l-Khx" userLabel="SceneInfo">
+                                        <rect key="frame" x="168" y="0.0" width="49" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-bC-guZ">
+                                        <rect key="frame" x="168" y="28" width="167" height="30"/>
+                                        <state key="normal" title="Switch the wemo switch">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionSwitchTheSwitch:" destination="JV5-S1-fAV" eventType="touchUpInside" id="u0B-Oo-28U"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xJh-Lg-IX0" firstAttribute="leading" secondItem="HNP-XE-cZp" secondAttribute="trailing" constant="8" symbolic="YES" id="3KW-2W-J5L"/>
                                     <constraint firstItem="xJh-Lg-IX0" firstAttribute="centerY" secondItem="HNP-XE-cZp" secondAttribute="centerY" id="42n-DI-MBv"/>
                                     <constraint firstItem="HNP-XE-cZp" firstAttribute="leading" secondItem="cM6-Xp-iAr" secondAttribute="leading" id="7dD-iV-V0c"/>
                                     <constraint firstItem="5A1-pk-xAP" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="Bpq-il-tuh"/>
+                                    <constraint firstItem="7R3-bC-guZ" firstAttribute="top" secondItem="cpK-7l-Khx" secondAttribute="bottom" constant="8" symbolic="YES" id="CZp-vm-fNv"/>
                                     <constraint firstItem="cM6-Xp-iAr" firstAttribute="leading" secondItem="7R3-bC-guZ" secondAttribute="leading" id="Cys-97-iU1"/>
                                     <constraint firstItem="EuF-es-3tv" firstAttribute="leading" secondItem="tak-VK-ndB" secondAttribute="leading" id="GeZ-MI-Xlf"/>
+                                    <constraint firstItem="cpK-7l-Khx" firstAttribute="leading" secondItem="7R3-bC-guZ" secondAttribute="leading" id="Kry-k6-yAH"/>
                                     <constraint firstItem="cM6-Xp-iAr" firstAttribute="centerY" secondItem="9kI-f4-jJ7" secondAttribute="centerY" id="NQH-ZJ-9cd"/>
+                                    <constraint firstItem="cpK-7l-Khx" firstAttribute="leading" secondItem="5A1-pk-xAP" secondAttribute="trailing" constant="8" symbolic="YES" id="Nws-nO-OHU"/>
                                     <constraint firstItem="xJh-Lg-IX0" firstAttribute="top" secondItem="9kI-f4-jJ7" secondAttribute="bottom" constant="8" symbolic="YES" id="OUZ-xf-mbo"/>
+                                    <constraint firstItem="cpK-7l-Khx" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="S24-hD-khN"/>
                                     <constraint firstItem="9kI-f4-jJ7" firstAttribute="leading" secondItem="cM6-Xp-iAr" secondAttribute="trailing" constant="8" symbolic="YES" id="VMW-yh-guq"/>
                                     <constraint firstAttribute="bottom" secondItem="5A1-pk-xAP" secondAttribute="bottom" id="XYA-YW-xDK"/>
                                     <constraint firstItem="5A1-pk-xAP" firstAttribute="leading" secondItem="EuF-es-3tv" secondAttribute="trailing" id="YS2-ud-Ebe"/>
-                                    <constraint firstItem="7R3-bC-guZ" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="cEf-Ms-Kti"/>
                                     <constraint firstAttribute="bottom" secondItem="EuF-es-3tv" secondAttribute="bottom" id="g2K-m9-ONA"/>
                                     <constraint firstItem="EuF-es-3tv" firstAttribute="width" secondItem="5A1-pk-xAP" secondAttribute="width" id="jux-Xf-KEy"/>
-                                    <constraint firstItem="7R3-bC-guZ" firstAttribute="leading" secondItem="5A1-pk-xAP" secondAttribute="trailing" constant="8" symbolic="YES" id="l8r-2o-cPU"/>
                                     <constraint firstItem="9kI-f4-jJ7" firstAttribute="top" secondItem="7R3-bC-guZ" secondAttribute="bottom" constant="8" symbolic="YES" id="nDZ-1E-DMn"/>
                                     <constraint firstItem="EuF-es-3tv" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="oWx-CJ-56U"/>
                                     <constraint firstAttribute="height" constant="180" id="qne-8D-nmf"/>
@@ -239,6 +247,7 @@
                     <connections>
                         <outlet property="debugSwitch" destination="PyI-eV-RhX" id="uG4-OR-WpP"/>
                         <outlet property="debugView" destination="tak-VK-ndB" id="FgL-8C-Qfj"/>
+                        <outlet property="sceneInfoLabel" destination="cpK-7l-Khx" id="YXx-aO-pkd"/>
                         <outlet property="triggerBeaconsOnNearSwitch" destination="xJh-Lg-IX0" id="fEa-Xc-g9D"/>
                         <outlet property="useBeaconsSwitch" destination="9kI-f4-jJ7" id="98J-4d-YXd"/>
                         <outlet property="voiceCommandsLabel" destination="pnN-yL-H5N" id="3Jq-xf-MLt"/>

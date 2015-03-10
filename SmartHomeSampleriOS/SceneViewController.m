@@ -276,7 +276,7 @@
 
 - (void)setupBeaconTriggers {
     __weak typeof(self) wself = self;
-    
+
     // scene 1
     [self startBeaconTriggerWithUUIDString:[self.scene1.configuration valueForKeyPath:@"iBeacon.uuid"]
                            andTriggerBlock:^{
@@ -287,6 +287,9 @@
                                    [self performSelector:@selector(stopScene2:) withObject:nil afterDelay:2.0];
                                    self.scene1.sceneInfo = self.scene2.sceneInfo;
                                    [self startScene1:nil];
+
+                                   sself.sceneInfoLabel.text = [NSString stringWithFormat:@"S1 active @ %@",
+                                                                [self.timeFormatter stringFromDate:[NSDate date]]];
                                }
                            }];
     
@@ -300,8 +303,21 @@
                                     [self performSelector:@selector(stopScene1:) withObject:nil afterDelay:2.0];
                                    self.scene2.sceneInfo = self.scene1.sceneInfo;
                                    [self startScene2:nil];
+
+                                   sself.sceneInfoLabel.text = [NSString stringWithFormat:@"S2 active @ %@",
+                                                                [self.timeFormatter stringFromDate:[NSDate date]]];
                                }
                            }];
+}
+
+- (NSDateFormatter *)timeFormatter {
+    static NSDateFormatter *timeFormatter = nil;
+    if (!timeFormatter) {
+        timeFormatter = [NSDateFormatter new];
+        timeFormatter.dateFormat = @"HH:mm:ss";
+    }
+
+    return timeFormatter;
 }
 
 - (void)startBeaconTriggerWithUUIDString:(NSString *)uuidString
