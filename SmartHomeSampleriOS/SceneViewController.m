@@ -201,12 +201,12 @@
     
     if(self.currentSceneIndex == 0){
         [self.scene1 stopSceneWithTransition];
-        [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:25.0];
-        [self.scene1 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:35.0];
+        [self.scene1 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:20.0];
+        [self.scene1 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:30.0];
     }else{
         [self.scene2 stopSceneWithTransition];
-        [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:25.0];
-        [self.scene2 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:35.0];
+        [self.scene2 performSelector:@selector(playMessageFromURL:) withObject:newURL afterDelay:20.0];
+        [self.scene2 performSelector:@selector(startSceneWithTransition) withObject:nil afterDelay:30.0];
     }
 }
 
