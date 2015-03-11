@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *voiceCommandsLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *sceneInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commandLabel;
 
 - (IBAction)triggerScene1OnNearSwitchChanged:(UISwitch *)sender;
 - (IBAction)triggerScene2OnNearSwitchChanged:(UISwitch *)sender;

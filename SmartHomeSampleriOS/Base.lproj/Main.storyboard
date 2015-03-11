@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -255,13 +255,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You said:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-Hc-dOa">
+                                <rect key="frame" x="16" y="316" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PyI-eV-RhX" firstAttribute="leading" secondItem="tKp-v2-yg4" secondAttribute="trailing" constant="8" symbolic="YES" id="30f-rs-f8H"/>
                             <constraint firstItem="PyI-eV-RhX" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="bottom" constant="8" symbolic="YES" id="3oX-a7-u8S"/>
                             <constraint firstItem="Mb2-yo-Xdn" firstAttribute="top" secondItem="PyI-eV-RhX" secondAttribute="bottom" constant="8" symbolic="YES" id="4la-NH-Ktq"/>
+                            <constraint firstItem="3sf-Hc-dOa" firstAttribute="trailing" secondItem="pnN-yL-H5N" secondAttribute="trailing" id="8ao-m6-fLW"/>
                             <constraint firstItem="bvs-Nd-O5N" firstAttribute="top" secondItem="7sZ-7t-oRY" secondAttribute="bottom" constant="8" symbolic="YES" id="EeI-ik-2fr"/>
+                            <constraint firstItem="3sf-Hc-dOa" firstAttribute="leading" secondItem="pnN-yL-H5N" secondAttribute="leading" id="Eme-7b-fNh"/>
                             <constraint firstItem="l7O-si-bLI" firstAttribute="top" secondItem="bvs-Nd-O5N" secondAttribute="bottom" constant="8" symbolic="YES" id="Fgy-40-IEZ"/>
                             <constraint firstItem="tak-VK-ndB" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="OYa-10-7Zq"/>
                             <constraint firstItem="pnN-yL-H5N" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="RMC-Hm-MJ2"/>
@@ -269,6 +277,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="tak-VK-ndB" secondAttribute="trailing" id="YCj-ua-f5n"/>
                             <constraint firstItem="PyI-eV-RhX" firstAttribute="centerY" secondItem="tKp-v2-yg4" secondAttribute="centerY" id="bMu-uU-V87"/>
                             <constraint firstItem="tKp-v2-yg4" firstAttribute="leading" secondItem="30k-k2-llg" secondAttribute="leadingMargin" id="cwQ-PW-OPG"/>
+                            <constraint firstItem="3sf-Hc-dOa" firstAttribute="top" secondItem="pnN-yL-H5N" secondAttribute="bottom" constant="6.5" id="gwh-2R-G5I"/>
                             <constraint firstItem="l7O-si-bLI" firstAttribute="centerX" secondItem="bvs-Nd-O5N" secondAttribute="centerX" id="izf-lH-apu"/>
                             <constraint firstAttribute="centerX" secondItem="bvs-Nd-O5N" secondAttribute="centerX" id="qYb-Lw-05L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pnN-yL-H5N" secondAttribute="trailing" id="xn0-rS-Y6p"/>
@@ -276,6 +285,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="APT-r0-uEr"/>
                     <connections>
+                        <outlet property="commandLabel" destination="3sf-Hc-dOa" id="SZA-55-sIi"/>
                         <outlet property="debugSwitch" destination="PyI-eV-RhX" id="uG4-OR-WpP"/>
                         <outlet property="debugView" destination="tak-VK-ndB" id="FgL-8C-Qfj"/>
                         <outlet property="sceneInfoLabel" destination="cpK-7l-Khx" id="YXx-aO-pkd"/>
@@ -288,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-rR-UHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="1048.5"/>
+            <point key="canvasLocation" x="486" y="1048"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

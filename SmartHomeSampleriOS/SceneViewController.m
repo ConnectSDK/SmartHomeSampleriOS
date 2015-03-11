@@ -174,7 +174,7 @@
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *currentTime = [dateFormatter stringFromDate:today];
     
-    NSString *message = [NSString stringWithFormat:@"Its time to wake up. The time is %@",currentTime];
+    NSString *message = [NSString stringWithFormat:@"Good morning John.The time is %@ ,its currently clear outside",currentTime];
     
     NSString *urlString = [NSString stringWithFormat:@"http://www.translate.google.com/translate_tts?tl=en&q=%@",[message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
@@ -216,6 +216,7 @@
             NSLog(@"Error in Speech Recognition");
         }
         
+        self.commandLabel.text = [NSString stringWithFormat:@"You said: %@",responseString];
         
         if([responseString isEqualToString:@"Wake me up"] ||[responseString isEqualToString:@"Going to sleep"] ){
             [self wakeMeUp:nil];
