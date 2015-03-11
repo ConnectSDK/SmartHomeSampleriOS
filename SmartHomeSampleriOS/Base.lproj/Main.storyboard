@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -177,7 +177,7 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-7l-Khx" userLabel="SceneInfo">
-                                        <rect key="frame" x="168" y="0.0" width="49" height="20.5"/>
+                                        <rect key="frame" x="168" y="0.0" width="48.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -215,10 +215,10 @@
                                     <constraint firstAttribute="height" constant="180" id="qne-8D-nmf"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-yL-H5N" userLabel="VoiceCommandsLabel">
-                                <rect key="frame" x="16" y="208" width="568" height="101.5"/>
-                                <string key="text">▸ "Going to Bed"	Stops Playing the current scene
-▸ "Wake me up"	Plays an Wake up message and starts playing the scene
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-yL-H5N" userLabel="VoiceCommandsLabel">
+                                <rect key="frame" x="16" y="208" width="599" height="101.5"/>
+                                <string key="text">▸ "Going to Sleep"	Plays an Wake up message and starts playing the scene
+▸ "Start Playing"	Starts Playing the current scene
 ▸ "Stop Playing"	Stops Playing the current scene
 ▸ "Pause Playing"	Pauses the current scene</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
