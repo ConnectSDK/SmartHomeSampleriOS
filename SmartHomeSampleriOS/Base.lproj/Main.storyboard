@@ -47,7 +47,6 @@
                                 <rect key="frame" x="75" y="561" width="51" height="31"/>
                                 <connections>
                                     <action selector="debugSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="C1x-mR-lEX"/>
-                                    <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="bOM-6x-Pt2"/>
                                 </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tak-VK-ndB" userLabel="DebugView">
