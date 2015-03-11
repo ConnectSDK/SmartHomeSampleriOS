@@ -13,7 +13,7 @@
 #import "UIImage+ColorArt.h"
 #import "Secret.h"
 
-#define minVolume 0.15
+#define minVolume 0.11
 
 @interface Scene()
 
