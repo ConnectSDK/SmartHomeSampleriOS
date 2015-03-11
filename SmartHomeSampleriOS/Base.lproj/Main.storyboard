@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DQa-S3-F5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -54,22 +54,22 @@
                                 <rect key="frame" x="16" y="373" width="568" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Beacons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-Xp-iAr">
-                                        <rect key="frame" x="168" y="71" width="102.5" height="20.5"/>
+                                        <rect key="frame" x="188" y="71" width="102.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-f4-jJ7" userLabel="UseBeaconsSwitch">
-                                        <rect key="frame" x="278" y="66" width="51" height="31"/>
+                                        <rect key="frame" x="298" y="66" width="51" height="31"/>
                                         <connections>
                                             <action selector="useBeaconsSwitchPressed:" destination="JV5-S1-fAV" eventType="valueChanged" id="efQ-IQ-7L0"/>
                                         </connections>
                                     </switch>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuF-es-3tv" userLabel="Scene1Controls">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="180"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-ia-2eY">
-                                                <rect key="frame" x="23" y="28" width="33" height="30"/>
+                                                <rect key="frame" x="28" y="28" width="33" height="30"/>
                                                 <state key="normal" title="Start">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -78,7 +78,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-cz-ZUM">
-                                                <rect key="frame" x="18" y="66" width="43" height="30"/>
+                                                <rect key="frame" x="23" y="66" width="43" height="30"/>
                                                 <state key="normal" title="Pause">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -87,7 +87,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-0o-Hi1">
-                                                <rect key="frame" x="23" y="104" width="33" height="30"/>
+                                                <rect key="frame" x="28" y="104" width="33" height="30"/>
                                                 <state key="normal" title="Stop">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -96,7 +96,25 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-YZ-YxV">
-                                                <rect key="frame" x="8" y="0.0" width="63" height="20.5"/>
+                                                <rect key="frame" x="13" y="0.0" width="63" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-DI-fPW">
+                                                <rect key="frame" x="20" y="142" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="triggerScene1OnNearSwitchChanged:" destination="JV5-S1-fAV" eventType="valueChanged" id="god-kc-9iv"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-B2-j26">
+                                                <rect key="frame" x="71" y="147" width="12.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-LS-wMp">
+                                                <rect key="frame" x="15" y="147" width="4.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -106,20 +124,26 @@
                                         <constraints>
                                             <constraint firstItem="g0z-ia-2eY" firstAttribute="top" secondItem="w7S-YZ-YxV" secondAttribute="bottom" constant="8" symbolic="YES" id="1Ei-jK-GB2"/>
                                             <constraint firstItem="5NY-cz-ZUM" firstAttribute="top" secondItem="g0z-ia-2eY" secondAttribute="bottom" constant="8" id="2of-lz-ANW"/>
+                                            <constraint firstItem="cS4-DI-fPW" firstAttribute="centerY" secondItem="aIA-LS-wMp" secondAttribute="centerY" id="8pP-2q-bSJ"/>
+                                            <constraint firstItem="M1e-0o-Hi1" firstAttribute="centerX" secondItem="cS4-DI-fPW" secondAttribute="centerX" id="AnX-GH-T7A"/>
                                             <constraint firstAttribute="centerX" secondItem="g0z-ia-2eY" secondAttribute="centerX" id="Gcu-VL-A1H"/>
                                             <constraint firstAttribute="centerX" secondItem="M1e-0o-Hi1" secondAttribute="centerX" id="Ksq-CC-Ypq"/>
-                                            <constraint firstAttribute="width" constant="80" id="Mpa-PY-pYa"/>
+                                            <constraint firstAttribute="width" constant="90" id="Mpa-PY-pYa"/>
+                                            <constraint firstItem="cS4-DI-fPW" firstAttribute="top" secondItem="M1e-0o-Hi1" secondAttribute="bottom" constant="8" symbolic="YES" id="Qd9-kq-c69"/>
                                             <constraint firstAttribute="centerX" secondItem="5NY-cz-ZUM" secondAttribute="centerX" id="cQ8-8N-Igz"/>
                                             <constraint firstAttribute="centerX" secondItem="w7S-YZ-YxV" secondAttribute="centerX" id="dSz-7p-oFD"/>
+                                            <constraint firstItem="5qy-B2-j26" firstAttribute="centerY" secondItem="cS4-DI-fPW" secondAttribute="centerY" id="eYe-qZ-AT3"/>
                                             <constraint firstItem="M1e-0o-Hi1" firstAttribute="top" secondItem="5NY-cz-ZUM" secondAttribute="bottom" constant="8" id="fz7-5w-HAo"/>
                                             <constraint firstItem="w7S-YZ-YxV" firstAttribute="top" secondItem="EuF-es-3tv" secondAttribute="top" id="gGV-wz-Vzm"/>
+                                            <constraint firstItem="cS4-DI-fPW" firstAttribute="leading" secondItem="aIA-LS-wMp" secondAttribute="trailing" id="hY5-bg-FLr"/>
+                                            <constraint firstItem="5qy-B2-j26" firstAttribute="leading" secondItem="cS4-DI-fPW" secondAttribute="trailing" constant="2" id="yyL-ZE-Tri"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-pk-xAP" userLabel="Scene2Controls">
-                                        <rect key="frame" x="80" y="0.0" width="80" height="180"/>
+                                        <rect key="frame" x="90" y="0.0" width="90" height="180"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-5K-8XE">
-                                                <rect key="frame" x="23" y="28" width="33" height="30"/>
+                                                <rect key="frame" x="28" y="28" width="33" height="30"/>
                                                 <state key="normal" title="Start">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -128,7 +152,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-kl-ePy">
-                                                <rect key="frame" x="18" y="66" width="43" height="30"/>
+                                                <rect key="frame" x="23" y="66" width="43" height="30"/>
                                                 <state key="normal" title="Pause">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -137,13 +161,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTC-De-6AD">
-                                                <rect key="frame" x="8" y="0.0" width="63" height="20.5"/>
+                                                <rect key="frame" x="13" y="0.0" width="63" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9x-0A-vls">
-                                                <rect key="frame" x="23" y="104" width="33" height="30"/>
+                                                <rect key="frame" x="28" y="104" width="33" height="30"/>
                                                 <state key="normal" title="Stop">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -151,39 +175,51 @@
                                                     <action selector="stopScene2:" destination="JV5-S1-fAV" eventType="touchUpInside" id="Mlc-Br-R2Z"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qig-WT-Jef">
+                                                <rect key="frame" x="71" y="147" width="12.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-yo-9qZ">
+                                                <rect key="frame" x="15" y="147" width="4.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gd3-6N-TTs">
+                                                <rect key="frame" x="20" y="142" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="triggerScene2OnNearSwitchChanged:" destination="JV5-S1-fAV" eventType="valueChanged" id="C7r-mn-tTK"/>
+                                                </connections>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="B9x-0A-vls" secondAttribute="centerX" id="1F5-ji-yY7"/>
                                             <constraint firstItem="bR6-5K-8XE" firstAttribute="top" secondItem="GTC-De-6AD" secondAttribute="bottom" constant="8" symbolic="YES" id="3lY-w5-OT7"/>
+                                            <constraint firstItem="Qig-WT-Jef" firstAttribute="leading" secondItem="gd3-6N-TTs" secondAttribute="trailing" constant="2" id="AzZ-Y2-WoA"/>
                                             <constraint firstAttribute="centerX" secondItem="bR6-5K-8XE" secondAttribute="centerX" id="EGf-EN-FRE"/>
                                             <constraint firstAttribute="centerX" secondItem="GTC-De-6AD" secondAttribute="centerX" id="FwI-aW-8ty"/>
+                                            <constraint firstItem="gd3-6N-TTs" firstAttribute="leading" secondItem="aG2-yo-9qZ" secondAttribute="trailing" id="ay6-uR-OxO"/>
+                                            <constraint firstItem="gd3-6N-TTs" firstAttribute="centerY" secondItem="aG2-yo-9qZ" secondAttribute="centerY" id="bR1-az-YSl"/>
                                             <constraint firstItem="B9x-0A-vls" firstAttribute="top" secondItem="0FG-kl-ePy" secondAttribute="bottom" constant="8" symbolic="YES" id="cJx-w5-VPC"/>
                                             <constraint firstItem="GTC-De-6AD" firstAttribute="top" secondItem="5A1-pk-xAP" secondAttribute="top" id="fLW-MT-qvJ"/>
                                             <constraint firstAttribute="centerX" secondItem="0FG-kl-ePy" secondAttribute="centerX" id="fci-RK-hc6"/>
+                                            <constraint firstItem="gd3-6N-TTs" firstAttribute="centerX" secondItem="B9x-0A-vls" secondAttribute="centerX" id="goT-a2-wSl"/>
                                             <constraint firstItem="0FG-kl-ePy" firstAttribute="top" secondItem="bR6-5K-8XE" secondAttribute="bottom" constant="8" symbolic="YES" id="k9W-XQ-QW3"/>
+                                            <constraint firstItem="Qig-WT-Jef" firstAttribute="centerY" secondItem="gd3-6N-TTs" secondAttribute="centerY" id="vcc-2e-9cs"/>
+                                            <constraint firstItem="gd3-6N-TTs" firstAttribute="top" secondItem="B9x-0A-vls" secondAttribute="bottom" constant="8" symbolic="YES" id="xgP-Ue-U4B"/>
                                         </constraints>
                                     </view>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger on &quot;near&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNP-XE-cZp">
-                                        <rect key="frame" x="168" y="110" width="130" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-Lg-IX0" userLabel="TriggerOnNearSwitch">
-                                        <rect key="frame" x="306" y="105" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="triggerOnNearSwitchChanged:" destination="JV5-S1-fAV" eventType="valueChanged" id="dzf-S6-9cw"/>
-                                        </connections>
-                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-7l-Khx" userLabel="SceneInfo">
-                                        <rect key="frame" x="168" y="0.0" width="48.5" height="20.5"/>
+                                        <rect key="frame" x="188" y="0.0" width="48.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-bC-guZ">
-                                        <rect key="frame" x="168" y="28" width="167" height="30"/>
+                                        <rect key="frame" x="188" y="28" width="167" height="30"/>
                                         <state key="normal" title="Switch the wemo switch">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -193,9 +229,6 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xJh-Lg-IX0" firstAttribute="leading" secondItem="HNP-XE-cZp" secondAttribute="trailing" constant="8" symbolic="YES" id="3KW-2W-J5L"/>
-                                    <constraint firstItem="xJh-Lg-IX0" firstAttribute="centerY" secondItem="HNP-XE-cZp" secondAttribute="centerY" id="42n-DI-MBv"/>
-                                    <constraint firstItem="HNP-XE-cZp" firstAttribute="leading" secondItem="cM6-Xp-iAr" secondAttribute="leading" id="7dD-iV-V0c"/>
                                     <constraint firstItem="5A1-pk-xAP" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="Bpq-il-tuh"/>
                                     <constraint firstItem="7R3-bC-guZ" firstAttribute="top" secondItem="cpK-7l-Khx" secondAttribute="bottom" constant="8" symbolic="YES" id="CZp-vm-fNv"/>
                                     <constraint firstItem="cM6-Xp-iAr" firstAttribute="leading" secondItem="7R3-bC-guZ" secondAttribute="leading" id="Cys-97-iU1"/>
@@ -203,7 +236,6 @@
                                     <constraint firstItem="cpK-7l-Khx" firstAttribute="leading" secondItem="7R3-bC-guZ" secondAttribute="leading" id="Kry-k6-yAH"/>
                                     <constraint firstItem="cM6-Xp-iAr" firstAttribute="centerY" secondItem="9kI-f4-jJ7" secondAttribute="centerY" id="NQH-ZJ-9cd"/>
                                     <constraint firstItem="cpK-7l-Khx" firstAttribute="leading" secondItem="5A1-pk-xAP" secondAttribute="trailing" constant="8" symbolic="YES" id="Nws-nO-OHU"/>
-                                    <constraint firstItem="xJh-Lg-IX0" firstAttribute="top" secondItem="9kI-f4-jJ7" secondAttribute="bottom" constant="8" symbolic="YES" id="OUZ-xf-mbo"/>
                                     <constraint firstItem="cpK-7l-Khx" firstAttribute="top" secondItem="tak-VK-ndB" secondAttribute="top" id="S24-hD-khN"/>
                                     <constraint firstItem="9kI-f4-jJ7" firstAttribute="leading" secondItem="cM6-Xp-iAr" secondAttribute="trailing" constant="8" symbolic="YES" id="VMW-yh-guq"/>
                                     <constraint firstAttribute="bottom" secondItem="5A1-pk-xAP" secondAttribute="bottom" id="XYA-YW-xDK"/>
@@ -215,8 +247,8 @@
                                     <constraint firstAttribute="height" constant="180" id="qne-8D-nmf"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-yL-H5N" userLabel="VoiceCommandsLabel">
-                                <rect key="frame" x="16" y="208" width="599" height="101.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-yL-H5N" userLabel="VoiceCommandsLabel">
+                                <rect key="frame" x="16" y="208" width="568" height="101.5"/>
                                 <string key="text">▸ "Going to Sleep"	Plays an Wake up message and starts playing the scene
 ▸ "Start Playing"	Starts Playing the current scene
 ▸ "Stop Playing"	Stops Playing the current scene
@@ -248,7 +280,8 @@
                         <outlet property="debugSwitch" destination="PyI-eV-RhX" id="uG4-OR-WpP"/>
                         <outlet property="debugView" destination="tak-VK-ndB" id="FgL-8C-Qfj"/>
                         <outlet property="sceneInfoLabel" destination="cpK-7l-Khx" id="YXx-aO-pkd"/>
-                        <outlet property="triggerBeaconsOnNearSwitch" destination="xJh-Lg-IX0" id="fEa-Xc-g9D"/>
+                        <outlet property="triggerScene1OnNearSwitch" destination="cS4-DI-fPW" id="51n-m4-NUs"/>
+                        <outlet property="triggerScene2OnNearSwitch" destination="gd3-6N-TTs" id="wWC-iH-b8k"/>
                         <outlet property="useBeaconsSwitch" destination="9kI-f4-jJ7" id="98J-4d-YXd"/>
                         <outlet property="voiceCommandsLabel" destination="pnN-yL-H5N" id="3Jq-xf-MLt"/>
                         <outlet property="wemoSwitch" destination="7R3-bC-guZ" id="v5l-aj-zBT"/>
@@ -256,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-rR-UHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="1048"/>
+            <point key="canvasLocation" x="486" y="1048.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

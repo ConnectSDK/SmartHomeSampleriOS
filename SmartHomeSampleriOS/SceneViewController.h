@@ -13,7 +13,8 @@
 - (IBAction)actionSwitchTheSwitch:(id)sender;
 
 @property(nonatomic,weak)IBOutlet UISwitch *useBeaconsSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *triggerBeaconsOnNearSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *triggerScene1OnNearSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *triggerScene2OnNearSwitch;
 
 @property(nonatomic,weak)IBOutlet UIButton *wemoSwitch;
 @property(nonatomic,weak)IBOutlet UISwitch *debugSwitch;
@@ -23,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sceneInfoLabel;
 
-- (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender;
+- (IBAction)triggerScene1OnNearSwitchChanged:(UISwitch *)sender;
+- (IBAction)triggerScene2OnNearSwitchChanged:(UISwitch *)sender;
 
 @end

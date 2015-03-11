@@ -76,7 +76,6 @@
     [self.speechKit configure];
 
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
-    [self triggerOnNearSwitchChanged:self.triggerBeaconsOnNearSwitch];
 }
 
 - (void)setupUI {
@@ -262,7 +261,6 @@
 -(IBAction)useBeaconsSwitchPressed:(id)sender{
     if (self.useBeaconsSwitch.on) {
         [self setupBeaconTriggers];
-        [self triggerOnNearSwitchChanged:self.triggerBeaconsOnNearSwitch];
     } else {
         [self stopBeaconTriggering];
         self.currentSceneIndex = -1;
@@ -280,7 +278,7 @@
 
     // scene 1
     [self startBeaconTriggerWithUUIDString:[self.scene1.configuration valueForKeyPath:@"iBeacon.uuid"]
-                 triggeringOnNearProximity:YES
+                 triggeringOnNearProximity:self.triggerScene1OnNearSwitch.on
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 0) {
@@ -297,7 +295,7 @@
     
     // scene 2
     [self startBeaconTriggerWithUUIDString:[self.scene2.configuration valueForKeyPath:@"iBeacon.uuid"]
-                 triggeringOnNearProximity:NO
+                 triggeringOnNearProximity:self.triggerScene2OnNearSwitch.on
                            andTriggerBlock:^{
                                typeof(self) sself = wself;
                                if (sself.currentSceneIndex != 1) {
@@ -343,11 +341,16 @@
     self.beaconTriggers = nil;
 }
 
-- (IBAction)triggerOnNearSwitchChanged:(UISwitch *)sender {
-/*    const BOOL newTriggerOnNear = sender.on;
-    for (BeaconTrigger *trigger in self.beaconTriggers) {
-        trigger.triggerOnNearProximity = newTriggerOnNear;
-    }*/
+- (IBAction)triggerScene1OnNearSwitchChanged:(UISwitch *)sender {
+    if (self.beaconTriggers.count >= 2) {
+        [self.beaconTriggers[0] setTriggerOnNearProximity:sender.on];
+    }
+}
+
+- (IBAction)triggerScene2OnNearSwitchChanged:(UISwitch *)sender {
+    if (self.beaconTriggers.count >= 2) {
+        [self.beaconTriggers[1] setTriggerOnNearProximity:sender.on];
+    }
 }
 
 # pragma mark - DiscoveryManagerDelegate methods
