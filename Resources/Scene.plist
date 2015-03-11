@@ -6,15 +6,15 @@
 	<array>
 		<dict>
 			<key>description</key>
-			<string>Song Description</string>
+			<string>Kenny Beltrey</string>
 			<key>title</key>
-			<string>Title</string>
+			<string>Hydrate</string>
 			<key>iconURL</key>
 			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image1.jpg</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/Turn_down_for_what.mp3</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/hydrate.mp3</string>
 		</dict>
 		<dict>
 			<key>description</key>
