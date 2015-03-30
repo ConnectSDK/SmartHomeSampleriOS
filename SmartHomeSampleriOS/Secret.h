@@ -21,6 +21,8 @@
 @import Foundation;
 
 extern NSString *const kNuanceAppId;
+extern NSString *const kNuanceAppHost;
+extern long const kNuanceAppPort;
 extern const unsigned char SpeechKitApplicationKey[];
 
 extern NSString *const kWinkUsername;

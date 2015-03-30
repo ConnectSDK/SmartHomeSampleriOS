@@ -26,6 +26,8 @@
 // git config filter.mask_secrets.clean ./mask_secrets.sed
 
 NSString *const kNuanceAppId = @"CHANGE_ME";
+NSString *const kNuanceAppHost = @"CHANGE_ME";
+long const kNuanceAppPort = 443;
 const unsigned char SpeechKitApplicationKey[] = {0x00, 0xff /*CHANGE_ME*/};
 
 NSString *const kWinkUsername = @"CHANGE_ME";
