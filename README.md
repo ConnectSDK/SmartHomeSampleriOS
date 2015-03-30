@@ -1,24 +1,27 @@
-# SmartHomeSampleriOS
+# SmartHomeSampleriOS app
 
-##About
-For information on Connect SDK, visit [connectsdk.com/discover](http://connectsdk.com/discover/).
+## About
 
-##Setup
+For information on Connect SDK, visit [http://connectsdk.com/discover/](http://connectsdk.com/discover/).
 
-###Dependencies
-- Add ConnectSDK for iOS to the project. See [link](https://github.com/ConnectSDK/Connect-SDK-iOS) for setup instructions
-- Add Belkin [Wemo SDK](http://developers.belkin.com/wemo/sdk). Run wemo_duplicate_symbols_fix.sh in WeMoSDK folder
-- Add [Philips Hue SDK](http://www.developers.meethue.com/documentation/apple-sdk). Add [Lumberjack](https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/tree/master/Lumberjack) which is required by Philips Hue.
-- Add Nuance Dragon mobile [Speechkit framework](http://nuancemobiledeveloper.com/public/index.php). Update the variables kNuanceAppId, kNuanceAppHost, kNuanceAppHost and SpeechKitApplicationKey in Secret.m with the values provided . For instructions for SpeechKit setup see [this](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html)
-- Update Wink access parameters kWinkUsername, kWinkPassword, kWinkClientId, kWinkClientSecret
+## Setup
 
-##See also
-For more information on using Connect SDK, we recommend you review the following material.
+### Dependencies
+
+- Add ConnectSDK for iOS to the project. See [link](https://github.com/ConnectSDK/Connect-SDK-iOS) for setup instructions.
+- Add Belkin [Wemo SDK](http://developers.belkin.com/wemo/sdk). Run `wemo_duplicate_symbols_fix.sh` in `WeMoSDK/` directory.
+- Add [Philips Hue SDK](http://www.developers.meethue.com/documentation/apple-sdk). Add [Cocoa Lumberjack](https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/tree/master/Lumberjack), which is required by Philips Hue.
+- Add Nuance Dragon mobile [SpeechKit framework](http://nuancemobiledeveloper.com/public/index.php). Update the variables `kNuanceAppId`, `kNuanceAppHost`, `kNuanceAppHost` and `SpeechKitApplicationKey` in `Secret.m` with the values provided. For instructions for SpeechKit setup see [this document](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html).
+- Update the following access parameters to [Wink API](http://docs.wink.apiary.io): `kWinkUsername`, `kWinkPassword`, `kWinkClientId`, and `kWinkClientSecret`.
+
+## See also
+
+For more information on using Connect SDK, we recommend you review the following material:
 
 - [Connect SDK iOS Docs](http://connectsdk.com/docs/ios)
 - [API Documentation](http://connectsdk.com/apis/ios/)
 
-##License
+## License
 
 Copyright 2015 LG Electronics
 
