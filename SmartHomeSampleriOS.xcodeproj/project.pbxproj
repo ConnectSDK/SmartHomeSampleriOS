@@ -470,6 +470,7 @@
 				0F79F5D61A8AE05200A6FB2E /* Sources */,
 				0F79F5D71A8AE05200A6FB2E /* Frameworks */,
 				0F79F5D81A8AE05200A6FB2E /* Resources */,
+				44D8F7C91AB0D5EB00559FE3 /* Check if secrets are filled */,
 			);
 			buildRules = (
 			);
@@ -589,6 +590,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44D8F7C91AB0D5EB00559FE3 /* Check if secrets are filled */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check if secrets are filled";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"$SRCROOT/SmartHomeSampleriOS/Secret.m\"\nLINES=$( grep CHANGE_ME \"$FILE\" )\nif [[ $? == 0 ]]; then\n    echo \"error: Please fill in the secrets in $FILE:\"\n    echo \"$LINES\"\n    exit 1\nfi\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F79F5D61A8AE05200A6FB2E /* Sources */ = {
