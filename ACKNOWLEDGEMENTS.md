@@ -1,7 +1,10 @@
 # Acknowledgements
 Sample Smart home application uses the following frameworks and libraries
 
-## [Dragon Mobile SDK](http://nuancemobiledeveloper.com/public/index.php)
+## [Belkin Wemo SDK](http://developers.belkin.com/wemo/sdk)
+Please read ["Terms and conditions of use"](http://developers.belkin.com/wemo/sdk)
+
+## [Nuance Dragon Mobile SDK](http://nuancemobiledeveloper.com/public/index.php)
 
 NUANCE MOBILE DEVELOPER PROGRAM LICENSE AND HOSTING SERVICES AGREEMENT
 THIS NUANCE MOBILE DEVELOPERS PROGRAM LICENSE AND HOSTING SERVICES AGREEMENT ("AGREEMENT") IS BETWEEN
@@ -14,12 +17,14 @@ ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT, UNDERSTAND THEM, CONSENT TO B
 BECOMING A PARTY TO, THIS AGREEMENT, AND (2) REPRESENT THAT YOU ARE NOT A NUANCE COMPETITOR, AS DEFINED
 BELOW.  IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT OR IF YOU ARE A NUANCE COMPETITOR,
 CLICK THE "DO NOT ACCEPT" BUTTON AND DO NOT DOWNLOAD THE SOFTWARE OR USE THE SERVICE.
+
 For purposes of this agreement, "Nuance Competitor" means any person or entity that is involved in the
 research or development of (1) speech recognition software, (2) voice authentication software, (3)
 text-to-speech software, (4) text input software, or (5) paper-to-digital imaging solutions.
 If you are a Nuance Competitor, you may not download or use this Software or Documentation. You hereby
 represent that as of the time you accept this Agreement and thereafter continuously during the Term of
 this Agreement, that you are not a Nuance Competitor.
+
 1.      DESCRIPTION.  The Nuance Mobile Developers Program consist of certain client software
 applications identified below ("Software"), that permits you to access certain server applications
 installed at a Nuance facility (the "Service").  In order to access the Service, you must install the
@@ -43,14 +48,17 @@ the original copyright, patent, and other intellectual property notices and mark
 provide Nuance with reasonable feedback on the results of the evaluation, including recommendations for
 improvements and specific reasons for commercialization decisions with respect to the Service.
 3. LICENSEE OBLIGATIONS.
-(a) You agree to set a unique, Nuance provided, AppID and 64byte AppKey in the client software before
+
+  (a) You agree to set a unique, Nuance provided, AppID and 64byte AppKey in the client software before
 connection to the system is accepted. Nuance reserves the right to deny connection attempts to the
 service where Licensee does not set the correct reporting identifiers.
-(b) You further agree not to reuse dictation credentials among your end users. Every end user must be
+
+  (b) You further agree not to reuse dictation credentials among your end users. Every end user must be
 identified with a unique identifier in the connection attempt to the Service. Unique identifiers allow
 the Service to adapt over time to the end users speaking pattern.
 4. RESTRICTIONS; PROPRIETARY RIGHTS.
-4.1. RESTRICTIONS. To the extent permitted by applicable law, you may not: (a) submit any automated or
+
+  4.1. RESTRICTIONS. To the extent permitted by applicable law, you may not: (a) submit any automated or
 recorded queries to the Service unless otherwise approved in writing by Nuance; (b) use the Software or
 Service for blogging or any other similar web journaling; (c) use the Software or Service for
 commercial use; (d) access the Service with software or means other than the Software; (e) copy,
@@ -62,7 +70,8 @@ discover any source code, underlying ideas, or algorithms, of the Software or Se
 remove any proprietary notices, labels or marks from the Software; or (j) use the Software and/or
 Service for purposes of comparison with or benchmarking against products or services made available by
 third parties.
-4.2. PROPRIETARY RIGHTS.  Nuance and its licensors own all right, title, and interest in the Software
+
+  4.2. PROPRIETARY RIGHTS.  Nuance and its licensors own all right, title, and interest in the Software
 and Service including, but not limited to, all patent, copyright, trade secret, trademark and other
 intellectual property rights associated therewith, and all title to such rights shall remain solely in
 Nuance and/or its licensors. Unauthorized copying of the Software or Service, or failure to comply with
@@ -71,11 +80,13 @@ hereunder, and will make available to Nuance all legal and equitable remedies fo
 Notwithstanding anything to the contrary, you acknowledge and agree that Nuance shall not be restricted
 from creating, or having created on its behalf, any application, or feature or function contained
 therein, regardless of the similarity to your application, feature or function contained therein.
-4.3. THIRD PARTY SOFTWARE.  The Software and Services may contain a copy of the Speex codec in
+
+  4.3. THIRD PARTY SOFTWARE.  The Software and Services may contain a copy of the Speex codec in
 executable form. You acknowledge that use of the Speex codec is subject to the conditions and
 disclaimers listed in revised BSD license found at http://www.xiph.org/licenses/bsd/speex/.   ©
 2002-2003, Jean-Marc Valin/Xiph.Org Foundation.
-4.4. SPEECH DATA; PERSONAL DATA.
+
+  4.4. SPEECH DATA; PERSONAL DATA.
 (a) As part of the Service, Nuance collects and uses Speech Data, as defined below, to tune, enhance
 and improve the speech recognition and other components of the Service, and other Nuance services and
 products.  In accepting the terms and conditions of this Agreement, you acknowledge, consent and agree
@@ -190,33 +201,6 @@ right or provision of this Agreement shall not constitute a waiver of such right
 Agreement.
 Copyright © 2010 Nuance Communications, Inc.  All rights reserved.
 
-## [Panic Inc. ColorArt](https://github.com/panicinc/ColorArt)
-
-Copyright (C) 2012 Panic Inc. Code by Wade Cosgrove. All rights reserved.
-
-Redistribution and use, with or without modification, are permitted
-provided that the following conditions are met:
-
-- Redistributions must reproduce the above copyright notice, this list of
-  conditions and the following disclaimer in the documentation and/or
-  other materials provided with the distribution.
-
-- Neither the name of Panic Inc nor the names of its contributors may be
-  used to endorse or promote works derived from this software without
-  specific prior written permission from Panic Inc.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL PANIC INC BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-
 ## [OCMock 3.x](http://ocmock.org/)
 Copyright (c) 2004-2014 Erik Doernenburg and contributors
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use these files except in compliance with the License. You may obtain a copy of the License at
@@ -224,7 +208,7 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## [OpenSSL](https://www.openssl.org/)
-
+```
 LICENSE ISSUES
   ==============
 
@@ -350,6 +334,33 @@ Original SSLeay License
  * copied and put under another distribution licence
  * [including the GNU Public Licence.]
  */
+```
+## [Panic Inc. ColorArt](https://github.com/panicinc/ColorArt)
+
+Copyright (C) 2012 Panic Inc. Code by Wade Cosgrove. All rights reserved.
+
+Redistribution and use, with or without modification, are permitted
+provided that the following conditions are met:
+
+- Redistributions must reproduce the above copyright notice, this list of
+  conditions and the following disclaimer in the documentation and/or
+  other materials provided with the distribution.
+
+- Neither the name of Panic Inc nor the names of its contributors may be
+  used to endorse or promote works derived from this software without
+  specific prior written permission from Panic Inc.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL PANIC INC BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
 
 ## [Philips Hue](http://www.developers.meethue.com/documentation/apple-sdk)
 Philips releases this SDK with friendly house rules. These friendly house rules are part of a legal framework; this to protect both the developers and hue. The friendly house rules cover e.g. the naming of Philips and of hue which can only be used as a reference (a true and honest statement) and not as a an brand or identity. Also covered is that the hue SDK and API can only be used for hue and for no other application or product. Very common sense friendly rules that are common practice amongst leading brands that have released their SDK’s.
@@ -365,6 +376,3 @@ Redistributions in binary form must reproduce the above copyright notice, this l
 Neither the name of Philips Electronics N.V. , nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOTLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FORA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER ORCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, ORPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OFLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDINGNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THISSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-## [Wemo SDK](http://developers.belkin.com/wemo/sdk)
-Please read ["Terms and conditions of use"](http://developers.belkin.com/wemo/sdk)
