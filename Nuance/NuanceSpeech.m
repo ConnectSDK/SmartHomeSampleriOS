@@ -35,7 +35,7 @@
 - (void)configure {
     [SpeechKit setupWithID:kNuanceAppId
                       host:kNuanceAppHost
-                      port:kNuanceAppHost
+                      port:kNuanceAppPort
                     useSSL:YES
                   delegate:nil];
     
