@@ -1,12 +1,15 @@
-# Acknowledgements
-Sample Smart home application uses the following frameworks and libraries
+# Acknowledgments
+
+Sample Smart Home application uses the following frameworks and libraries:
 
 ## [Belkin Wemo SDK](http://developers.belkin.com/wemo/sdk)
+
 Please read ["Terms and conditions of use"](http://developers.belkin.com/wemo/sdk)
 
 ## [Nuance Dragon Mobile SDK](http://nuancemobiledeveloper.com/public/index.php)
 
 NUANCE MOBILE DEVELOPER PROGRAM LICENSE AND HOSTING SERVICES AGREEMENT
+
 THIS NUANCE MOBILE DEVELOPERS PROGRAM LICENSE AND HOSTING SERVICES AGREEMENT ("AGREEMENT") IS BETWEEN
 YOU AND NUANCE COMMUNICATIONS, INC., ("NUANCE").  IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF
 A COMPANY OR OTHER ENTITY, YOU REPRESENT THAT YOU ARE THE EMPLOYEE OR AGENT OF SUCH COMPANY (OR OTHER
@@ -25,29 +28,38 @@ If you are a Nuance Competitor, you may not download or use this Software or Doc
 represent that as of the time you accept this Agreement and thereafter continuously during the Term of
 this Agreement, that you are not a Nuance Competitor.
 
-1.      DESCRIPTION.  The Nuance Mobile Developers Program consist of certain client software
+1.&nbsp; DESCRIPTION.  The Nuance Mobile Developers Program consist of certain client software
 applications identified below ("Software"), that permits you to access certain server applications
 installed at a Nuance facility (the "Service").  In order to access the Service, you must install the
 Software, which is downloaded to your product ("Product").  For the purposes of this Agreement, a
 "Product" shall mean a single (as applicable): mobile device, personal computer, server or an embedded
 automotive hardware platform, that permits access to the Service by one individual person or machine at
 a time.
+
 Software: Dragon Mobile SDK
+
 Service: Server-based short message dictation, freeform websearch, and text to speech applications
 supporting languages as stated at http://dragonmobile.nuancemobiledeveloper.com/faq.php
-2.      LICENSE GRANT.  Subject to the terms of this Agreement, Nuance grants you a personal,
+
+2.&nbsp; LICENSE GRANT.  Subject to the terms of this Agreement, Nuance grants you a personal,
 revocable, non-exclusive, non-transferable right to use the Software to develop one or more
 applications to install on a Product and to access the Service via the Product, subject to the
 following limitations:
+
 (a) to no more than one (1) concurrent connection;
+
 (b) to connections from no more than 3 unique devices per day;
+
 (c) to daily volume not to exceed 100 transactions per day; and
+
 (d) to a ninety (90) day term from your acceptance of this Agreement (the "Term");
+
 You may make a copy of the Software for internal back-up purposes only, provided that such copy bears
 the original copyright, patent, and other intellectual property notices and markings.  You agree to
 provide Nuance with reasonable feedback on the results of the evaluation, including recommendations for
 improvements and specific reasons for commercialization decisions with respect to the Service.
-3. LICENSEE OBLIGATIONS.
+
+3.&nbsp; LICENSEE OBLIGATIONS.
 
   (a) You agree to set a unique, Nuance provided, AppID and 64byte AppKey in the client software before
 connection to the system is accepted. Nuance reserves the right to deny connection attempts to the
@@ -56,7 +68,8 @@ service where Licensee does not set the correct reporting identifiers.
   (b) You further agree not to reuse dictation credentials among your end users. Every end user must be
 identified with a unique identifier in the connection attempt to the Service. Unique identifiers allow
 the Service to adapt over time to the end users speaking pattern.
-4. RESTRICTIONS; PROPRIETARY RIGHTS.
+
+4.&nbsp; RESTRICTIONS; PROPRIETARY RIGHTS.
 
   4.1. RESTRICTIONS. To the extent permitted by applicable law, you may not: (a) submit any automated or
 recorded queries to the Service unless otherwise approved in writing by Nuance; (b) use the Software or
@@ -107,7 +120,8 @@ including but not limited to any personal data.
 if so required, to meet legal or regulatory requirements, such as under a court order or to a
 government institution if required or authorized by law, or in the event of a sale, merger or
 acquisition to another entity by Nuance.
-5.  CONFIDENTIAL INFORMATION.  Neither party shall disclose or use the other party's Confidential
+
+5.&nbsp; CONFIDENTIAL INFORMATION.  Neither party shall disclose or use the other party's Confidential
 Information (as defined below) except as provided in this Agreement while this Agreement is in effect
 and for three years following termination or expiration of this Agreement; provided, however, that the
 foregoing restriction shall be perpetual as to all software.  A party may disclose Confidential
@@ -123,74 +137,86 @@ development, and know-how designated as confidential at the time of disclosure; 
 that ought, in good faith, to be treated as confidential given its nature and/or the circumstances of
 its disclosure. "Confidential Information" does not include information that (i) was generally known
 and available in the public domain at the time it was disclosed or subsequently becomes generally known
-￼
 and available in the public domain through no fault of the recipient; (ii) was rightfully known to the
 recipient at the time of disclosure and this can be shown by reasonable evidence; (iii) is disclosed
 with the prior written approval of the disclosing party; (iv) was independently developed by the
 recipient without any use of the Confidential Information of the disclosing party; or (v) becomes known
 to the recipient from a source other than the disclosing party without breach of this Agreement and
 this can be shown by reasonable evidence.
-6. SUPPORT.  To facilitate the process of evaluating and testing of the Software and Service, upon
+
+6.&nbsp; SUPPORT.  To facilitate the process of evaluating and testing of the Software and Service, upon
 Nuance personnel availability, Nuance may provide reasonable support services through email, a support
 forum or other means to Licensee's designated personnel to provide such personnel with clarification of
 functions and features of the Software and Service, integration support, and defect support in
 connection therewith.  Support does not include any customization or professional services, including
 but not limited to grammar development or tuning of applications.
-7.  DISCLAIMER OF WARRANTIES. YOU ACKNOWLEDGE AND AGREE THAT NUANCE IS PROVIDING THE SOFTWARE AND
+
+7.&nbsp; DISCLAIMER OF WARRANTIES. YOU ACKNOWLEDGE AND AGREE THAT NUANCE IS PROVIDING THE SOFTWARE AND
 SERVICE TO YOU SOLELY TO PERMIT YOU TO EVALUATE AND USE THE SOFTWARE AND SERVICE. CONSEQUENTLY, YOU
 AGREE TO TAKE ALL PRECAUTIONS AND SAFEGUARDS NECESSARY TO PROTECT YOUR DATA AND SYSTEMS FROM LOSS OR
 DAMAGE. NUANCE PROVIDES THE SOFTWARE AND SERVICE "AS IS," WITH ALL FAULTS, AND WITHOUT WARRANTY OF ANY
 KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NUANCE SPECIFICALLY DISCLAIMS ANY EXPRESS OR
 IMPLIED WARRANTIES, INCLUDING ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
 NON-INFRINGEMENT.
-8.      LIMITATION OF LIABILITY.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL
+
+8.&nbsp; LIMITATION OF LIABILITY.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL
 NUANCE, ITS OFFICERS, DIRECTORS, AND EMPLOYEES, OR ITS LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 SPECIAL, INCIDENTAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS
 OF PROFITS, LOSS OF DATA, LOSS OF USE, BUSINESS INTERRUPTION, OR COST OF COVER, ARISING FROM THE USE OF
 THE SOFTWARE OR SERVICE, HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES IN ADVANCE.
-9.      TERM; TERMINATION.  This Agreement begins on your acceptance of the terms and conditions of
+
+9.&nbsp; TERM; TERMINATION.  This Agreement begins on your acceptance of the terms and conditions of
 this Agreement and expires upon the expiration of the Term,  unless otherwise terminated herein. Nuance
 may terminate this Agreement, and the license granted hereunder, at any time in its sole discretion,
 with or without cause, by notifying you that the Service has been terminated.  This Agreement shall
 terminate automatically upon the breach of any of its terms and conditions by you.  Upon termination,
 you shall immediately stop use of and shall delete all copies of the Software.
-10.     EXPORT COMPLIANCE.  You represent and warrant that (i) you are not located in a country that is
+
+10.&nbsp; EXPORT COMPLIANCE.  You represent and warrant that (i) you are not located in a country that is
 subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a
 "terrorist supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited
 or restricted parties.
-11.     U.S. GOVERNMENT END USERS.  The Software is a "commercial item," as that term is defined in 48
+
+11.&nbsp; U.S. GOVERNMENT END USERS.  The Software is a "commercial item," as that term is defined in 48
 C.F.R. 2.101, consisting of "commercial computer software" and "commercial computer software
 documentation," as such terms are used in 48 C.F.R. 12.212. Consistent with 48 C.F.R. 12.212 and 48
 C.F.R. 227.7202-1 through 227.7202-4, all U.S. Government end users acquire the Software with only
 those rights set forth herein.
-12.     MARKETING.  During the Term, you acknowledge and agree that Nuance may use your company name in
+
+12.&nbsp; MARKETING.  During the Term, you acknowledge and agree that Nuance may use your company name in
 any publicity, advertising, or similar activity, with regards to your participation in the Nuance
 Mobile Developer Program.  Upon the prior written consent of Nuance, you may use Nuance's name in any
 publicity, advertising, or similar activity, with regards to your participation in the Nuance Mobile
 Developer Program, provided you properly refer to refer to Nuance as: "Nuance Communications, Inc.
 (Nasdaq: NUAN)"
-13.     TRADEMARKS.  Third-party trademarks, trade names, product names and logos (the "Trademarks")
+
+13.&nbsp;  TRADEMARKS.  Third-party trademarks, trade names, product names and logos (the "Trademarks")
 contained in or used by the Software or Service are the trademarks or registered trademarks of their
 respective owners, and the use of such Trademarks shall inure to the benefit of the trademark owner.
 The use of such Trademarks is intended to denote interoperability and does not constitute: (i) an
 affiliation by Nuance with such company, or (ii) an endorsement or approval of such company of Nuance
 and its products or services.
-14.     GOVERNING LAW.  This Agreement and any action related thereto shall be governed, controlled,
-￼
+
+14.&nbsp; GOVERNING LAW.  This Agreement and any action related thereto shall be governed, controlled,
 interpreted and defined by and under the laws specified below, and the parties agree shall be subject
 to the exclusive jurisdiction of the applicable courts specified below:
+
 (a) Your principal place/country location is a country within the European Economic Area (EEA), Europe,
 the Middle East or Africa, or Russia:  governing law and exclusive jurisdiction shall be England.
+
 (b)  Your principal place/country location is a country within the Asia- Pacific Economic Cooperation
 (APEC) (excluding Russia, the United State of America and Canada):  governing law and exclusive
 jurisdiction shall be State of New South Wales, Australia.
+
 (c) All other countries:  governing law shall be Commonwealth of Massachusetts and all applicable
 federal laws of the United States of America, with exclusive jurisdiction in the Commonwealth of
 Massachusetts, United States of America.
+
 This Agreement shall not be governed by the United Nations Convention of Contracts for the
 International Sale of Goods, the application of which is hereby expressly excluded.
-15. GENERAL LEGAL TERMS. You may not assign or otherwise transfer any rights or obligations under this
+
+15.&nbsp; GENERAL LEGAL TERMS. You may not assign or otherwise transfer any rights or obligations under this
 Agreement without Nuance's prior written consent. This Agreement is the entire agreement between Nuance
 and you and supersedes any other communications or advertising with respect to the Software and
 Service.  If any provision of this Agreement is held invalid or unenforceable, such provision shall be
@@ -199,15 +225,21 @@ Agreement shall continue in full force and effect.  The failure of Nuance to exe
 right or provision of this Agreement shall not constitute a waiver of such right or provision. Sections
 4, 5, 7, 8, 9, 14 and 15 of this Agreement shall survive the expiration or termination of this
 Agreement.
+
 Copyright © 2010 Nuance Communications, Inc.  All rights reserved.
 
 ## [OCMock 3.x](http://ocmock.org/)
+
 Copyright (c) 2004-2014 Erik Doernenburg and contributors
+
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use these files except in compliance with the License. You may obtain a copy of the License at
+
    http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## [OpenSSL](https://www.openssl.org/)
+
 ```
 LICENSE ISSUES
   ==============
@@ -335,6 +367,7 @@ Original SSLeay License
  * [including the GNU Public Licence.]
  */
 ```
+
 ## [Panic Inc. ColorArt](https://github.com/panicinc/ColorArt)
 
 Copyright (C) 2012 Panic Inc. Code by Wade Cosgrove. All rights reserved.
@@ -363,15 +396,16 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
 ## [Philips Hue](http://www.developers.meethue.com/documentation/apple-sdk)
+
 Philips releases this SDK with friendly house rules. These friendly house rules are part of a legal framework; this to protect both the developers and hue. The friendly house rules cover e.g. the naming of Philips and of hue which can only be used as a reference (a true and honest statement) and not as a an brand or identity. Also covered is that the hue SDK and API can only be used for hue and for no other application or product. Very common sense friendly rules that are common practice amongst leading brands that have released their SDK’s.
 
 Copyright (c) 2012- 2013, Philips Electronics N.V. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 Neither the name of Philips Electronics N.V. , nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
