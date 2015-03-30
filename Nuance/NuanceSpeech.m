@@ -34,8 +34,8 @@
 
 - (void)configure {
     [SpeechKit setupWithID:kNuanceAppId
-                      host:@"sslsandbox.nmdp.nuancemobility.net"
-                      port:443
+                      host:kNuanceAppHost
+                      port:kNuanceAppHost
                     useSSL:YES
                   delegate:nil];
     
