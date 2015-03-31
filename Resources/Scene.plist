@@ -10,7 +10,7 @@
 			<key>title</key>
 			<string>Hydrate</string>
 			<key>iconURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image1.jpg</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample3.png</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
@@ -18,27 +18,27 @@
 		</dict>
 		<dict>
 			<key>description</key>
-			<string>Akon</string>
+			<string>Franz Schubert</string>
 			<key>title</key>
-			<string>So Blue (Clean)</string>
+			<string>Fantasy in C Major</string>
 			<key>iconURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image2.jpg</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample.png</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/akon-so-blue-clean.mp3</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/fantasy_in_c_major.mp3</string>
 		</dict>
 		<dict>
 			<key>description</key>
-			<string>Lana Del Rey</string>
+			<string>Ludwig van Beethoven</string>
 			<key>title</key>
-			<string>Young and Beautiful</string>
+			<string>Symphony</string>
 			<key>iconURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/image3.jpg</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample2.png</string>
 			<key>mimeType</key>
 			<string>audio/mp3</string>
 			<key>mediaURL</key>
-			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/young_and_beautiful.mp3</string>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/symphony.mp3</string>
 		</dict>
 	</array>
 	<key>Scenes</key>
