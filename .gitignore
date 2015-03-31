@@ -1,2 +1,5 @@
-# do not commit the framework
+# do not commit third-party frameworks and SDKs
 PhilipsHue/HueSDK_iOS.framework
+PhilipsHue/Lumberjack/
+Nuance/SpeechKit.framework
+WeMoSDK/*.[ah]
