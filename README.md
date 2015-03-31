@@ -9,7 +9,7 @@ For information on Connect SDK, visit [http://connectsdk.com/discover/](http://c
 ### Dependencies
 
 - Add ConnectSDK for iOS to the project. See [link](https://github.com/ConnectSDK/Connect-SDK-iOS) for setup instructions.
-- Add Belkin [Wemo SDK](http://developers.belkin.com/wemo/sdk). Run `wemo_duplicate_symbols_fix.sh` in `WeMoSDK/` directory.
+- Add Belkin WeMo SDK. Get it from [http://developers.belkin.com/wemo/sdk](http://developers.belkin.com/wemo/sdk), `unzip` the file you'll receive, and copy the contents of the `-iphoneos/` directory into `WeMoSDK/` directory. To fix the `duplicate symbols` errors during linking, patch one of the libraries by running the `WeMoSDK/wemo_duplicate_symbols_fix.sh` script.
 - Add [Philips Hue SDK](http://www.developers.meethue.com/documentation/apple-sdk). Add [Cocoa Lumberjack](https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/tree/master/Lumberjack), which is required by Philips Hue.
 - Add Nuance Dragon mobile [SpeechKit framework](http://nuancemobiledeveloper.com/public/index.php). Update the variables `kNuanceAppId`, `kNuanceAppHost`, `kNuanceAppHost` and `SpeechKitApplicationKey` in `Secret.m` with the values provided. For instructions for SpeechKit setup see [this document](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html).
 - Update the following access parameters to [Wink API](http://docs.wink.apiary.io): `kWinkUsername`, `kWinkPassword`, `kWinkClientId`, and `kWinkClientSecret`.
