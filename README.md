@@ -9,10 +9,10 @@ For information on Connect SDK, visit [http://connectsdk.com/discover/](http://c
 ### Dependencies
 
 - Add ConnectSDK for iOS to the project. See [link](https://github.com/ConnectSDK/Connect-SDK-iOS) for setup instructions.
-- Add Belkin WeMo SDK. Get it from [http://developers.belkin.com/wemo/sdk](http://developers.belkin.com/wemo/sdk), `unzip` the file you'll receive, and copy the contents of the `-iphoneos/` directory into `WeMoSDK/` directory. To fix the `duplicate symbols` errors during linking, patch one of the libraries by running the `WeMoSDK/wemo_duplicate_symbols_fix.sh` script.
-- Add [Philips Hue SDK](http://www.developers.meethue.com/documentation/apple-sdk). Add [Cocoa Lumberjack](https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/tree/master/Lumberjack), which is required by Philips Hue.
-- Add Nuance Dragon mobile [SpeechKit framework](http://nuancemobiledeveloper.com/public/index.php). Update the variables `kNuanceAppId`, `kNuanceAppHost`, `kNuanceAppHost` and `SpeechKitApplicationKey` in `Secret.m` with the values provided. For instructions for SpeechKit setup see [this document](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html).
-- Update the following access parameters to [Wink API](http://docs.wink.apiary.io): `kWinkUsername`, `kWinkPassword`, `kWinkClientId`, and `kWinkClientSecret`.
+- Belkin WeMo SDK: Get it from [http://developers.belkin.com/wemo/sdk](http://developers.belkin.com/wemo/sdk), `unzip` the file you'll receive, and copy the contents of the `-iphoneos/` directory into `SmartHomeSampleriOS/WeMoSDK/` directory. To fix the `duplicate symbols` errors during linking, patch one of the libraries by running the `SmartHomeSampleriOS/WeMoSDK/wemo_duplicate_symbols_fix.sh` script.
+- [Philips Hue SDK](http://www.developers.meethue.com/documentation/apple-sdk): Place the `HueSDK_iOS.framework` into `SmartHomeSampleriOS/PhilipsHue/` directory. Add [Cocoa Lumberjack](https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/tree/master/Lumberjack), which is required by Philips Hue, into `SmartHomeSampleriOS/PhilipsHue/`.
+- Nuance Dragon mobile [SpeechKit framework](http://nuancemobiledeveloper.com/public/index.php): Place the `SpeechKit.framework` into `SmartHomeSampleriOS/Nuance/` directory. Update the variables `kNuanceAppId`, `kNuanceAppHost`, `kNuanceAppHost` and `SpeechKitApplicationKey` in `SmartHomeSampleriOS/Secret.m` with the values provided. For instructions for SpeechKit setup, see [this document](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html).
+- [Wink API](http://docs.wink.apiary.io): Update the following access parameters: `kWinkUsername`, `kWinkPassword`, `kWinkClientId`, and `kWinkClientSecret` in `SmartHomeSampleriOS/Secret.m`.
 
 ## See also
 
