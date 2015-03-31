@@ -23,7 +23,6 @@
 		0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F67C0731A97C2A200A0E8E1 /* Scene.plist */; };
 		0F79F5E01A8AE05200A6FB2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5DF1A8AE05200A6FB2E /* main.m */; };
 		0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */; };
-		0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E51A8AE05200A6FB2E /* ViewController.m */; };
 		0F79F5E91A8AE05200A6FB2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5E71A8AE05200A6FB2E /* Main.storyboard */; };
 		0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */; };
 		0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */; };
@@ -114,8 +113,6 @@
 		0F79F5DF1A8AE05200A6FB2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F79F5E41A8AE05200A6FB2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0F79F5E51A8AE05200A6FB2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F79F5E81A8AE05200A6FB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F79F5ED1A8AE05200A6FB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -284,8 +281,6 @@
 				440383521AAA6F33008BF221 /* Secret.m */,
 				0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */,
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
-				0F79F5E41A8AE05200A6FB2E /* ViewController.h */,
-				0F79F5E51A8AE05200A6FB2E /* ViewController.m */,
 				0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */,
 				0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */,
 				0F79F5E71A8AE05200A6FB2E /* Main.storyboard */,
@@ -622,7 +617,6 @@
 				0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */,
 				0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */,
 				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
-				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
 				44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */,
 				0F2A259E1AA12E08009E8B1D /* UIImage+Scale.m in Sources */,
