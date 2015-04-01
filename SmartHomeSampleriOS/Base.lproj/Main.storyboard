@@ -283,7 +283,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pnN-yL-H5N" secondAttribute="trailing" id="xn0-rS-Y6p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="APT-r0-uEr"/>
+                    <navigationItem key="navigationItem" id="APT-r0-uEr">
+                        <barButtonItem key="leftBarButtonItem" title="ℹ️" style="plain" id="hPE-Lq-akn" userLabel="AboutButton">
+                            <connections>
+                                <action selector="aboutAction:" destination="JV5-S1-fAV" id="6ev-dc-Ao0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commandLabel" destination="3sf-Hc-dOa" id="SZA-55-sIi"/>
                         <outlet property="debugSwitch" destination="PyI-eV-RhX" id="uG4-OR-WpP"/>

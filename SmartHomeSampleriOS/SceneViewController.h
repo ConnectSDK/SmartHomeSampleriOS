@@ -40,4 +40,6 @@
 - (IBAction)triggerScene1OnNearSwitchChanged:(UISwitch *)sender;
 - (IBAction)triggerScene2OnNearSwitchChanged:(UISwitch *)sender;
 
+- (IBAction)aboutAction:(id)sender;
+
 @end

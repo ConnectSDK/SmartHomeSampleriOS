@@ -55,6 +55,9 @@
 		4472875F1A9F924E0035F665 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472875E1A9F924E0035F665 /* libcrypto.a */; };
 		447287601A9F94DA0035F665 /* WeMoLocalControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287411A9E622A0035F665 /* WeMoLocalControl.a */; };
 		447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447287661A9FBCBE0035F665 /* DeviceConfigData.plist */; };
+		44C64CCA1ACC65CA005E411F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 44C64CC51ACC65C4005E411F /* LICENSE */; };
+		44C64CCD1ACC70B4005E411F /* ACKNOWLEDGMENTS.html in Resources */ = {isa = PBXBuildFile; fileRef = 44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */; };
+		44C64CD01ACC7150005E411F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C64CCF1ACC7150005E411F /* AboutViewController.m */; };
 		44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */; };
 		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
 		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
@@ -166,6 +169,12 @@
 		4472874B1A9E62650035F665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		4472875E1A9F924E0035F665 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		447287661A9FBCBE0035F665 /* DeviceConfigData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceConfigData.plist; sourceTree = "<group>"; };
+		44C64CC41ACC65C4005E411F /* ACKNOWLEDGMENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ACKNOWLEDGMENTS.md; sourceTree = SOURCE_ROOT; };
+		44C64CC51ACC65C4005E411F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		44C64CC61ACC65C4005E411F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ACKNOWLEDGMENTS.html; sourceTree = SOURCE_ROOT; };
+		44C64CCE1ACC7150005E411F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		44C64CCF1ACC7150005E411F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+ObjectGetter.h"; sourceTree = "<group>"; };
 		44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+ObjectGetter.m"; sourceTree = "<group>"; };
 		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
@@ -283,6 +292,8 @@
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
 				0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */,
 				0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */,
+				44C64CCE1ACC7150005E411F /* AboutViewController.h */,
+				44C64CCF1ACC7150005E411F /* AboutViewController.m */,
 				0F79F5E71A8AE05200A6FB2E /* Main.storyboard */,
 				0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */,
 				0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */,
@@ -294,6 +305,10 @@
 		0F79F5DD1A8AE05200A6FB2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */,
+				44C64CC41ACC65C4005E411F /* ACKNOWLEDGMENTS.md */,
+				44C64CC51ACC65C4005E411F /* LICENSE */,
+				44C64CC61ACC65C4005E411F /* README.md */,
 				0F79F62E1A8D3D3100A6FB2E /* Resources */,
 				0F79F5DE1A8AE05200A6FB2E /* Info.plist */,
 				0F79F5DF1A8AE05200A6FB2E /* main.m */,
@@ -499,7 +514,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Ibrahim Adnan";
+				ORGANIZATIONNAME = "LG Electronics";
 				TargetAttributes = {
 					0F79F5D91A8AE05200A6FB2E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -567,9 +582,11 @@
 				0F348DF21AA7CE8D00941FC2 /* earcon_listening.wav in Resources */,
 				0F348DE91AA7CCAD00941FC2 /* voiceicon.png in Resources */,
 				0F348DF01AA7CE8D00941FC2 /* earcon_cancel.wav in Resources */,
+				44C64CCA1ACC65CA005E411F /* LICENSE in Resources */,
 				0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */,
 				0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */,
 				447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */,
+				44C64CCD1ACC70B4005E411F /* ACKNOWLEDGMENTS.html in Resources */,
 				0F348DF11AA7CE8D00941FC2 /* earcon_done_listening.wav in Resources */,
 				0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */,
 			);
@@ -625,6 +642,7 @@
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
 				440383531AAA6F33008BF221 /* Secret.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
+				44C64CD01ACC7150005E411F /* AboutViewController.m in Sources */,
 				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
 				0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */,
 				0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */,

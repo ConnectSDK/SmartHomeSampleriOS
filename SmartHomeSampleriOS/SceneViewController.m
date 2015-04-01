@@ -29,6 +29,7 @@
 #import "BeaconTrigger.h"
 #import "WeMoDiscoveryManager.h"
 #import "NuanceSpeech.h"
+#import "AboutViewController.h"
 
 @interface SceneViewController () <DiscoveryManagerDelegate,
                                     WeMoDeviceDiscoveryDelegate>
@@ -104,6 +105,11 @@
     NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:self.voiceCommandsLabel.text
                                                                    attributes:@{NSParagraphStyleAttributeName: comLabelStyle}];
     self.voiceCommandsLabel.attributedText = attrText;
+}
+
+- (IBAction)aboutAction:(id)sender {
+    AboutViewController *aboutVC = [AboutViewController new];
+    [self.navigationController pushViewController:aboutVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
