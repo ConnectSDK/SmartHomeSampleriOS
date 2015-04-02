@@ -23,6 +23,8 @@
     [super viewDidLoad];
     [self showCurrentSceneInfo];
     // Do any additional setup after loading the view.
+    self.title = [NSString stringWithFormat:NSLocalizedString(@"Scene %d", nil),
+                  (self.currentSceneIndex + 1)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +82,7 @@
     DevicesTableViewController *destinationViewController = (DevicesTableViewController *)[[segue destinationViewController] visibleViewController];
     destinationViewController.deviceType = button.tag;
     destinationViewController.delegate = self;
+    destinationViewController.currentSceneIndex = self.currentSceneIndex;
     
     switch (button.tag) {
         case ConnectedDeviceType: destinationViewController.devices = [UIAppDelegate connectedDevices];

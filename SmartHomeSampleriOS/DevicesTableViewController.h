@@ -14,4 +14,6 @@
 @property (nonatomic, weak) id<ConfigureSceneViewControllerDelegate> delegate;
 @property NSInteger deviceType;
 @property NSMutableDictionary *selectedDevices;
+@property (nonatomic, assign) NSInteger currentSceneIndex;
+
 @end
