@@ -43,7 +43,8 @@
 
 - (void)showCurrentSceneInfo{
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
-   self.contentDictionary = [[NSDictionary dictionaryWithContentsOfFile:plistPath] mutableCopy];
+    self.contentDictionary = [NSMutableDictionary new];
+   self.contentDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
     NSDictionary *sceneDictionary = [[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex];
     UILabel *label = (UILabel *)[self.view viewWithTag:ConnectedDeviceType+100];
     label.text = [[sceneDictionary objectForKey:@"device"] valueForKey:@"name"];
@@ -109,12 +110,12 @@
 -(void)updateDeviceSelected:(NSDictionary *)device withType:(NSInteger)type{
     UILabel *label = (UILabel *)[self.view viewWithTag:type+100];
     
-    NSMutableDictionary *sceneDictionary = [[[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex] mutableCopy];
+    NSMutableDictionary *sceneDictionary = [[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex];
     
     switch (type) {
         case ConnectedDeviceType:
             label.text = [device valueForKey:@"name"];
-            [[[sceneDictionary objectForKey:@"device"] mutableCopy] setObject:[device valueForKey:@"name"] forKey:@"name"];
+            [[sceneDictionary objectForKey:@"device"]  setObject:[device valueForKey:@"name"] forKey:@"name"];
             break;
             
         case HueDeviceType:
@@ -123,21 +124,24 @@
             break;
         case WemoDeviceType:
             label.text = [device valueForKey:@"name"];
-            [[[sceneDictionary objectForKey:@"wemoSwitch"] mutableCopy] setObject:[device valueForKey:@"name"] forKey:@"name"];
-            [[[sceneDictionary objectForKey:@"wemoSwitch"] mutableCopy] setObject:[device valueForKey:@"id"] forKey:@"udn"];
+            [[sceneDictionary objectForKey:@"wemoSwitch"] setObject:[device valueForKey:@"name"] forKey:@"name"];
+            [[sceneDictionary objectForKey:@"wemoSwitch"] setObject:[device valueForKey:@"id"] forKey:@"udn"];
             break;
         case WinkDeviceType:
             label.text = [device valueForKey:@"name"];
-            [[[sceneDictionary objectForKey:@"wink"] mutableCopy] setObject:[device valueForKey:@"name"] forKey:@"name"];
-            [[[sceneDictionary objectForKey:@"wink"] mutableCopy] setObject:[device valueForKey:@"id"] forKey:@"bulbId"];
+            [[sceneDictionary objectForKey:@"wink"] setObject:[device valueForKey:@"name"] forKey:@"name"];
+            [[sceneDictionary objectForKey:@"wink"] setObject:[device valueForKey:@"id"] forKey:@"bulbId"];
             break;
         default: break;
     }
+     NSLog(@"Content Dic %@",sceneDictionary);
+    [[self.contentDictionary objectForKey:@"Scenes"] setObject:sceneDictionary atIndex:self.currentSceneIndex];
 }
 
 -(IBAction)saveSceneInfo:(id)sender{
+    NSLog(@"Content Dic %@",self.contentDictionary);
      NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]){
+    if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]){
         [self.contentDictionary writeToFile:plistPath atomically:YES];
     }
 }
