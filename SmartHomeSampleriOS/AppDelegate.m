@@ -20,6 +20,8 @@
 
 #import "AppDelegate.h"
 #import "PHLoadingViewController.h"
+#import "WinkAPI.h"
+#import "Secret.h"
 
 @interface AppDelegate ()
 
@@ -44,7 +46,8 @@
     self.phHueSDK = [[PHHueSDK alloc] init];
     [self.phHueSDK startUpSDK];
     [self.phHueSDK enableLogging:YES];
-    
+    self.connectedDevices = [NSMutableDictionary dictionary];
+    self.wemoDevices = [NSMutableDictionary dictionary];
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
     /***************************************************
@@ -70,6 +73,7 @@
     
     self.navigationController = (UINavigationController *)self.window.rootViewController;
     [self registerDefaultsFromSettingsBundle];
+    [self getWinkDevices];
     return YES;
 }
 
@@ -507,6 +511,19 @@
         [self.loadingView.view removeFromSuperview];
         self.loadingView = nil;
     }
+}
+
+-(void)getWinkDevices{
+    WinkAPI *wink = [[WinkAPI alloc] initWithUsername:kWinkUsername
+                                             password:kWinkPassword
+                                             clientId:kWinkClientId
+                                         clientSecret:kWinkClientSecret];
+    [wink authenticateWithResponse:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [wink retrieveUserDevices:^(NSData *data, NSURLResponse *response, NSError *error) {
+            self.winkDevices = wink.winkDevices;
+        }];
+    }];
 }
 
 @end

@@ -44,6 +44,13 @@
 	<key>Scenes</key>
 	<array>
 		<dict>
+			<key>wink</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>bulbId</key>
+				<string></string>
+			</dict>
 			<key>iBeacon</key>
 			<dict>
 				<key>uuid</key>
@@ -52,9 +59,9 @@
 			<key>hueBulb</key>
 			<dict>
 				<key>2</key>
-				<string>2</string>
+				<string>Hue Bulb 2</string>
 				<key>3</key>
-				<string>3</string>
+				<string>Hue Bulb 3</string>
 			</dict>
 			<key>device</key>
 			<dict>
@@ -65,6 +72,8 @@
 			</dict>
 			<key>wemoSwitch</key>
 			<dict>
+				<key>name</key>
+				<string>Wemo Switch</string>
 				<key>udn</key>
 				<string>uuid:Socket-1_0-221434K0100D1D</string>
 			</dict>
@@ -77,13 +86,15 @@
 			</dict>
 			<key>wink</key>
 			<dict>
+				<key>name</key>
+				<string>GE bulb</string>
 				<key>bulbId</key>
 				<string>459599</string>
 			</dict>
 			<key>hueBulb</key>
 			<dict>
 				<key>1</key>
-				<string>1</string>
+				<string>Hue Bulb 1</string>
 			</dict>
 			<key>device</key>
 			<dict>

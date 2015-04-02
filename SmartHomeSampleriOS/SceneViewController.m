@@ -386,6 +386,13 @@
 }
 
 - (void)didUpdateConnectableDevice:(ConnectableDevice *)device {
+    
+    if ([UIAppDelegate connectedDevices])
+    {
+        @synchronized ([UIAppDelegate connectedDevices]) { [[UIAppDelegate connectedDevices] setObject:device.friendlyName forKey:device.address];}
+        
+    }
+    
     if (device && self.scene1 && self.scene2) {
         const BOOL deviceHasWebOSService = ([device serviceWithName:kConnectSDKWebOSTVServiceId] != nil);
 
@@ -413,7 +420,11 @@
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
           didFoundDevice:(WeMoControlDevice *)device {
     NSLog(@"didFindDevice %@", device);
-
+    if ([UIAppDelegate wemoDevices])
+    {
+        @synchronized ([UIAppDelegate wemoDevices]) { [[UIAppDelegate wemoDevices] setObject:device.friendlyName forKey:device.udn];}
+        
+    }
     [[self scenesForWemoSwitchUdn:device.udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
         scene.wemoSwitch = device;
     }];

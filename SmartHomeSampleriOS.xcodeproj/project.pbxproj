@@ -47,6 +47,10 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		0F98C5371ACB4C460005EBA0 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F98C5361ACB4C460005EBA0 /* info.png */; };
+		0F98C53D1ACB5CF00005EBA0 /* ConfigureSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */; };
+		0F98C5401ACB60750005EBA0 /* DevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */; };
+		0F98C5441ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */; };
 		440383531AAA6F33008BF221 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = 440383521AAA6F33008BF221 /* Secret.m */; };
 		447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287391A9E622A0035F665 /* BelkinSDKLibrary.a */; };
 		447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873A1A9E622A0035F665 /* Cybergarage.a */; };
@@ -150,6 +154,13 @@
 		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Resources/Settings.bundle; sourceTree = "<group>"; };
 		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		0F98C5361ACB4C460005EBA0 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		0F98C53B1ACB5CF00005EBA0 /* ConfigureSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureSceneViewController.h; sourceTree = "<group>"; };
+		0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureSceneViewController.m; sourceTree = "<group>"; };
+		0F98C53E1ACB60750005EBA0 /* DevicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesTableViewController.h; sourceTree = "<group>"; };
+		0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesTableViewController.m; sourceTree = "<group>"; };
+		0F98C5421ACC99530005EBA0 /* ConfigureSceneSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureSceneSelectionViewController.h; sourceTree = "<group>"; };
+		0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureSceneSelectionViewController.m; sourceTree = "<group>"; };
 		440383511AAA6F33008BF221 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
 		440383521AAA6F33008BF221 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
 		447287391A9E622A0035F665 /* BelkinSDKLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = BelkinSDKLibrary.a; sourceTree = "<group>"; };
@@ -283,6 +294,12 @@
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
 				0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */,
 				0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */,
+				0F98C53B1ACB5CF00005EBA0 /* ConfigureSceneViewController.h */,
+				0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */,
+				0F98C53E1ACB60750005EBA0 /* DevicesTableViewController.h */,
+				0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */,
+				0F98C5421ACC99530005EBA0 /* ConfigureSceneSelectionViewController.h */,
+				0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */,
 				0F79F5E71A8AE05200A6FB2E /* Main.storyboard */,
 				0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */,
 				0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */,
@@ -395,6 +412,7 @@
 		0F79F62E1A8D3D3100A6FB2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F98C5361ACB4C460005EBA0 /* info.png */,
 				0F348DED1AA7CE8D00941FC2 /* earcon_cancel.wav */,
 				0F348DEE1AA7CE8D00941FC2 /* earcon_done_listening.wav */,
 				0F348DEF1AA7CE8D00941FC2 /* earcon_listening.wav */,
@@ -564,6 +582,7 @@
 				0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */,
 				0F79F6321A8D3D3F00A6FB2E /* press_smartbridge@2x.png in Resources */,
 				0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */,
+				0F98C5371ACB4C460005EBA0 /* info.png in Resources */,
 				0F348DF21AA7CE8D00941FC2 /* earcon_listening.wav in Resources */,
 				0F348DE91AA7CCAD00941FC2 /* voiceicon.png in Resources */,
 				0F348DF01AA7CE8D00941FC2 /* earcon_cancel.wav in Resources */,
@@ -607,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F98C5401ACB60750005EBA0 /* DevicesTableViewController.m in Sources */,
 				0F348DF81AA7CF8400941FC2 /* NuanceSpeech.m in Sources */,
 				0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */,
 				0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */,
@@ -615,6 +635,7 @@
 				0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */,
 				0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */,
 				0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */,
+				0F98C53D1ACB5CF00005EBA0 /* ConfigureSceneViewController.m in Sources */,
 				0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */,
 				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
@@ -624,6 +645,7 @@
 				0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */,
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
 				440383531AAA6F33008BF221 /* Secret.m in Sources */,
+				0F98C5441ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
 				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
 				0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */,
