@@ -48,6 +48,18 @@
     [self.phHueSDK enableLogging:YES];
     self.connectedDevices = [NSMutableDictionary dictionary];
     self.wemoDevices = [NSMutableDictionary dictionary];
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSMutableDictionary *plistdict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *docfilePath = [basePath stringByAppendingPathComponent:@"Scene.plist"];
+    self.plistPath = docfilePath;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:docfilePath]){
+        [plistdict writeToFile:docfilePath atomically:YES];
+    }
+    
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
     /***************************************************

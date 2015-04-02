@@ -42,7 +42,7 @@
 //}
 
 - (void)showCurrentSceneInfo{
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSString* plistPath = [UIAppDelegate plistPath];
     self.contentDictionary = [NSMutableDictionary new];
    self.contentDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
     NSDictionary *sceneDictionary = [[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex];
@@ -116,6 +116,7 @@
         case ConnectedDeviceType:
             label.text = [device valueForKey:@"name"];
             [[sceneDictionary objectForKey:@"device"]  setObject:[device valueForKey:@"name"] forKey:@"name"];
+            [[sceneDictionary objectForKey:@"device"]  setObject:[device valueForKey:@"type"] forKey:@"type"];
             break;
             
         case HueDeviceType:
@@ -134,15 +135,16 @@
             break;
         default: break;
     }
-     NSLog(@"Content Dic %@",sceneDictionary);
     [[self.contentDictionary objectForKey:@"Scenes"] setObject:sceneDictionary atIndex:self.currentSceneIndex];
 }
 
 -(IBAction)saveSceneInfo:(id)sender{
-    NSLog(@"Content Dic %@",self.contentDictionary);
-     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSLog(@"Config %@",self.contentDictionary);
+     NSString* plistPath = [UIAppDelegate plistPath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]){
-        [self.contentDictionary writeToFile:plistPath atomically:YES];
+        BOOL value  = [self.contentDictionary writeToFile:plistPath atomically:YES];
+        [self showCurrentSceneInfo];
+        NSLog(@"bool %d",value);
     }
 }
 

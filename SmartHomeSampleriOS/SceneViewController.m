@@ -51,7 +51,7 @@
 
     self.currentSceneIndex = -1;
     [self debugSwitchPressed:self.debugSwitch];
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSString* plistPath = [UIAppDelegate plistPath];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
     SceneInfo *sceneInfo = [[SceneInfo alloc] init];
@@ -389,7 +389,7 @@
     
     if ([UIAppDelegate connectedDevices])
     {
-        @synchronized ([UIAppDelegate connectedDevices]) { [[UIAppDelegate connectedDevices] setObject:device.friendlyName forKey:device.address];}
+        @synchronized ([UIAppDelegate connectedDevices]) { [[UIAppDelegate connectedDevices] setObject:device forKey:device.address];}
         
     }
     

@@ -7,6 +7,7 @@
 //
 
 #import "DevicesTableViewController.h"
+#import <ConnectSDK/WebOSTVService.h>
 
 @interface DevicesTableViewController ()
 
@@ -82,8 +83,17 @@
 
 - (NSDictionary *)getDeviceDetailsAtIndex :(NSIndexPath *)indexPath{
     NSMutableDictionary *device = [NSMutableDictionary dictionary];
-    [device setObject:[[self.devices allKeys] objectAtIndex:indexPath.row] forKey:@"id"];
-    [device setObject:[[self.devices allValues]objectAtIndex:indexPath.row] forKey:@"name"];
+    if(self.deviceType == ConnectedDeviceType){
+        
+        ConnectableDevice *cDevice = [[self.devices allValues] objectAtIndex:indexPath.row];
+         const BOOL deviceHasWebOSService = ([cDevice serviceWithName:kConnectSDKWebOSTVServiceId] != nil);
+        NSString *type = deviceHasWebOSService ? @"webostv" : @"";
+        [device setObject:type forKey:@"type"];
+        [device setObject:cDevice.friendlyName forKey:@"name"];
+    }else{
+        [device setObject:[[self.devices allKeys] objectAtIndex:indexPath.row] forKey:@"id"];
+        [device setObject:[[self.devices allValues]objectAtIndex:indexPath.row] forKey:@"name"];
+    }
     return device;
 }
 
