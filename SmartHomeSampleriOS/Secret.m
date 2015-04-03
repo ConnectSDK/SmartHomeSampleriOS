@@ -25,6 +25,9 @@
 // to avoid committing changes, run this command from the working copy root:
 // git config filter.mask_secrets.clean ./mask_secrets.sed
 
+// to ignore the file being shown as changed in `git status` you the command:
+// git update-index --assume-unchanged SmartHomeSampleriOS/Secret.m
+
 NSString *const kNuanceAppId = @"CHANGE_ME";
 NSString *const kNuanceAppHost = @"CHANGE_ME";
 long const kNuanceAppPort = 443;
