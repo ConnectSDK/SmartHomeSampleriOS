@@ -65,7 +65,12 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customcell" forIndexPath:indexPath];
     cell.textLabel.text = [[self getDeviceDetailsAtIndex:indexPath] valueForKey:@"name"];
-    
+    for ( NSIndexPath *index in self.selectedIndexes) {
+        if([indexPath row] == [index row]){
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            break;
+        }
+    }
     // Configure the cell...
     
     return cell;

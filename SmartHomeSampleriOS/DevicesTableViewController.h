@@ -13,5 +13,6 @@
 @property (nonatomic, strong)NSMutableDictionary *devices;
 @property (nonatomic, weak) id<ConfigureSceneViewControllerDelegate> delegate;
 @property NSInteger deviceType;
-@property NSMutableDictionary *selectedDevices;
+@property (nonatomic, strong)NSMutableDictionary *selectedDevices;
+@property (nonatomic, strong)NSMutableArray *selectedIndexes;
 @end

@@ -44,19 +44,19 @@
 - (void)showCurrentSceneInfo{
     NSString* plistPath = [UIAppDelegate plistPath];
     self.contentDictionary = [NSMutableDictionary new];
-   self.contentDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
-    NSDictionary *sceneDictionary = [[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex];
+    self.contentDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    self.sceneDictionary = [[self.contentDictionary objectForKey:@"Scenes"] objectAtIndex:self.currentSceneIndex];
     UILabel *label = (UILabel *)[self.view viewWithTag:ConnectedDeviceType+100];
-    label.text = [[sceneDictionary objectForKey:@"device"] valueForKey:@"name"];
+    label.text = [[self.sceneDictionary objectForKey:@"device"] valueForKey:@"name"];
     label = (UILabel *)[self.view viewWithTag:HueDeviceType+100];
-    NSDictionary *bulbDict = [sceneDictionary objectForKey:@"hueBulb"];
+    NSDictionary *bulbDict = [self.sceneDictionary objectForKey:@"hueBulb"];
     label.text = [self getBulbString:bulbDict];
     label = (UILabel *)[self.view viewWithTag:WemoDeviceType+100];
-    label.text = [[sceneDictionary objectForKey:@"wemoSwitch"] valueForKey:@"name"];
+    label.text = [[self.sceneDictionary objectForKey:@"wemoSwitch"] valueForKey:@"name"];
     label = (UILabel *)[self.view viewWithTag:BeaconDeviceType+100];
-    label.text = [[sceneDictionary objectForKey:@"iBeacon"] valueForKey:@"uuid"];
+    label.text = [[self.sceneDictionary objectForKey:@"iBeacon"] valueForKey:@"uuid"];
     label = (UILabel *)[self.view viewWithTag:WinkDeviceType+100];
-    label.text = [[sceneDictionary objectForKey:@"wink"] valueForKey:@"name"];
+    label.text = [[self.sceneDictionary objectForKey:@"wink"] valueForKey:@"name"];
 }
 
 -(NSString*)getBulbString:(NSDictionary *)bulbDict{
@@ -83,22 +83,26 @@
     
     switch (button.tag) {
         case ConnectedDeviceType: destinationViewController.devices = [UIAppDelegate connectedDevices];
+            destinationViewController.selectedIndexes = [self getSelectedIndexes:destinationViewController.devices forType:ConnectedDeviceType];
             destinationViewController.tableView.allowsMultipleSelection = NO;
             [destinationViewController.tableView reloadData];
             break;
             
         case HueDeviceType:
             destinationViewController.devices = [self getPhilipsHueLights];
+            destinationViewController.selectedIndexes = [self getSelectedIndexes:destinationViewController.devices forType:HueDeviceType];
             destinationViewController.tableView.allowsMultipleSelection = YES;
             [destinationViewController.tableView reloadData];
             break;
         case WemoDeviceType:
             destinationViewController.devices = [UIAppDelegate wemoDevices];
+            destinationViewController.selectedIndexes = [self getSelectedIndexes:destinationViewController.devices forType:WemoDeviceType];
             destinationViewController.tableView.allowsMultipleSelection = NO;
             [destinationViewController.tableView reloadData];
             break;
         case WinkDeviceType:
             destinationViewController.devices = [UIAppDelegate winkDevices];
+            destinationViewController.selectedIndexes = [self getSelectedIndexes:destinationViewController.devices forType:WinkDeviceType];
             destinationViewController.tableView.allowsMultipleSelection = NO;
             [destinationViewController.tableView reloadData];
             break;
@@ -157,6 +161,49 @@
     return lights;
 }
 
-
+-(NSMutableArray *)getSelectedIndexes:(NSDictionary *)devices forType:(NSInteger)type{
+    NSMutableArray *selectedIndexes = [NSMutableArray array];
+    NSString *filter = @"";
+     __block NSInteger idx;
+    if(type == ConnectedDeviceType){
+        filter = [[self.sceneDictionary objectForKey:@"device"] valueForKey:@"name"];
+        [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            ConnectableDevice *cDevice = (ConnectableDevice *) obj;
+            if([cDevice.friendlyName isEqualToString:filter]){
+                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                *stop = YES;
+            }
+            idx++;
+        }];
+    }else if (type == HueDeviceType){
+        
+        [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if([[self.sceneDictionary objectForKey:@"hueBulb"] valueForKey:key]){
+                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+            }
+            idx++;
+        }];
+    }else if (type == WemoDeviceType){
+        filter = [[self.sceneDictionary objectForKey:@"wemoSwitch"] valueForKey:@"udn"];
+        [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if([key isEqualToString:filter]){
+                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                 *stop = YES;
+            }
+            idx++;
+        }];
+    }else if (type == WinkDeviceType){
+        filter = [[self.sceneDictionary objectForKey:@"wink"] valueForKey:@"bulbId"];
+        [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if([key isEqualToString:filter]){
+                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                 *stop = YES;
+            }
+            idx++;
+        }];
+    }
+    
+    return selectedIndexes;
+}
 
 @end

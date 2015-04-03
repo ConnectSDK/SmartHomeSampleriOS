@@ -27,5 +27,5 @@ typedef enum {
 
 @property NSInteger currentSceneIndex;
 @property(nonatomic, strong) NSMutableDictionary *contentDictionary;
-
+@property(nonatomic, strong) NSMutableDictionary *sceneDictionary;
 @end
