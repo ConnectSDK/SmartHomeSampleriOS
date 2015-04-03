@@ -87,6 +87,12 @@
     self.speechKit = [[NuanceSpeech alloc] init];
     [self.speechKit configure];
 
+    if (![self scenesAreReady]) {
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [self performSegueWithIdentifier:@"ConfigureScenesSegue" sender:nil];
+       });
+    }
+
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
 }
 
@@ -104,6 +110,12 @@
     NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:self.voiceCommandsLabel.text
                                                                    attributes:@{NSParagraphStyleAttributeName: comLabelStyle}];
     self.voiceCommandsLabel.attributedText = attrText;
+}
+
+- (BOOL)scenesAreReady {
+    // we require that each scene at least has a media device
+    return (([[self.scene1.configuration valueForKeyPath:@"device.name"] length] > 0) &&
+            ([[self.scene2.configuration valueForKeyPath:@"device.name"] length] > 0));
 }
 
 - (void)didReceiveMemoryWarning {

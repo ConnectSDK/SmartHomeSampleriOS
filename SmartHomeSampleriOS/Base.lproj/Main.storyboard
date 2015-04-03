@@ -291,7 +291,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Configure" id="XFh-bx-Hig">
                             <connections>
-                                <segue destination="GC0-6U-ZNH" kind="show" id="aNH-pN-vt5"/>
+                                <segue destination="GC0-6U-ZNH" kind="show" identifier="ConfigureScenesSegue" id="aNH-pN-vt5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
