@@ -24,6 +24,28 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = [NSString stringWithFormat:NSLocalizedString(@"Scene %d.%@", nil),
+                  (self.currentSceneIndex + 1),
+                  [self deviceTypeToString:self.deviceType]];
+}
+
+- (NSString *)deviceTypeToString:(DeviceType)type {
+    switch (type) {
+        case ConnectedDeviceType:
+            return NSLocalizedString(@"Media Device", nil);
+
+        case HueDeviceType:
+            return NSLocalizedString(@"Philips Hue", nil);
+
+        case WemoDeviceType:
+            return NSLocalizedString(@"WeMo", nil);
+
+        case WinkDeviceType:
+            return NSLocalizedString(@"Wink", nil);
+
+        default:
+            return @"";
+    }
 }
 
 - (void)didReceiveMemoryWarning {

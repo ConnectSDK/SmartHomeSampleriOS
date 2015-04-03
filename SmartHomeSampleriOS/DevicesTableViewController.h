@@ -15,4 +15,6 @@
 @property NSInteger deviceType;
 @property (nonatomic, strong)NSMutableDictionary *selectedDevices;
 @property (nonatomic, strong)NSMutableArray *selectedIndexes;
+@property (nonatomic, assign) NSInteger currentSceneIndex;
+
 @end
