@@ -63,7 +63,11 @@
         
         [self.delegate updateDeviceSelected:self.selectedDevices withType:self.deviceType];
     }else{
-        [self.delegate updateDeviceSelected:[self getDeviceDetailsAtIndex:self.tableView.indexPathForSelectedRow] withType:self.deviceType];
+        NSDictionary *deviceDetails = [self getDeviceDetailsAtIndex:self.tableView.indexPathForSelectedRow];
+        if (deviceDetails) {
+            [self.delegate updateDeviceSelected:deviceDetails
+                                       withType:self.deviceType];
+        }
     }
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         
@@ -109,6 +113,10 @@
 }
 
 - (NSDictionary *)getDeviceDetailsAtIndex :(NSIndexPath *)indexPath{
+    if (!indexPath) {
+        return nil;
+    }
+
     NSMutableDictionary *device = [NSMutableDictionary dictionary];
     if(self.deviceType == ConnectedDeviceType){
         
