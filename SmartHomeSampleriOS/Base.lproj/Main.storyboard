@@ -470,7 +470,7 @@
                                     <action selector="saveSceneInfo:" destination="cxK-Zn-PfS" eventType="touchUpInside" id="zbm-SY-xcD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLy-0z-165">
+                            <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ffffeeee-dddd-cccc-bbbb-aaaa99998888" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLy-0z-165">
                                 <rect key="frame" x="133" y="216" width="451" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

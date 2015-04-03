@@ -54,7 +54,7 @@
 			<key>iBeacon</key>
 			<dict>
 				<key>uuid</key>
-				<string>00001111-2222-3333-4444-555566667777</string>
+				<string></string>
 			</dict>
 			<key>hueBulb</key>
 			<dict/>
@@ -84,7 +84,7 @@
 			<key>iBeacon</key>
 			<dict>
 				<key>uuid</key>
-				<string>88889999-aaaa-bbbb-cccc-ddddeeeeffff</string>
+				<string></string>
 			</dict>
 			<key>wink</key>
 			<dict>

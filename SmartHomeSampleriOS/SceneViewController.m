@@ -377,15 +377,21 @@ static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
                triggeringOnNearProximity:(BOOL)triggerOnNearProximity
                          andTriggerBlock:(TriggerBlock)block {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
-    BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
-                                                                          major:@0
-                                                                          minor:@0
-                                                                andTriggerBlock:block];
-    beaconTrigger.triggerOnNearProximity = triggerOnNearProximity;
-    [beaconTrigger start];
-    
-    self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
-    [self.beaconTriggers addObject:beaconTrigger];
+    if (uuid) {
+        BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
+                                                                              major:@0
+                                                                              minor:@0
+                                                                    andTriggerBlock:block];
+        beaconTrigger.triggerOnNearProximity = triggerOnNearProximity;
+        [beaconTrigger start];
+
+        self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
+        [self.beaconTriggers addObject:beaconTrigger];
+    } else if (uuidString.length > 0) {
+        NSLog(@"Couldn't parse beacon UUID: %@", uuidString);
+    } else {
+        NSLog(@"No beacon UUID specified – ignoring");
+    }
 }
 
 
