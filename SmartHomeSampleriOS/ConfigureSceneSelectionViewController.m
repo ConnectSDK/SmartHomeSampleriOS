@@ -11,6 +11,8 @@
 
 @interface ConfigureSceneSelectionViewController ()
 
+@property (nonatomic, assign, readwrite) BOOL configHasChanged;
+
 @end
 
 @implementation ConfigureSceneSelectionViewController
@@ -31,15 +33,27 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    ConfigureSceneViewController *vc = segue.destinationViewController;
+    __weak typeof(self) wself = self;
+    vc.configChangeBlock = ^(BOOL configHasChanged) {
+        wself.configHasChanged |= configHasChanged;
+    };
+
     UIButton *button = (UIButton *)sender;
     if (button.tag == 1) {
-        ((ConfigureSceneViewController *)[segue destinationViewController]).currentSceneIndex = 0;
+        vc.currentSceneIndex = 0;
     }else{
-        ((ConfigureSceneViewController *)[segue destinationViewController]).currentSceneIndex = 1;
+        vc.currentSceneIndex = 1;
     }
 }
 
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (!parent) {
+        // going back
+        if (self.configChangeBlock) {
+            self.configChangeBlock(self.configHasChanged);
+        }
+    }
+}
 
 @end

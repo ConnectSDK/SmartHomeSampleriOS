@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ConfigureSceneViewController.h"
+
+@protocol DevicesTableViewControllerDelegate <NSObject>
+
+// TODO change the method to the commond standards
+- (void)updateDeviceSelected:(NSDictionary *)device withType:(NSInteger)type;
+
+@end
+
 @interface DevicesTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong)NSMutableDictionary *devices;
-@property (nonatomic, weak) id<ConfigureSceneViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<DevicesTableViewControllerDelegate> delegate;
 @property NSInteger deviceType;
 @property (nonatomic, strong)NSMutableDictionary *selectedDevices;
 @property (nonatomic, strong)NSMutableArray *selectedIndexes;

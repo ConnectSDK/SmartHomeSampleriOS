@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <ConnectSDK/ConnectSDK.h>
 
-@protocol ConfigureSceneViewControllerDelegate <NSObject>
-
--(void)updateDeviceSelected:(NSDictionary *)device withType:(NSInteger)type;
-
-@end
-
 typedef enum {
     ConnectedDeviceType =0,
     HueDeviceType,
@@ -23,9 +17,15 @@ typedef enum {
     BeaconDeviceType
 }DeviceType;
 
-@interface ConfigureSceneViewController : UIViewController<ConfigureSceneViewControllerDelegate>
+@interface ConfigureSceneViewController : UIViewController
 
 @property NSInteger currentSceneIndex;
 @property(nonatomic, strong) NSMutableDictionary *contentDictionary;
 @property(nonatomic, strong) NSMutableDictionary *sceneDictionary;
+
+/// Returns @c YES if the scene config has been updated and saved.
+@property (nonatomic, readonly) BOOL configHasChanged;
+
+@property (nonatomic, copy) void (^configChangeBlock)(BOOL configHasChanged);
+
 @end

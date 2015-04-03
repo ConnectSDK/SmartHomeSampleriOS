@@ -29,6 +29,9 @@
 #import "BeaconTrigger.h"
 #import "WeMoDiscoveryManager.h"
 #import "NuanceSpeech.h"
+#import "ConfigureSceneSelectionViewController.h"
+
+static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
 
 @interface SceneViewController () <DiscoveryManagerDelegate,
                                     WeMoDeviceDiscoveryDelegate>
@@ -49,20 +52,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentSceneIndex = -1;
     [self debugSwitchPressed:self.debugSwitch];
-    NSString* plistPath = [UIAppDelegate plistPath];
-    NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
-    SceneInfo *sceneInfo = [[SceneInfo alloc] init];
-    sceneInfo.mediaArray = [contentDictionary objectForKey:@"Media"];
-    sceneInfo.currentMediaIndex = 0;
-    sceneInfo.currentPosition = 0;
-    self.scene1 = [[Scene alloc] initWithConfiguration:scene1Dictionary andSceneInfo:sceneInfo];
-    
-    NSDictionary *scene2Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:1];
-    self.scene2 = [[Scene alloc] initWithConfiguration:scene2Dictionary andSceneInfo:sceneInfo];
 
+    [self setupScenes];
     [self setupUI];
     
     // Do any additional setup after loading the view.
@@ -89,11 +81,34 @@
 
     if (![self scenesAreReady]) {
        dispatch_async(dispatch_get_main_queue(), ^{
-           [self performSegueWithIdentifier:@"ConfigureScenesSegue" sender:nil];
+           [self performSegueWithIdentifier:kConfigureScenesSegueId sender:nil];
        });
     }
 
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
+}
+
+- (void)setupScenes {
+    self.currentSceneIndex = -1;
+
+    NSString *plistPath = [UIAppDelegate plistPath];
+    NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+
+    SceneInfo *sceneInfo = [[SceneInfo alloc] init];
+    sceneInfo.mediaArray = [contentDictionary objectForKey:@"Media"];
+    sceneInfo.currentMediaIndex = 0;
+    sceneInfo.currentPosition = 0;
+
+    NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
+    self.scene1 = [[Scene alloc] initWithConfiguration:scene1Dictionary andSceneInfo:sceneInfo];
+
+    NSDictionary *scene2Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:1];
+    self.scene2 = [[Scene alloc] initWithConfiguration:scene2Dictionary andSceneInfo:sceneInfo];
+}
+
+- (void)resetScenes {
+    [self setupScenes];
+    [self setupBeaconTriggers];
 }
 
 - (void)setupUI {
@@ -294,6 +309,18 @@
 
 - (IBAction)debugSwitchPressed:(UISwitch *)sender {
     self.debugView.hidden = !sender.on;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([kConfigureScenesSegueId isEqualToString:segue.identifier]) {
+        ConfigureSceneSelectionViewController *vc = segue.destinationViewController;
+        __weak typeof(self) wself = self;
+        vc.configChangeBlock = ^(BOOL configHasChanged) {
+            if (configHasChanged) {
+                [wself resetScenes];
+            }
+        };
+    }
 }
 
 #pragma mark - Triggers

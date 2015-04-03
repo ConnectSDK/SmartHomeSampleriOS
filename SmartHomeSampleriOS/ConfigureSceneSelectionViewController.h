@@ -10,4 +10,8 @@
 
 @interface ConfigureSceneSelectionViewController : UIViewController
 
+/// Returns @c YES if at least one of the scene configs has been updated and saved.
+@property (nonatomic, readonly) BOOL configHasChanged;
+@property (nonatomic, copy) void (^configChangeBlock)(BOOL configHasChanged);
+
 @end

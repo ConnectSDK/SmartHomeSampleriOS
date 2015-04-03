@@ -13,7 +13,9 @@
 #import "WinkAPI.h"
 #import "Secret.h"
 
-@interface ConfigureSceneViewController ()
+@interface ConfigureSceneViewController () <DevicesTableViewControllerDelegate>
+
+@property (nonatomic, assign, readwrite) BOOL configHasChanged;
 
 @end
 
@@ -59,6 +61,8 @@
     label.text = [[self.sceneDictionary objectForKey:@"iBeacon"] valueForKey:@"uuid"];
     label = (UILabel *)[self.view viewWithTag:WinkDeviceType+100];
     label.text = [[self.sceneDictionary objectForKey:@"wink"] valueForKey:@"name"];
+
+    self.configHasChanged = NO;
 }
 
 -(NSString*)getBulbString:(NSDictionary *)bulbDict{
@@ -70,6 +74,13 @@
         [hueBulbs appendString:obj];
     }];
     return hueBulbs;
+}
+
+- (void)setConfigHasChanged:(BOOL)configHasChanged {
+    _configHasChanged = configHasChanged;
+    if (self.configChangeBlock) {
+        self.configChangeBlock(configHasChanged);
+    }
 }
 
 #pragma mark - Navigation
@@ -149,9 +160,10 @@
     NSLog(@"Config %@",self.contentDictionary);
      NSString* plistPath = [UIAppDelegate plistPath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]){
-        BOOL value  = [self.contentDictionary writeToFile:plistPath atomically:YES];
+        BOOL saveSuccess = [self.contentDictionary writeToFile:plistPath atomically:YES];
         [self showCurrentSceneInfo];
-        NSLog(@"bool %d",value);
+        NSLog(@"Config saved %d", saveSuccess);
+        self.configHasChanged = saveSuccess;
     }
 }
 
