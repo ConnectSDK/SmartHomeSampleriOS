@@ -30,8 +30,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) PHHueSDK *phHueSDK;
-
-
+@property (strong, nonatomic) NSMutableDictionary *connectedDevices;
+@property (strong, nonatomic) NSMutableDictionary *wemoDevices;
+@property (strong, nonatomic) NSMutableDictionary *winkDevices;
+@property (strong, nonatomic) NSString *plistPath;
 #pragma mark - HueSDK
 
 /**

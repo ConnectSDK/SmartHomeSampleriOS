@@ -20,6 +20,8 @@
 
 #import "AppDelegate.h"
 #import "PHLoadingViewController.h"
+#import "WinkAPI.h"
+#import "Secret.h"
 
 @interface AppDelegate ()
 
@@ -44,6 +46,19 @@
     self.phHueSDK = [[PHHueSDK alloc] init];
     [self.phHueSDK startUpSDK];
     [self.phHueSDK enableLogging:YES];
+    self.connectedDevices = [NSMutableDictionary dictionary];
+    self.wemoDevices = [NSMutableDictionary dictionary];
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSMutableDictionary *plistdict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *docfilePath = [basePath stringByAppendingPathComponent:@"Scene.plist"];
+    self.plistPath = docfilePath;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:docfilePath]){
+        [plistdict writeToFile:docfilePath atomically:YES];
+    }
     
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
@@ -70,6 +85,7 @@
     
     self.navigationController = (UINavigationController *)self.window.rootViewController;
     [self registerDefaultsFromSettingsBundle];
+    [self getWinkDevices];
     return YES;
 }
 
@@ -507,6 +523,19 @@
         [self.loadingView.view removeFromSuperview];
         self.loadingView = nil;
     }
+}
+
+-(void)getWinkDevices{
+    WinkAPI *wink = [[WinkAPI alloc] initWithUsername:kWinkUsername
+                                             password:kWinkPassword
+                                             clientId:kWinkClientId
+                                         clientSecret:kWinkClientSecret];
+    [wink authenticateWithResponse:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [wink retrieveUserDevices:^(NSData *data, NSURLResponse *response, NSError *error) {
+            self.winkDevices = wink.winkDevices;
+        }];
+    }];
 }
 
 @end

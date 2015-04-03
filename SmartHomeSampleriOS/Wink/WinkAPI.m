@@ -89,6 +89,7 @@ NSString *const API_URL = @"https://winkapi.quirky.com/";
 }
 
 -(void)retrieveUserDevices:(WinkResponseBlock)responseBlock{
+    self.winkDevices = [NSMutableDictionary dictionary];
     NSURL *URL = [NSURL URLWithString:[API_URL stringByAppendingString:@"users/me/wink_devices"]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:@"GET"];
@@ -112,11 +113,21 @@ NSString *const API_URL = @"https://winkapi.quirky.com/";
                                       }
                                       
                                       NSError* jsonError;
-                                      NSMutableDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                      NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
                                                                                            options:kNilOptions
                                                                                              error:&jsonError];
                                       
-                                      self.winkDevices = json;
+                                     
+                                      
+                                      NSArray *dataDic = [json objectForKey:@"data"];
+                                      [dataDic enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                          NSString *model = [obj valueForKey:@"model_name"];
+                                          if(model != (id)[NSNull null]  && [model isEqualToString:@"GE light bulb"]){
+                                              [self.winkDevices setObject:[obj valueForKey:@"model_name"] forKey:[obj valueForKey:@"light_bulb_id"]];
+                                          }
+                                      }];
+                                     
+                                      responseBlock(data,response,error);
                                   }];
     [task resume];
     

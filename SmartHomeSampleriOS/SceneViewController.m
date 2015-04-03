@@ -30,6 +30,9 @@
 #import "WeMoDiscoveryManager.h"
 #import "NuanceSpeech.h"
 #import "AboutViewController.h"
+#import "ConfigureSceneSelectionViewController.h"
+
+static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
 
 @interface SceneViewController () <DiscoveryManagerDelegate,
                                     WeMoDeviceDiscoveryDelegate>
@@ -50,31 +53,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentSceneIndex = -1;
     [self debugSwitchPressed:self.debugSwitch];
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+
+    [self setupScenes];
+    [self setupUI];
+
+    _discoveryManager = [DiscoveryManager sharedManager];
+    [_discoveryManager registerDeviceService:[DLNAService class] withDiscovery:[SSDPDiscoveryProvider class]];
+    [_discoveryManager registerDeviceService:[WebOSTVService class] withDiscovery:[SSDPDiscoveryProvider class]];
+    _discoveryManager.pairingLevel = DeviceServicePairingLevelOn;
+    _discoveryManager.delegate = self;
+    [self setupDevices];
+
+    self.speechKit = [[NuanceSpeech alloc] init];
+    [self.speechKit configure];
+
+    if (![self scenesAreReady]) {
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [self performSegueWithIdentifier:kConfigureScenesSegueId sender:nil];
+       });
+    }
+
+    [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
+}
+
+- (void)setupScenes {
+    self.currentSceneIndex = -1;
+
+    NSString *plistPath = [UIAppDelegate plistPath];
     NSDictionary *contentDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
+
     SceneInfo *sceneInfo = [[SceneInfo alloc] init];
     sceneInfo.mediaArray = [contentDictionary objectForKey:@"Media"];
     sceneInfo.currentMediaIndex = 0;
     sceneInfo.currentPosition = 0;
+
+    NSDictionary *scene1Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:0];
     self.scene1 = [[Scene alloc] initWithConfiguration:scene1Dictionary andSceneInfo:sceneInfo];
-    
+
     NSDictionary *scene2Dictionary = [[contentDictionary objectForKey:@"Scenes"] objectAtIndex:1];
     self.scene2 = [[Scene alloc] initWithConfiguration:scene2Dictionary andSceneInfo:sceneInfo];
+}
 
-    [self setupUI];
-    
-    // Do any additional setup after loading the view.
-    _discoveryManager = [DiscoveryManager sharedManager];
-    [_discoveryManager registerDeviceService:[DLNAService class] withDiscovery:[SSDPDiscoveryProvider class]];
-    [_discoveryManager registerDeviceService:[WebOSTVService class] withDiscovery:[SSDPDiscoveryProvider class]];
-    
-    _discoveryManager.pairingLevel = DeviceServicePairingLevelOn;
-    _discoveryManager.delegate = self;
+- (void)setupDevices {
+    [_discoveryManager stopDiscovery];
     [_discoveryManager startDiscovery];
-    
+
      [UIAppDelegate enableLocalHeartbeat];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
@@ -84,11 +108,12 @@
         // totally incorrect!
         [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
     });
-    
-    self.speechKit = [[NuanceSpeech alloc] init];
-    [self.speechKit configure];
+}
 
-    [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
+- (void)resetScenes {
+    [self setupScenes];
+    [self setupDevices];
+    [self setupBeaconTriggers];
 }
 
 - (void)setupUI {
@@ -110,6 +135,12 @@
 - (IBAction)aboutAction:(id)sender {
     AboutViewController *aboutVC = [AboutViewController new];
     [self.navigationController pushViewController:aboutVC animated:YES];
+}
+
+- (BOOL)scenesAreReady {
+    // we require that each scene at least has a media device
+    return (([[self.scene1.configuration valueForKeyPath:@"device.name"] length] > 0) &&
+            ([[self.scene2.configuration valueForKeyPath:@"device.name"] length] > 0));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -290,6 +321,18 @@
     self.debugView.hidden = !sender.on;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([kConfigureScenesSegueId isEqualToString:segue.identifier]) {
+        ConfigureSceneSelectionViewController *vc = segue.destinationViewController;
+        __weak typeof(self) wself = self;
+        vc.configChangeBlock = ^(BOOL configHasChanged) {
+            if (configHasChanged) {
+                [wself resetScenes];
+            }
+        };
+    }
+}
+
 #pragma mark - Triggers
 
 - (void)setupBeaconTriggers {
@@ -344,15 +387,21 @@
                triggeringOnNearProximity:(BOOL)triggerOnNearProximity
                          andTriggerBlock:(TriggerBlock)block {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
-    BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
-                                                                          major:@0
-                                                                          minor:@0
-                                                                andTriggerBlock:block];
-    beaconTrigger.triggerOnNearProximity = triggerOnNearProximity;
-    [beaconTrigger start];
-    
-    self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
-    [self.beaconTriggers addObject:beaconTrigger];
+    if (uuid) {
+        BeaconTrigger *beaconTrigger = [[BeaconTrigger alloc] initWithProximityUUID:uuid
+                                                                              major:@0
+                                                                              minor:@0
+                                                                    andTriggerBlock:block];
+        beaconTrigger.triggerOnNearProximity = triggerOnNearProximity;
+        [beaconTrigger start];
+
+        self.beaconTriggers = self.beaconTriggers ?: [NSMutableArray array];
+        [self.beaconTriggers addObject:beaconTrigger];
+    } else if (uuidString.length > 0) {
+        NSLog(@"Couldn't parse beacon UUID: %@", uuidString);
+    } else {
+        NSLog(@"No beacon UUID specified – ignoring");
+    }
 }
 
 
@@ -392,6 +441,13 @@
 }
 
 - (void)didUpdateConnectableDevice:(ConnectableDevice *)device {
+    
+    if ([UIAppDelegate connectedDevices])
+    {
+        @synchronized ([UIAppDelegate connectedDevices]) { [[UIAppDelegate connectedDevices] setObject:device forKey:device.address];}
+        
+    }
+    
     if (device && self.scene1 && self.scene2) {
         const BOOL deviceHasWebOSService = ([device serviceWithName:kConnectSDKWebOSTVServiceId] != nil);
 
@@ -419,7 +475,11 @@
 - (void)discoveryManager:(WeMoDiscoveryManager *)manager
           didFoundDevice:(WeMoControlDevice *)device {
     NSLog(@"didFindDevice %@", device);
-
+    if ([UIAppDelegate wemoDevices])
+    {
+        @synchronized ([UIAppDelegate wemoDevices]) { [[UIAppDelegate wemoDevices] setObject:device.friendlyName forKey:device.udn];}
+        
+    }
     [[self scenesForWemoSwitchUdn:device.udn] enumerateObjectsUsingBlock:^(Scene *scene, NSUInteger idx, BOOL *stop) {
         scene.wemoSwitch = device;
     }];

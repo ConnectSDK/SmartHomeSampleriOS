@@ -44,51 +44,61 @@
 	<key>Scenes</key>
 	<array>
 		<dict>
+			<key>wink</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>bulbId</key>
+				<string></string>
+			</dict>
 			<key>iBeacon</key>
 			<dict>
 				<key>uuid</key>
-				<string>00001111-2222-3333-4444-555566667777</string>
+				<string></string>
 			</dict>
 			<key>hueBulb</key>
-			<dict>
-				<key>2</key>
-				<string>2</string>
-				<key>3</key>
-				<string>3</string>
-			</dict>
+			<dict/>
 			<key>device</key>
 			<dict>
 				<key>name</key>
-				<string>adnan tv</string>
+				<string></string>
 				<key>type</key>
-				<string>webostv</string>
+				<string></string>
 			</dict>
 			<key>wemoSwitch</key>
 			<dict>
+				<key>name</key>
+				<string></string>
 				<key>udn</key>
-				<string>uuid:Socket-1_0-221434K0100D1D</string>
+				<string></string>
 			</dict>
 		</dict>
 		<dict>
+			<key>wemoSwitch</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>udn</key>
+				<string></string>
+			</dict>
 			<key>iBeacon</key>
 			<dict>
 				<key>uuid</key>
-				<string>88889999-aaaa-bbbb-cccc-ddddeeeeffff</string>
+				<string></string>
 			</dict>
 			<key>wink</key>
 			<dict>
+				<key>name</key>
+				<string></string>
 				<key>bulbId</key>
-				<string>459599</string>
+				<string></string>
 			</dict>
 			<key>hueBulb</key>
-			<dict>
-				<key>1</key>
-				<string>1</string>
-			</dict>
+			<dict/>
 			<key>device</key>
 			<dict>
 				<key>name</key>
-				<string>Living Room - Sonos PLAY:1 Media Renderer</string>
+				<string></string>
 			</dict>
 		</dict>
 	</array>
