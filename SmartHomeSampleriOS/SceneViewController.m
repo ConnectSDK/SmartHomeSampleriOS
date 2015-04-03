@@ -56,26 +56,14 @@ static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
 
     [self setupScenes];
     [self setupUI];
-    
-    // Do any additional setup after loading the view.
+
     _discoveryManager = [DiscoveryManager sharedManager];
     [_discoveryManager registerDeviceService:[DLNAService class] withDiscovery:[SSDPDiscoveryProvider class]];
     [_discoveryManager registerDeviceService:[WebOSTVService class] withDiscovery:[SSDPDiscoveryProvider class]];
-    
     _discoveryManager.pairingLevel = DeviceServicePairingLevelOn;
     _discoveryManager.delegate = self;
-    [_discoveryManager startDiscovery];
-    
-     [UIAppDelegate enableLocalHeartbeat];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
-        // * you must have the discovery settings in a file named
-        // `DeviceConfigData.plist`
-        // * according to the docs, this method returns immediately, which is
-        // totally incorrect!
-        [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
-    });
-    
+    [self setupDevices];
+
     self.speechKit = [[NuanceSpeech alloc] init];
     [self.speechKit configure];
 
@@ -106,8 +94,24 @@ static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
     self.scene2 = [[Scene alloc] initWithConfiguration:scene2Dictionary andSceneInfo:sceneInfo];
 }
 
+- (void)setupDevices {
+    [_discoveryManager stopDiscovery];
+    [_discoveryManager startDiscovery];
+
+     [UIAppDelegate enableLocalHeartbeat];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
+        // * you must have the discovery settings in a file named
+        // `DeviceConfigData.plist`
+        // * according to the docs, this method returns immediately, which is
+        // totally incorrect!
+        [[WeMoDiscoveryManager sharedWeMoDiscoveryManager] discoverDevices:WeMoUpnpInterface];
+    });
+}
+
 - (void)resetScenes {
     [self setupScenes];
+    [self setupDevices];
     [self setupBeaconTriggers];
 }
 
