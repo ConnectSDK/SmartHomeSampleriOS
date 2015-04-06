@@ -37,6 +37,12 @@ The app must be in the foreground with the screen unlocked to work properly with
 - Nuance Dragon mobile [SpeechKit framework](http://nuancemobiledeveloper.com/public/index.php): Place the `SpeechKit.framework` into `SmartHomeSampleriOS/Nuance/` directory. Update the variables `kNuanceAppId`, `kNuanceAppHost`, `kNuanceAppHost` and `SpeechKitApplicationKey` in `SmartHomeSampleriOS/Secret.m` with the values provided. For instructions for SpeechKit setup, see [this document](http://dragonmobile.nuancemobiledeveloper.com/public/Help/DragonMobileSDKReference_iOS/SpeechKit_Guide/ServerConnection.html).
 - [Wink API](http://docs.wink.apiary.io): Update the following access parameters: `kWinkUsername`, `kWinkPassword`, `kWinkClientId`, and `kWinkClientSecret` in `SmartHomeSampleriOS/Secret.m`.
 
+### Scenes Configuration
+
+At first launch, you are able to pick devices for your scenes. You can use the "Configure" button later to change the config.
+
+**Important**: Make sure to select different devices for the scenes.
+
 ## See also
 
 For more information on using Connect SDK, we recommend you review the following material:
