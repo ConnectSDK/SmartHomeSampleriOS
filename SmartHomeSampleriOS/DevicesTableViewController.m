@@ -89,11 +89,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customcell" forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"customcell"];//[tableView dequeueReusableCellWithIdentifier:@"customcell" forIndexPath:indexPath];
     cell.textLabel.text = [[self getDeviceDetailsAtIndex:indexPath] valueForKey:@"name"];
-    for ( NSIndexPath *index in self.selectedIndexes) {
-        if([indexPath row] == [index row]){
+    for ( NSNumber *index in self.selectedIndexes) {
+        if([indexPath row] == [index integerValue]){
+            NSLog(@"Selected row %d",indexPath.row);
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
             break;
         }
     }

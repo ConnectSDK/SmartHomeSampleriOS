@@ -179,13 +179,13 @@
 -(NSMutableArray *)getSelectedIndexes:(NSDictionary *)devices forType:(NSInteger)type{
     NSMutableArray *selectedIndexes = [NSMutableArray array];
     NSString *filter = @"";
-     __block NSInteger idx;
+     __block NSInteger idx = 0;
     if(type == ConnectedDeviceType){
         filter = [[self.sceneDictionary objectForKey:@"device"] valueForKey:@"name"];
         [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             ConnectableDevice *cDevice = (ConnectableDevice *) obj;
             if([cDevice.friendlyName isEqualToString:filter]){
-                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                [selectedIndexes addObject:@(idx)];
                 *stop = YES;
             }
             idx++;
@@ -194,7 +194,7 @@
         
         [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if([[self.sceneDictionary objectForKey:@"hueBulb"] valueForKey:key]){
-                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                [selectedIndexes addObject:@(idx)];
             }
             idx++;
         }];
@@ -202,7 +202,7 @@
         filter = [[self.sceneDictionary objectForKey:@"wemoSwitch"] valueForKey:@"udn"];
         [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if([key isEqualToString:filter]){
-                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                [selectedIndexes addObject:@(idx)];
                  *stop = YES;
             }
             idx++;
@@ -211,7 +211,7 @@
         filter = [[self.sceneDictionary objectForKey:@"wink"] valueForKey:@"bulbId"];
         [devices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if([key isEqualToString:filter]){
-                [selectedIndexes addObject:[NSIndexPath indexPathForRow:idx inSection:1]];
+                [selectedIndexes addObject:@(idx)];
                  *stop = YES;
             }
             idx++;
