@@ -4,6 +4,27 @@
 
 For information on Connect SDK, visit [http://connectsdk.com/discover/](http://connectsdk.com/discover/).
 
+### Prerequisites
+
+Required devices:
+
+* LG WebOS TV or DLNA-compatible media device for each scene (two total), such as Sonos.
+
+The app has been tested and works with these devices:
+
+* [LG WebOS 2014 TV](http://www.lg.com/us/experience-tvs/smart-tv)
+* [Sonos PLAY:1 speaker](http://www.sonos.com/sonos-shop/products/play1)
+* [Philips Hue hub and bulbs](http://www2.meethue.com/en-us/)
+* [Belkin WeMo Switch](http://www.belkin.com/us/p/F7C027fc/)
+* [Wink hub](http://www.wink.com/products/wink-hub/) + [GE link light bulb](http://gelinkbulbs.com)
+* [StickNFind iBeacons](https://www.sticknfind.com/sticknfind.aspx)
+
+**Important**: Make sure all the WiFi-supported devices (WebOS TV, Sonos speaker, Philips Hue hub, WeMo switch, and Wink hub) and your iOS device with the app are connected to the same WiFi network. To configure the devices, you need to use their respective apps.
+
+### Limitations
+
+The app must be in the foreground with the screen unlocked to work properly with the devices.
+
 ## Setup
 
 ### Dependencies
