@@ -72,6 +72,8 @@ static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
        dispatch_async(dispatch_get_main_queue(), ^{
            [self performSegueWithIdentifier:kConfigureScenesSegueId sender:nil];
        });
+    }else{
+        [UIAppDelegate enableLocalHeartbeat];
     }
 
     [self useBeaconsSwitchPressed:self.useBeaconsSwitch];
@@ -99,7 +101,6 @@ static NSString *const kConfigureScenesSegueId = @"ConfigureScenesSegue";
     [_discoveryManager stopDiscovery];
     [_discoveryManager startDiscovery];
 
-     [UIAppDelegate enableLocalHeartbeat];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [WeMoDiscoveryManager sharedWeMoDiscoveryManager].deviceDiscoveryDelegate = self;
         // * you must have the discovery settings in a file named

@@ -27,6 +27,10 @@
     // Do any additional setup after loading the view.
     self.title = [NSString stringWithFormat:NSLocalizedString(@"Scene %d", nil),
                   (self.currentSceneIndex + 1)];
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    if (cache != nil && cache.lights == nil) {
+        [UIAppDelegate enableLocalHeartbeat];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

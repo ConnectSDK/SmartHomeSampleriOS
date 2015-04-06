@@ -184,7 +184,6 @@
      *****************************************************/
     
     // Move to main screen (as you can't control lights when not connected)
-    [self.navigationController popToRootViewControllerAnimated:YES];
     
     // Dismiss modal views when connection is lost
     if (self.navigationController.presentedViewController) {
@@ -219,8 +218,6 @@
         // No connection at all, show connection popup
         
         if (self.noConnectionAlert == nil) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            
             // Showing popup, so remove this view
             [self removeLoadingView];
             [self showNoConnectionDialog];
