@@ -1,0 +1,6 @@
+# do not commit third-party frameworks and SDKs
+HueSDK_iOS.framework
+Lumberjack/
+SpeechKit.framework
+SmartHomeSampleriOS/WeMoSDK/*.[ah]
+!SmartHomeSampleriOS/WeMoSDK/libcrypto.a

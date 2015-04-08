@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2A25941A9FD86B009E8B1D /* WinkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25931A9FD86B009E8B1D /* WinkAPI.m */; };
+		0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25971AA12E08009E8B1D /* SLColorArt.m */; };
+		0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */; };
+		0F2A259E1AA12E08009E8B1D /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */; };
+		0F348DE91AA7CCAD00941FC2 /* voiceicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F348DE81AA7CCAD00941FC2 /* voiceicon.png */; };
+		0F348DF01AA7CE8D00941FC2 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F348DED1AA7CE8D00941FC2 /* earcon_cancel.wav */; };
+		0F348DF11AA7CE8D00941FC2 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F348DEE1AA7CE8D00941FC2 /* earcon_done_listening.wav */; };
+		0F348DF21AA7CE8D00941FC2 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F348DEF1AA7CE8D00941FC2 /* earcon_listening.wav */; };
+		0F348DF41AA7CEEF00941FC2 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F348DF31AA7CEEF00941FC2 /* SpeechKit.framework */; };
+		0F348DF81AA7CF8400941FC2 /* NuanceSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F348DF71AA7CF8400941FC2 /* NuanceSpeech.m */; };
+		0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C0691A96BB3C00A0E8E1 /* Scene.m */; };
+		0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */; };
+		0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */; };
+		0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F67C0731A97C2A200A0E8E1 /* Scene.plist */; };
 		0F79F5E01A8AE05200A6FB2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5DF1A8AE05200A6FB2E /* main.m */; };
 		0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */; };
-		0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5E51A8AE05200A6FB2E /* ViewController.m */; };
 		0F79F5E91A8AE05200A6FB2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5E71A8AE05200A6FB2E /* Main.storyboard */; };
 		0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */; };
 		0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */; };
-		0F79F5FA1A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */; };
 		0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */; };
 		0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */; };
 		0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */; };
@@ -35,6 +47,26 @@
 		0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79F6401A8D626000A6FB2E /* libicucore.dylib */; };
 		0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79F6441A8D76C600A6FB2E /* Settings.bundle */; };
 		0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */; };
+		0F7BEE3E1AD2F3D900DFC717 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7BEE3D1AD2F3D900DFC717 /* info@2x.png */; };
+		0F98C5371ACB4C460005EBA0 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F98C5361ACB4C460005EBA0 /* info.png */; };
+		0F98C53D1ACB5CF00005EBA0 /* ConfigureSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */; };
+		0F98C5401ACB60750005EBA0 /* DevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */; };
+		0F98C5441ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */; };
+		440383531AAA6F33008BF221 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = 440383521AAA6F33008BF221 /* Secret.m */; };
+		447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287391A9E622A0035F665 /* BelkinSDKLibrary.a */; };
+		447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873A1A9E622A0035F665 /* Cybergarage.a */; };
+		447287461A9E622A0035F665 /* Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472873B1A9E622A0035F665 /* Reachability.a */; };
+		4472874C1A9E62650035F665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472874B1A9E62650035F665 /* libxml2.dylib */; };
+		4472875F1A9F924E0035F665 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4472875E1A9F924E0035F665 /* libcrypto.a */; };
+		447287601A9F94DA0035F665 /* WeMoLocalControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447287411A9E622A0035F665 /* WeMoLocalControl.a */; };
+		447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447287661A9FBCBE0035F665 /* DeviceConfigData.plist */; };
+		44C64CCA1ACC65CA005E411F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 44C64CC51ACC65C4005E411F /* LICENSE */; };
+		44C64CCD1ACC70B4005E411F /* ACKNOWLEDGMENTS.html in Resources */ = {isa = PBXBuildFile; fileRef = 44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */; };
+		44C64CD01ACC7150005E411F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C64CCF1ACC7150005E411F /* AboutViewController.m */; };
+		44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */; };
+		44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */; };
+		44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */; };
+		44F0F0681A96BC39007F4448 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F0F0671A96BC39007F4448 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,29 +94,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2A25921A9FD86B009E8B1D /* WinkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinkAPI.h; sourceTree = "<group>"; };
+		0F2A25931A9FD86B009E8B1D /* WinkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinkAPI.m; sourceTree = "<group>"; };
+		0F2A25961AA12E08009E8B1D /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
+		0F2A25971AA12E08009E8B1D /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
+		0F2A25981AA12E08009E8B1D /* UIImage+ColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorArt.h"; sourceTree = "<group>"; };
+		0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorArt.m"; sourceTree = "<group>"; };
+		0F2A259A1AA12E08009E8B1D /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		0F348DE81AA7CCAD00941FC2 /* voiceicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voiceicon.png; sourceTree = "<group>"; };
+		0F348DED1AA7CE8D00941FC2 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
+		0F348DEE1AA7CE8D00941FC2 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_done_listening.wav; sourceTree = "<group>"; };
+		0F348DEF1AA7CE8D00941FC2 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_listening.wav; sourceTree = "<group>"; };
+		0F348DF31AA7CEEF00941FC2 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
+		0F348DF61AA7CF8400941FC2 /* NuanceSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuanceSpeech.h; sourceTree = "<group>"; };
+		0F348DF71AA7CF8400941FC2 /* NuanceSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuanceSpeech.m; sourceTree = "<group>"; };
+		0F67C0681A96BB3C00A0E8E1 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		0F67C0691A96BB3C00A0E8E1 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		0F67C06B1A96C3C000A0E8E1 /* SceneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneInfo.h; sourceTree = "<group>"; };
+		0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneInfo.m; sourceTree = "<group>"; };
+		0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewController.h; sourceTree = "<group>"; };
+		0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneViewController.m; sourceTree = "<group>"; };
+		0F67C0731A97C2A200A0E8E1 /* Scene.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Scene.plist; path = ../Resources/Scene.plist; sourceTree = "<group>"; };
 		0F79F5DA1A8AE05200A6FB2E /* SmartHomeSampleriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomeSampleriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F79F5DE1A8AE05200A6FB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F79F5DF1A8AE05200A6FB2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F79F5E41A8AE05200A6FB2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0F79F5E51A8AE05200A6FB2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F79F5E81A8AE05200A6FB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F79F5ED1A8AE05200A6FB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0F79F5F31A8AE05200A6FB2E /* SmartHomeSampleriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeSampleriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F79F5F81A8AE05200A6FB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeSampleriOSTests.m; sourceTree = "<group>"; };
 		0F79F6051A8D2A8600A6FB2E /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
-		0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHBridgePushLinkViewController.h; path = PhilipsHue/PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
-		0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHBridgePushLinkViewController.m; path = PhilipsHue/PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
-		0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PHBridgePushLinkViewController.xib; path = PhilipsHue/PHBridgePushLinkViewController.xib; sourceTree = "<group>"; };
-		0F79F60B1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHBridgeSelectionViewController.h; path = PhilipsHue/PHBridgeSelectionViewController.h; sourceTree = "<group>"; };
-		0F79F60C1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHBridgeSelectionViewController.m; path = PhilipsHue/PHBridgeSelectionViewController.m; sourceTree = "<group>"; };
-		0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PHBridgeSelectionViewController.xib; path = PhilipsHue/PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
-		0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HueSDK_iOS.framework; path = ../PhilipsHue/HueSDK_iOS.framework; sourceTree = "<group>"; };
+		0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
+		0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
+		0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgePushLinkViewController.xib; sourceTree = "<group>"; };
+		0F79F60B1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgeSelectionViewController.h; sourceTree = "<group>"; };
+		0F79F60C1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgeSelectionViewController.m; sourceTree = "<group>"; };
+		0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
+		0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
 		0F79F6181A8D322100A6FB2E /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		0F79F6191A8D322100A6FB2E /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		0F79F61A1A8D322100A6FB2E /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -99,14 +150,51 @@
 		0F79F6241A8D322100A6FB2E /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		0F79F6251A8D322100A6FB2E /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		0F79F6261A8D322100A6FB2E /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = press_smartbridge.png; path = Resources/press_smartbridge.png; sourceTree = SOURCE_ROOT; };
-		0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "press_smartbridge@2x.png"; path = "Resources/press_smartbridge@2x.png"; sourceTree = SOURCE_ROOT; };
+		0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
+		0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
 		0F79F6331A8D608B00A6FB2E /* ConnectSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ConnectSDK.xcodeproj; path = "../Connect-SDK-iOS/ConnectSDK.xcodeproj"; sourceTree = "<group>"; };
 		0F79F63E1A8D60BB00A6FB2E /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleCast.framework; path = "../../Connect-SDK-iOS/modules/google-cast/GoogleCast.framework"; sourceTree = "<group>"; };
 		0F79F6401A8D626000A6FB2E /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = SOURCE_ROOT; };
-		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PhilipsHue/UIImage+Color.h"; sourceTree = "<group>"; };
-		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PhilipsHue/UIImage+Color.m"; sourceTree = "<group>"; };
+		0F79F6441A8D76C600A6FB2E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Resources/Settings.bundle; sourceTree = "<group>"; };
+		0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		0F7BEE3D1AD2F3D900DFC717 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		0F98C5361ACB4C460005EBA0 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		0F98C53B1ACB5CF00005EBA0 /* ConfigureSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureSceneViewController.h; sourceTree = "<group>"; };
+		0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureSceneViewController.m; sourceTree = "<group>"; };
+		0F98C53E1ACB60750005EBA0 /* DevicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesTableViewController.h; sourceTree = "<group>"; };
+		0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesTableViewController.m; sourceTree = "<group>"; };
+		0F98C5421ACC99530005EBA0 /* ConfigureSceneSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureSceneSelectionViewController.h; sourceTree = "<group>"; };
+		0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureSceneSelectionViewController.m; sourceTree = "<group>"; };
+		440383511AAA6F33008BF221 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
+		440383521AAA6F33008BF221 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
+		447287391A9E622A0035F665 /* BelkinSDKLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = BelkinSDKLibrary.a; sourceTree = "<group>"; };
+		4472873A1A9E622A0035F665 /* Cybergarage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Cybergarage.a; sourceTree = "<group>"; };
+		4472873B1A9E622A0035F665 /* Reachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Reachability.a; sourceTree = "<group>"; };
+		4472873C1A9E622A0035F665 /* WeMoBugSenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoBugSenseManager.h; sourceTree = "<group>"; };
+		4472873D1A9E622A0035F665 /* WeMoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoConstants.h; sourceTree = "<group>"; };
+		4472873E1A9E622A0035F665 /* WeMoControlDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoControlDevice.h; sourceTree = "<group>"; };
+		4472873F1A9E622A0035F665 /* WeMoDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoDevice.h; sourceTree = "<group>"; };
+		447287401A9E622A0035F665 /* WeMoDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoDiscoveryManager.h; sourceTree = "<group>"; };
+		447287411A9E622A0035F665 /* WeMoLocalControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = WeMoLocalControl.a; sourceTree = "<group>"; };
+		447287421A9E622A0035F665 /* WeMoNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoNetworkManager.h; sourceTree = "<group>"; };
+		447287431A9E622A0035F665 /* WeMoStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoStateManager.h; sourceTree = "<group>"; };
+		4472874B1A9E62650035F665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		4472875E1A9F924E0035F665 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		447287661A9FBCBE0035F665 /* DeviceConfigData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceConfigData.plist; sourceTree = "<group>"; };
+		44C64CC41ACC65C4005E411F /* ACKNOWLEDGMENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ACKNOWLEDGMENTS.md; sourceTree = SOURCE_ROOT; };
+		44C64CC51ACC65C4005E411F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		44C64CC61ACC65C4005E411F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ACKNOWLEDGMENTS.html; sourceTree = SOURCE_ROOT; };
+		44C64CCE1ACC7150005E411F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		44C64CCF1ACC7150005E411F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+ObjectGetter.h"; sourceTree = "<group>"; };
+		44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+ObjectGetter.m"; sourceTree = "<group>"; };
+		44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTriggerTests.m; sourceTree = "<group>"; };
+		44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconTrigger.h; sourceTree = "<group>"; };
+		44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTrigger.m; sourceTree = "<group>"; };
+		44F0F0671A96BC39007F4448 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		44F0F06C1A9808D4007F4448 /* BeaconTrigger_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeaconTrigger_Private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +202,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F348DF41AA7CEEF00941FC2 /* SpeechKit.framework in Frameworks */,
+				4472874C1A9E62650035F665 /* libxml2.dylib in Frameworks */,
+				447287451A9E622A0035F665 /* Cybergarage.a in Frameworks */,
 				0F79F6411A8D626000A6FB2E /* libicucore.dylib in Frameworks */,
 				0F79F63F1A8D60BB00A6FB2E /* GoogleCast.framework in Frameworks */,
 				0F79F63D1A8D609A00A6FB2E /* libConnectSDK.a in Frameworks */,
 				0F79F6151A8D2C8900A6FB2E /* HueSDK_iOS.framework in Frameworks */,
+				4472875F1A9F924E0035F665 /* libcrypto.a in Frameworks */,
+				447287601A9F94DA0035F665 /* WeMoLocalControl.a in Frameworks */,
+				447287441A9E622A0035F665 /* BelkinSDKLibrary.a in Frameworks */,
+				447287461A9E622A0035F665 /* Reachability.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,17 +220,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F0F0681A96BC39007F4448 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2A258E1A9FD830009E8B1D /* Wink */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A25921A9FD86B009E8B1D /* WinkAPI.h */,
+				0F2A25931A9FD86B009E8B1D /* WinkAPI.m */,
+			);
+			path = Wink;
+			sourceTree = "<group>";
+		};
+		0F2A25951AA12E08009E8B1D /* ColorArt */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A25961AA12E08009E8B1D /* SLColorArt.h */,
+				0F2A25971AA12E08009E8B1D /* SLColorArt.m */,
+				0F2A25981AA12E08009E8B1D /* UIImage+ColorArt.h */,
+				0F2A25991AA12E08009E8B1D /* UIImage+ColorArt.m */,
+				0F2A259A1AA12E08009E8B1D /* UIImage+Scale.h */,
+				0F2A259B1AA12E08009E8B1D /* UIImage+Scale.m */,
+			);
+			path = ColorArt;
+			sourceTree = "<group>";
+		};
+		0F348DF51AA7CF4E00941FC2 /* Nuance */ = {
+			isa = PBXGroup;
+			children = (
+				0F348DF61AA7CF8400941FC2 /* NuanceSpeech.h */,
+				0F348DF71AA7CF8400941FC2 /* NuanceSpeech.m */,
+				0F348DF31AA7CEEF00941FC2 /* SpeechKit.framework */,
+			);
+			path = Nuance;
+			sourceTree = "<group>";
+		};
+		0F67C0631A96B66000A0E8E1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0F67C0681A96BB3C00A0E8E1 /* Scene.h */,
+				0F67C0691A96BB3C00A0E8E1 /* Scene.m */,
+				0F67C06B1A96C3C000A0E8E1 /* SceneInfo.h */,
+				0F67C06C1A96C3C000A0E8E1 /* SceneInfo.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		0F79F5D11A8AE05200A6FB2E = {
 			isa = PBXGroup;
 			children = (
 				0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */,
-				0F79F6031A8D2A6400A6FB2E /* PhilipsHue */,
 				0F79F6161A8D2CA200A6FB2E /* Frameworks */,
 				0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */,
 				0F79F5DB1A8AE05200A6FB2E /* Products */,
@@ -155,10 +293,26 @@
 		0F79F5DC1A8AE05200A6FB2E /* SmartHomeSampleriOS */ = {
 			isa = PBXGroup;
 			children = (
+				0F348DF51AA7CF4E00941FC2 /* Nuance */,
+				0F79F6031A8D2A6400A6FB2E /* PhilipsHue */,
+				0F67C0631A96B66000A0E8E1 /* Scenes */,
+				44F0F0591A96717C007F4448 /* Triggers */,
+				447287381A9E622A0035F665 /* WeMoSDK */,
+				0F2A258E1A9FD830009E8B1D /* Wink */,
+				440383511AAA6F33008BF221 /* Secret.h */,
+				440383521AAA6F33008BF221 /* Secret.m */,
 				0F79F5E11A8AE05200A6FB2E /* AppDelegate.h */,
 				0F79F5E21A8AE05200A6FB2E /* AppDelegate.m */,
-				0F79F5E41A8AE05200A6FB2E /* ViewController.h */,
-				0F79F5E51A8AE05200A6FB2E /* ViewController.m */,
+				0F67C06E1A97BB6500A0E8E1 /* SceneViewController.h */,
+				0F67C06F1A97BB6500A0E8E1 /* SceneViewController.m */,
+				44C64CCE1ACC7150005E411F /* AboutViewController.h */,
+				44C64CCF1ACC7150005E411F /* AboutViewController.m */,
+				0F98C53B1ACB5CF00005EBA0 /* ConfigureSceneViewController.h */,
+				0F98C53C1ACB5CF00005EBA0 /* ConfigureSceneViewController.m */,
+				0F98C53E1ACB60750005EBA0 /* DevicesTableViewController.h */,
+				0F98C53F1ACB60750005EBA0 /* DevicesTableViewController.m */,
+				0F98C5421ACC99530005EBA0 /* ConfigureSceneSelectionViewController.h */,
+				0F98C5431ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m */,
 				0F79F5E71A8AE05200A6FB2E /* Main.storyboard */,
 				0F79F5EA1A8AE05200A6FB2E /* Images.xcassets */,
 				0F79F5EC1A8AE05200A6FB2E /* LaunchScreen.xib */,
@@ -170,10 +324,15 @@
 		0F79F5DD1A8AE05200A6FB2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44C64CCC1ACC70B4005E411F /* ACKNOWLEDGMENTS.html */,
+				44C64CC41ACC65C4005E411F /* ACKNOWLEDGMENTS.md */,
+				44C64CC51ACC65C4005E411F /* LICENSE */,
+				44C64CC61ACC65C4005E411F /* README.md */,
 				0F79F62E1A8D3D3100A6FB2E /* Resources */,
 				0F79F5DE1A8AE05200A6FB2E /* Info.plist */,
 				0F79F5DF1A8AE05200A6FB2E /* main.m */,
 				0F79F6441A8D76C600A6FB2E /* Settings.bundle */,
+				0F67C0731A97C2A200A0E8E1 /* Scene.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,7 +340,10 @@
 		0F79F5F61A8AE05200A6FB2E /* SmartHomeSampleriOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F79F5F91A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m */,
+				44CD3DDD1A9BAEBC003F126A /* NSInvocation+ObjectGetter.h */,
+				44CD3DDE1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m */,
+				44F0F0671A96BC39007F4448 /* OCMock.framework */,
+				44F0F05D1A9671AD007F4448 /* Triggers */,
 				0F79F5F71A8AE05200A6FB2E /* Supporting Files */,
 			);
 			path = SmartHomeSampleriOSTests;
@@ -198,7 +360,9 @@
 		0F79F6031A8D2A6400A6FB2E /* PhilipsHue */ = {
 			isa = PBXGroup;
 			children = (
+				0F2A25951AA12E08009E8B1D /* ColorArt */,
 				0F79F6041A8D2A8600A6FB2E /* LoadingView */,
+				0F79F6171A8D322100A6FB2E /* Lumberjack */,
 				0F79F6081A8D2A8600A6FB2E /* PHBridgePushLinkViewController.h */,
 				0F79F6091A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m */,
 				0F79F60A1A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib */,
@@ -207,8 +371,9 @@
 				0F79F60D1A8D2A8600A6FB2E /* PHBridgeSelectionViewController.xib */,
 				0F79F6491A8D7EBA00A6FB2E /* UIImage+Color.h */,
 				0F79F64A1A8D7EBA00A6FB2E /* UIImage+Color.m */,
+				0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */,
 			);
-			name = PhilipsHue;
+			path = PhilipsHue;
 			sourceTree = "<group>";
 		};
 		0F79F6041A8D2A8600A6FB2E /* LoadingView */ = {
@@ -218,17 +383,15 @@
 				0F79F6061A8D2A8600A6FB2E /* PHLoadingViewController.m */,
 				0F79F6071A8D2A8600A6FB2E /* PHLoadingViewController.xib */,
 			);
-			name = LoadingView;
-			path = PhilipsHue/LoadingView;
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		0F79F6161A8D2CA200A6FB2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4472874B1A9E62650035F665 /* libxml2.dylib */,
 				0F79F6401A8D626000A6FB2E /* libicucore.dylib */,
 				0F79F63E1A8D60BB00A6FB2E /* GoogleCast.framework */,
-				0F79F6171A8D322100A6FB2E /* Lumberjack */,
-				0F79F6141A8D2C8900A6FB2E /* HueSDK_iOS.framework */,
 			);
 			name = Frameworks;
 			path = SmartHomeSampleriOS;
@@ -249,9 +412,8 @@
 				0F79F6211A8D322100A6FB2E /* DDTTYLogger.m */,
 				0F79F6221A8D322100A6FB2E /* Extensions */,
 			);
-			name = Lumberjack;
-			path = PhilipsHue/Lumberjack;
-			sourceTree = SOURCE_ROOT;
+			path = Lumberjack;
+			sourceTree = "<group>";
 		};
 		0F79F6221A8D322100A6FB2E /* Extensions */ = {
 			isa = PBXGroup;
@@ -267,10 +429,17 @@
 		0F79F62E1A8D3D3100A6FB2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F7BEE3D1AD2F3D900DFC717 /* info@2x.png */,
+				0F98C5361ACB4C460005EBA0 /* info.png */,
+				0F348DED1AA7CE8D00941FC2 /* earcon_cancel.wav */,
+				0F348DEE1AA7CE8D00941FC2 /* earcon_done_listening.wav */,
+				0F348DEF1AA7CE8D00941FC2 /* earcon_listening.wav */,
+				0F348DE81AA7CCAD00941FC2 /* voiceicon.png */,
 				0F79F62F1A8D3D3F00A6FB2E /* press_smartbridge.png */,
 				0F79F6301A8D3D3F00A6FB2E /* press_smartbridge@2x.png */,
 			);
 			name = Resources;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		0F79F6341A8D608B00A6FB2E /* Products */ = {
@@ -280,6 +449,44 @@
 				0F79F63C1A8D608B00A6FB2E /* ConnectSDKTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		447287381A9E622A0035F665 /* WeMoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447287661A9FBCBE0035F665 /* DeviceConfigData.plist */,
+				4472875E1A9F924E0035F665 /* libcrypto.a */,
+				447287391A9E622A0035F665 /* BelkinSDKLibrary.a */,
+				4472873A1A9E622A0035F665 /* Cybergarage.a */,
+				4472873B1A9E622A0035F665 /* Reachability.a */,
+				4472873C1A9E622A0035F665 /* WeMoBugSenseManager.h */,
+				4472873D1A9E622A0035F665 /* WeMoConstants.h */,
+				4472873E1A9E622A0035F665 /* WeMoControlDevice.h */,
+				4472873F1A9E622A0035F665 /* WeMoDevice.h */,
+				447287401A9E622A0035F665 /* WeMoDiscoveryManager.h */,
+				447287411A9E622A0035F665 /* WeMoLocalControl.a */,
+				447287421A9E622A0035F665 /* WeMoNetworkManager.h */,
+				447287431A9E622A0035F665 /* WeMoStateManager.h */,
+			);
+			path = WeMoSDK;
+			sourceTree = "<group>";
+		};
+		44F0F0591A96717C007F4448 /* Triggers */ = {
+			isa = PBXGroup;
+			children = (
+				44F0F0621A96AF4F007F4448 /* BeaconTrigger.h */,
+				44F0F0631A96AF4F007F4448 /* BeaconTrigger.m */,
+				44F0F06C1A9808D4007F4448 /* BeaconTrigger_Private.h */,
+			);
+			path = Triggers;
+			sourceTree = "<group>";
+		};
+		44F0F05D1A9671AD007F4448 /* Triggers */ = {
+			isa = PBXGroup;
+			children = (
+				44F0F0601A96AE2E007F4448 /* BeaconTriggerTests.m */,
+			);
+			path = Triggers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +499,7 @@
 				0F79F5D61A8AE05200A6FB2E /* Sources */,
 				0F79F5D71A8AE05200A6FB2E /* Frameworks */,
 				0F79F5D81A8AE05200A6FB2E /* Resources */,
+				44D8F7C91AB0D5EB00559FE3 /* Check if secrets are filled */,
 			);
 			buildRules = (
 			);
@@ -327,7 +535,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Ibrahim Adnan";
+				ORGANIZATIONNAME = "LG Electronics";
 				TargetAttributes = {
 					0F79F5D91A8AE05200A6FB2E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -391,8 +599,18 @@
 				0F79F6111A8D2A8600A6FB2E /* PHBridgePushLinkViewController.xib in Resources */,
 				0F79F60F1A8D2A8600A6FB2E /* PHLoadingViewController.xib in Resources */,
 				0F79F6321A8D3D3F00A6FB2E /* press_smartbridge@2x.png in Resources */,
+				0F7BEE3E1AD2F3D900DFC717 /* info@2x.png in Resources */,
 				0F79F5EE1A8AE05200A6FB2E /* LaunchScreen.xib in Resources */,
+				0F98C5371ACB4C460005EBA0 /* info.png in Resources */,
+				0F348DF21AA7CE8D00941FC2 /* earcon_listening.wav in Resources */,
+				0F348DE91AA7CCAD00941FC2 /* voiceicon.png in Resources */,
+				0F348DF01AA7CE8D00941FC2 /* earcon_cancel.wav in Resources */,
+				44C64CCA1ACC65CA005E411F /* LICENSE in Resources */,
+				0F67C0741A97C2A200A0E8E1 /* Scene.plist in Resources */,
 				0F79F6451A8D76C600A6FB2E /* Settings.bundle in Resources */,
+				447287671A9FBCBE0035F665 /* DeviceConfigData.plist in Resources */,
+				44C64CCD1ACC70B4005E411F /* ACKNOWLEDGMENTS.html in Resources */,
+				0F348DF11AA7CE8D00941FC2 /* earcon_done_listening.wav in Resources */,
 				0F79F5EB1A8AE05200A6FB2E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,23 +624,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44D8F7C91AB0D5EB00559FE3 /* Check if secrets are filled */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check if secrets are filled";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"$SRCROOT/SmartHomeSampleriOS/Secret.m\"\nLINES=$( grep CHANGE_ME \"$FILE\" )\nif [[ $? == 0 ]]; then\n    echo \"error: Please fill in the secrets in $FILE:\"\n    echo \"$LINES\"\n    exit 1\nfi\n\nexit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F79F5D61A8AE05200A6FB2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F98C5401ACB60750005EBA0 /* DevicesTableViewController.m in Sources */,
+				0F348DF81AA7CF8400941FC2 /* NuanceSpeech.m in Sources */,
+				0F67C06D1A96C3C000A0E8E1 /* SceneInfo.m in Sources */,
 				0F79F62A1A8D322100A6FB2E /* DDLog.m in Sources */,
+				0F2A25941A9FD86B009E8B1D /* WinkAPI.m in Sources */,
 				0F79F6281A8D322100A6FB2E /* DDASLLogger.m in Sources */,
 				0F79F6121A8D2A8600A6FB2E /* PHBridgeSelectionViewController.m in Sources */,
 				0F79F6101A8D2A8600A6FB2E /* PHBridgePushLinkViewController.m in Sources */,
 				0F79F62D1A8D322100A6FB2E /* DispatchQueueLogFormatter.m in Sources */,
+				0F98C53D1ACB5CF00005EBA0 /* ConfigureSceneViewController.m in Sources */,
+				0F2A259D1AA12E08009E8B1D /* UIImage+ColorArt.m in Sources */,
 				0F79F62B1A8D322100A6FB2E /* DDTTYLogger.m in Sources */,
-				0F79F5E61A8AE05200A6FB2E /* ViewController.m in Sources */,
 				0F79F60E1A8D2A8600A6FB2E /* PHLoadingViewController.m in Sources */,
+				44F0F0651A96AF52007F4448 /* BeaconTrigger.m in Sources */,
+				0F2A259E1AA12E08009E8B1D /* UIImage+Scale.m in Sources */,
 				0F79F6271A8D322100A6FB2E /* DDAbstractDatabaseLogger.m in Sources */,
+				0F67C06A1A96BB3C00A0E8E1 /* Scene.m in Sources */,
 				0F79F64B1A8D7EBA00A6FB2E /* UIImage+Color.m in Sources */,
+				440383531AAA6F33008BF221 /* Secret.m in Sources */,
+				0F98C5441ACC99530005EBA0 /* ConfigureSceneSelectionViewController.m in Sources */,
 				0F79F5E31A8AE05200A6FB2E /* AppDelegate.m in Sources */,
+				44C64CD01ACC7150005E411F /* AboutViewController.m in Sources */,
 				0F79F6291A8D322100A6FB2E /* DDFileLogger.m in Sources */,
+				0F2A259C1AA12E08009E8B1D /* SLColorArt.m in Sources */,
+				0F67C0701A97BB6500A0E8E1 /* SceneViewController.m in Sources */,
 				0F79F5E01A8AE05200A6FB2E /* main.m in Sources */,
 				0F79F62C1A8D322100A6FB2E /* ContextFilterLogFormatter.m in Sources */,
 			);
@@ -432,7 +681,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F79F5FA1A8AE05200A6FB2E /* SmartHomeSampleriOSTests.m in Sources */,
+				44CD3DDF1A9BAEBC003F126A /* NSInvocation+ObjectGetter.m in Sources */,
+				44F0F0611A96AE2E007F4448 /* BeaconTriggerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -512,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -550,12 +802,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PhilipsHue",
-					../,
 					"../Connect-SDK-iOS/modules/google-cast",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/Nuance",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/PhilipsHue",
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/WeMoSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
@@ -570,12 +826,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PhilipsHue",
-					../,
 					"../Connect-SDK-iOS/modules/google-cast",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/Nuance",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/PhilipsHue",
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHomeSampleriOS/WeMoSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
@@ -591,6 +851,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHomeSampleriOSTests",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -598,6 +859,12 @@
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHomeSampleriOS.app/SmartHomeSampleriOS";
 			};
@@ -610,9 +877,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHomeSampleriOSTests",
 				);
 				INFOPLIST_FILE = SmartHomeSampleriOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHomeSampleriOS.app/SmartHomeSampleriOS";
 			};

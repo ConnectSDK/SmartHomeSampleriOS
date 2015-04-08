@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Device Icon File Name</key>
+		<string>ic_switch.png</string>
+		<key>Device UDN</key>
+		<string>Socket</string>
+		<key>Device Type</key>
+		<string>urn:Belkin:device:controllee:1</string>
+		<key>Device Code</key>
+		<string>0</string>
+		<key>Additional Push Notifications</key>
+		<array/>
+		<key>Services Required Subscription</key>
+		<array>
+			<string>urn:Belkin:service:basicevent:1</string>
+			<string>urn:Belkin:service:firmwareupdate:1</string>
+		</array>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Media</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Kenny Beltrey</string>
+			<key>title</key>
+			<string>Hydrate</string>
+			<key>iconURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample3.png</string>
+			<key>mimeType</key>
+			<string>audio/mp3</string>
+			<key>mediaURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/hydrate.mp3</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>Franz Schubert</string>
+			<key>title</key>
+			<string>Fantasy in C Major</string>
+			<key>iconURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample.png</string>
+			<key>mimeType</key>
+			<string>audio/mp3</string>
+			<key>mediaURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/fantasy_in_c_major.mp3</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>Ludwig van Beethoven</string>
+			<key>title</key>
+			<string>Symphony</string>
+			<key>iconURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/sample2.png</string>
+			<key>mimeType</key>
+			<string>audio/mp3</string>
+			<key>mediaURL</key>
+			<string>http://ec2-54-201-108-205.us-west-2.compute.amazonaws.com/samples/media/symphony.mp3</string>
+		</dict>
+	</array>
+	<key>Scenes</key>
+	<array>
+		<dict>
+			<key>wink</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>bulbId</key>
+				<string></string>
+			</dict>
+			<key>iBeacon</key>
+			<dict>
+				<key>uuid</key>
+				<string></string>
+			</dict>
+			<key>hueBulb</key>
+			<dict/>
+			<key>device</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>type</key>
+				<string></string>
+			</dict>
+			<key>wemoSwitch</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>udn</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>wemoSwitch</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>udn</key>
+				<string></string>
+			</dict>
+			<key>iBeacon</key>
+			<dict>
+				<key>uuid</key>
+				<string></string>
+			</dict>
+			<key>wink</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>bulbId</key>
+				<string></string>
+			</dict>
+			<key>hueBulb</key>
+			<dict/>
+			<key>device</key>
+			<dict>
+				<key>name</key>
+				<string></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

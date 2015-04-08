@@ -3,11 +3,25 @@
 //  SmartHomeSampleriOS
 //
 //  Created by Ibrahim Adnan on 2/10/15.
-//  Copyright (c) 2015 Ibrahim Adnan. All rights reserved.
+//  Copyright (c) 2015 LG Electronics.
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 #import "AppDelegate.h"
 #import "PHLoadingViewController.h"
+#import "WinkAPI.h"
+#import "Secret.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +46,19 @@
     self.phHueSDK = [[PHHueSDK alloc] init];
     [self.phHueSDK startUpSDK];
     [self.phHueSDK enableLogging:YES];
+    self.connectedDevices = [NSMutableDictionary dictionary];
+    self.wemoDevices = [NSMutableDictionary dictionary];
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Scene" ofType:@"plist"];
+    NSMutableDictionary *plistdict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *docfilePath = [basePath stringByAppendingPathComponent:@"Scene.plist"];
+    self.plistPath = docfilePath;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:docfilePath]){
+        [plistdict writeToFile:docfilePath atomically:YES];
+    }
     
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
@@ -58,6 +85,7 @@
     
     self.navigationController = (UINavigationController *)self.window.rootViewController;
     [self registerDefaultsFromSettingsBundle];
+    [self getWinkDevices];
     return YES;
 }
 
@@ -81,7 +109,7 @@
         NSString *key = [prefSpecification objectForKey:@"Key"];
         if(key) {
             [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
-            NSLog(@"writing as default %@ to the key %@",[prefSpecification objectForKey:@"DefaultValue"],key);
+//            NSLog(@"writing as default %@ to the key %@",[prefSpecification objectForKey:@"DefaultValue"],key);
         }
     }
     
@@ -156,7 +184,6 @@
      *****************************************************/
     
     // Move to main screen (as you can't control lights when not connected)
-    [self.navigationController popToRootViewControllerAnimated:YES];
     
     // Dismiss modal views when connection is lost
     if (self.navigationController.presentedViewController) {
@@ -191,8 +218,6 @@
         // No connection at all, show connection popup
         
         if (self.noConnectionAlert == nil) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            
             // Showing popup, so remove this view
             [self removeLoadingView];
             [self showNoConnectionDialog];
@@ -495,6 +520,19 @@
         [self.loadingView.view removeFromSuperview];
         self.loadingView = nil;
     }
+}
+
+-(void)getWinkDevices{
+    WinkAPI *wink = [[WinkAPI alloc] initWithUsername:kWinkUsername
+                                             password:kWinkPassword
+                                             clientId:kWinkClientId
+                                         clientSecret:kWinkClientSecret];
+    [wink authenticateWithResponse:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [wink retrieveUserDevices:^(NSData *data, NSURLResponse *response, NSError *error) {
+            self.winkDevices = wink.winkDevices;
+        }];
+    }];
 }
 
 @end
