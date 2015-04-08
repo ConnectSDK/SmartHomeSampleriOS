@@ -22,7 +22,7 @@ For additional information on Connect SDK, visit [http://connectsdk.com/discover
 
 ### Prerequisites
 
-Devices used:
+Required devices:
 
 * LG WebOS TV or DLNA-compatible media device for each scene, such as Sonos speakers.
 
